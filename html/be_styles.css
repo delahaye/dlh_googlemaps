@@ -1,0 +1,16 @@
+.dlh_googlemaps_position #mapTypeControlPos_1_4, 
+.dlh_googlemaps_position #mapTypeControlPos_2_7, 
+.dlh_googlemaps_position #mapTypeControlPos_3_10, 
+.dlh_googlemaps_position #navigationControlPos_1_4, 
+.dlh_googlemaps_position #navigationControlPos_2_7, 
+.dlh_googlemaps_position #navigationControlPos_3_10, 
+.dlh_googlemaps_position #scaleControlPos_1_4, 
+.dlh_googlemaps_position #scaleControlPos_2_7, 
+.dlh_googlemaps_position #scaleControlPos_3_10 {
+	display:none;
+}
+.dlh_googlemaps_position #ctrl_mapTypeControlPos td, .dlh_googlemaps_position #ctrl_navigationControlPos td, .dlh_googlemaps_position #ctrl_scaleControlPos td {
+	border:1px solid #ffffff;
+	background-color: #99B3CC;
+	padding:5px 40px 5px 40px;
+}
