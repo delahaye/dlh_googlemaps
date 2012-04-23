@@ -95,5 +95,6 @@ $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['SMALL']				= 'Small vers
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['ZOOM_PAN']			= 'Big version';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCurl']			= 'No geocoding possible - CURL is missing.';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCoords']			= 'No geocoding possible.';
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['pcnt']				= '%';
 
 ?>

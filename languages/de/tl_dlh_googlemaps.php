@@ -95,5 +95,6 @@ $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['SMALL']				= 'Kleine Ver
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['ZOOM_PAN']			= 'Große Version';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCurl']			= 'Kodierung nicht möglich - kein CURL vorhanden.';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCoords']			= 'Kodierung nicht möglich.';
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['pcnt']				= '%';
 
 ?>

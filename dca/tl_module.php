@@ -61,8 +61,8 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['dlh_googlemap_size'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['dlh_googlemap_size'],
 	'exclude'                 => true,
 	'inputType'               => 'imageSize',
-	'options'                 => array('px', '%', 'em', 'pt', 'pc', 'in', 'cm', 'mm'),
-	'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
+	'options'                 => array('px', 'pcnt', 'em', 'pt', 'pc', 'in', 'cm', 'mm'),
+	'reference'               => &$GLOBALS['TL_LANG']['tl_module']['dlh_googlemap_ref'],
 	'eval'                    => array('rgxp'=>'digit')
 );
 

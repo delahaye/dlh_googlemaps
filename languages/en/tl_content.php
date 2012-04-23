@@ -37,5 +37,6 @@ $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_zoom']		= array('Zoom-Factor','
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_size']		= array('Dimensions width x height','Here you can override the map dimensions set in the module for just this implementation.');
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_static']	= array('Use static map','Instead of a normal Google-Map a (resticted) static map can be shown.');
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_url']		= array('Link address','Please enter a web address (http://...) or an insert-tag.');
+$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_ref']['pcnt'] = '%';
 
 ?>

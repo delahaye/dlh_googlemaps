@@ -170,7 +170,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['mapSize'],
 			'exclude'                 => true,
 			'inputType'               => 'imageSize',
-			'options'                 => array('px', '%', 'em', 'pt', 'pc', 'in', 'cm', 'mm'),
+			'options'                 => array('px', 'pcnt', 'em', 'pt', 'pc', 'in', 'cm', 'mm'),
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
 			'eval'                    => array('mandatory'=>true, 'rgxp'=>'digit')
 		),

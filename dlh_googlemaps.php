@@ -54,8 +54,10 @@ class dlh_googlemaps
 
 		$map['language'] = $GLOBALS['TL_LANGUAGE'];
 		$map['mapSize'] = deserialize($map['mapSize']);
+		$map['mapSize'][2]=str_replace('pcnt','%',$map['mapSize'][2]);
 		$tmpSize = deserialize($size);
-		if(is_array($tmpSize) && $tmpSize[0] > 9 && $tmpSize[1] > 0) {
+		$tmpSize[2]=str_replace('pcnt','%',$tmpSize[2]);
+		if(is_array($tmpSize) && $tmpSize[0] > 0 && $tmpSize[1] > 0) {
 			$map['mapSize'] = $tmpSize;
 		}
 		if($zoom > 0) {

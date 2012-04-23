@@ -37,5 +37,6 @@ $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_zoom']		= array('Zoom-Faktor','
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_size']		= array('Anzeigemaße Breite x Höhe','Hier können Sie die im Modul festgelegten Anzeigemaße für diese Einbindung überschreiben.');
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_static']	= array('Statische Karte verwenden','Anstelle einer normalen Google-Map kann eine (eingeschränkte) statische Karte eingebunden werden.');
 $GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_url']		= array('Link-Adresse','Geben Sie eine Web-Adresse (http://...) oder ein Insert-Tag ein.');
+$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_ref']['pcnt'] = '%';
 
 ?>
