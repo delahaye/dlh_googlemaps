@@ -214,11 +214,14 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 		),
 		'multiCoords' => array
 		(
-			'label'                   => tl_dlh_googlemaps_elements::dlhListWizard('multiCoords',$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['multiCoords'], $this->Environment),
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['multiCoords'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'dlhListWizard',
-			'eval'                    => array('mandatory'=>true, 'files'=>true, 'filesOnly'=>true,'extensions'=>'csv', 'fieldType'=>'checkbox')
+			'eval'                    => array('mandatory'=>true, 'files'=>true, 'filesOnly'=>true,'extensions'=>'csv', 'fieldType'=>'checkbox'),
+			'load_callback'           => array(
+				array('tl_dlh_googlemaps_elements', 'setWizLabel')
+				)
 		),
 		'markerShowTitle' => array
 		(
@@ -486,13 +489,17 @@ class tl_dlh_googlemaps_elements extends Backend
 	}
 
 
-	public static function dlhListWizard($field, $label, $env)
+	/**
+	 * Link to list import wizard
+	 * @param string
+	 * @param array
+	 * @return array
+	 */
+	public function setWizLabel($value, $dc)
 	{
-
-		$import = '<a href="'.$env->request.'&amp;field='.$field.'&amp;key=list" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/tablewizard.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom;"></a>';
-		$label[0] .= $import;
+		$GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements']['fields']['multiCoords']['label'][0] .= '<a href="'.$this->Environment->request.'&amp;field=multiCoords&amp;key=list" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/tablewizard.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom;"></a>';
 		
-		return $label;
+		return $dc;
 	}
 
 
