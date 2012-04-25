@@ -499,7 +499,7 @@ class tl_dlh_googlemaps_elements extends Backend
 	{
 		$GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements']['fields']['multiCoords']['label'][0] .= '<a href="'.$this->Environment->request.'&amp;field=multiCoords&amp;key=list" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/tablewizard.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom;"></a>';
 		
-		return $dc;
+		return $value;
 	}
 
 
