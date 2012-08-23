@@ -54,9 +54,20 @@ array_insert($GLOBALS['FE_MOD']['miscellaneous'], 9, array
 /**
  * Content elements
  */
-array_insert($GLOBALS['TL_CTE']['images'], 3, array
-(
-	'dlh_googlemaps' => 'Content_dlh_googlemaps'
-));
+ 
+if (version_compare(VERSION, '2.11', '>'))
+{
+	array_insert($GLOBALS['TL_CTE']['media'], count($GLOBALS['TL_CTE']['media']), array
+	(
+		'dlh_googlemaps' => 'Content_dlh_googlemaps'
+	));
+}
+else
+{
+	array_insert($GLOBALS['TL_CTE']['images'], 3, array
+	(
+		'dlh_googlemaps' => 'Content_dlh_googlemaps'
+	));
+}
 
 ?>
