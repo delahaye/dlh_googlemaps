@@ -246,10 +246,10 @@ class dlhListWizard extends Widget
 <div class="tl_tbox block">
   <h3><label for="separator">'.$GLOBALS['TL_LANG']['MSC']['separator'][0].'</label></h3>
   <select name="separator" id="separator" class="tl_select" onfocus="Backend.getScrollOffset();">
+    <option value="linebreak">'.$GLOBALS['TL_LANG']['MSC']['linebreak'].'</option>
     <option value="comma">'.$GLOBALS['TL_LANG']['MSC']['comma'].'</option>
     <option value="semicolon">'.$GLOBALS['TL_LANG']['MSC']['semicolon'].'</option>
     <option value="tabulator">'.$GLOBALS['TL_LANG']['MSC']['tabulator'].'</option>
-    <option value="linebreak">'.$GLOBALS['TL_LANG']['MSC']['linebreak'].'</option>
   </select>'.(($GLOBALS['TL_LANG']['MSC']['separator'][1] != '') ? '
   <p class="tl_help tl_tip">'.$GLOBALS['TL_LANG']['MSC']['separator'][1].'</p>' : '').'
   <h3><label for="source">'.$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['importfile'][0].'</label> <a href="contao/files.php" title="' . specialchars($GLOBALS['TL_LANG']['MSC']['fileManager']) . '" rel="lightbox[files 765 80%]">' . $this->generateImage('filemanager.gif', $GLOBALS['TL_LANG']['MSC']['fileManager'], 'style="vertical-align:text-bottom;"') . '</a></h3>
