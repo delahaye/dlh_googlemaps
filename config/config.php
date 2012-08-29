@@ -70,4 +70,5 @@ else
 	));
 }
 
+$GLOBALS['TL_CSS'][] = 'system/modules/dlh_googlemaps/html/dlh_googlemaps.css'; 
 ?>
