@@ -115,7 +115,7 @@ class dlh_googlemaps
 			$map['elements'][$k]['bounds'] = deserialize($v['bounds']);
 			$tmp1 = explode(',',$map['elements'][$k]['bounds'][0]);
 			$tmp2 = explode(',',$map['elements'][$k]['bounds'][1]);
-			$map['elements'][$k]['bounds'][2] = (trim($tmp1[0])+trim($tmp2[0]))/2 . ',' . (trim($tmp1[1])+trim($tmp2[1]))/2;
+			$map['elements'][$k]['bounds'][2] = (trim($tmp1[0]).trim($tmp2[0]))/2 . ',' . (trim($tmp1[1]).trim($tmp2[1]))/2;
 			$map['elements'][$k]['infoWindow'] = addslashes(str_replace('
 ','',nl2br($map['elements'][$k]['infoWindow'])));
 			$map['elements'][$k]['infoWindowAnchor'] = deserialize($v['infoWindowAnchor']);
