@@ -97,6 +97,14 @@ class dlh_googlemaps
 				$map['elements'][$k]['iconAnchor'][0] = floor($map['elements'][$k]['iconSize'][0]/2);
 				$map['elements'][$k]['iconAnchor'][1] = '0';
 			}
+			if (is_numeric($map['elements'][$k]['overlaySRC'])){
+				$objFile = \FilesModel::findByPk($map['elements'][$k]['overlaySRC']);
+				$map['elements'][$k]['overlaySRC'] = $objFile->path;
+			}
+			if (is_numeric($map['elements'][$k]['shadowSRC'])){
+				$objFile = \FilesModel::findByPk($map['elements'][$k]['shadowSRC']);
+				$map['elements'][$k]['shadowSRC'] = $objFile->path;
+			}
 			$map['elements'][$k]['shadowSize'] = deserialize($v['shadowSize']);
 			$map['elements'][$k]['strokeWeight'] = deserialize($v['strokeWeight']);
 			$tmp1 = deserialize($v['strokeOpacity']);
@@ -122,6 +130,10 @@ class dlh_googlemaps
 				case 'MARKER':
 					$map['staticMap'] .= '&amp;markers=';
 					if($map['elements'][$k]['markerType'] == 'ICON') {
+						if (is_numeric($map['elements'][$k]['iconSRC'])){
+							$objFile = \FilesModel::findByPk($map['elements'][$k]['iconSRC']);
+							$map['elements'][$k]['iconSRC'] = $objFile->path;
+						}
 						$map['staticMap'] .= 'icon:'.urlencode($base.$map['elements'][$k]['iconSRC']).'|shadow:false|';
 					}
 					$map['staticMap'] .= $map['elements'][$k]['singleCoords'];
