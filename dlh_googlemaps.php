@@ -97,17 +97,29 @@ class dlh_googlemaps
 				$map['elements'][$k]['iconAnchor'][0] = floor($map['elements'][$k]['iconSize'][0]/2);
 				$map['elements'][$k]['iconAnchor'][1] = '0';
 			}
+			if (is_numeric($map['elements'][$k]['overlaySRC'])){
+				$objFile = \FilesModel::findByPk($map['elements'][$k]['overlaySRC']);
+				$map['elements'][$k]['overlaySRC'] = $objFile->path;
+			}
+			if (is_numeric($map['elements'][$k]['shadowSRC'])){
+				$objFile = \FilesModel::findByPk($map['elements'][$k]['shadowSRC']);
+				$map['elements'][$k]['shadowSRC'] = $objFile->path;
+			}
 			$map['elements'][$k]['shadowSize'] = deserialize($v['shadowSize']);
 			$map['elements'][$k]['strokeWeight'] = deserialize($v['strokeWeight']);
 			$tmp1 = deserialize($v['strokeOpacity']);
-			$map['elements'][$k]['strokeOpacity'] = $tmp1['value']/100;
+			if (isset($tmp1['value'])) {
+				$map['elements'][$k]['strokeOpacity'] = ($tmp1['value']/100);
+			} 
 			$tmp1 = deserialize($v['fillOpacity']);
-			$map['elements'][$k]['fillOpacity'] = $tmp1['value']/100;
+			if (isset($tmp1['value'])) {
+			$map['elements'][$k]['fillOpacity'] = ($tmp1['value']/100);
+			} 
 			$map['elements'][$k]['radius'] = deserialize($v['radius']);
 			$map['elements'][$k]['bounds'] = deserialize($v['bounds']);
 			$tmp1 = explode(',',$map['elements'][$k]['bounds'][0]);
 			$tmp2 = explode(',',$map['elements'][$k]['bounds'][1]);
-			$map['elements'][$k]['bounds'][2] = (trim($tmp1[0])+trim($tmp2[0]))/2 . ',' . (trim($tmp1[1])+trim($tmp2[1]))/2;
+			$map['elements'][$k]['bounds'][2] = (trim($tmp1[0]).trim($tmp2[0]))/2 . ',' . (trim($tmp1[1]).trim($tmp2[1]))/2;
 			$map['elements'][$k]['infoWindow'] = addslashes(str_replace('
 ','',nl2br($map['elements'][$k]['infoWindow'])));
 			$map['elements'][$k]['infoWindowAnchor'] = deserialize($v['infoWindowAnchor']);
@@ -118,6 +130,10 @@ class dlh_googlemaps
 				case 'MARKER':
 					$map['staticMap'] .= '&amp;markers=';
 					if($map['elements'][$k]['markerType'] == 'ICON') {
+						if (is_numeric($map['elements'][$k]['iconSRC'])){
+							$objFile = \FilesModel::findByPk($map['elements'][$k]['iconSRC']);
+							$map['elements'][$k]['iconSRC'] = $objFile->path;
+						}
 						$map['staticMap'] .= 'icon:'.urlencode($base.$map['elements'][$k]['iconSRC']).'|shadow:false|';
 					}
 					$map['staticMap'] .= $map['elements'][$k]['singleCoords'];
