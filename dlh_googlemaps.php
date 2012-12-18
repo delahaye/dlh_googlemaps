@@ -108,9 +108,13 @@ class dlh_googlemaps
 			$map['elements'][$k]['shadowSize'] = deserialize($v['shadowSize']);
 			$map['elements'][$k]['strokeWeight'] = deserialize($v['strokeWeight']);
 			$tmp1 = deserialize($v['strokeOpacity']);
-			$map['elements'][$k]['strokeOpacity'] = ($tmp1['value'] /100);
+			if (isset($tmp1['value'])) {
+				$map['elements'][$k]['strokeOpacity'] = ($tmp1['value']/100);
+			} 
 			$tmp1 = deserialize($v['fillOpacity']);
-			$map['elements'][$k]['fillOpacity'] = ($tmp1['value'] /100);
+			if (isset($tmp1['value'])) {
+			$map['elements'][$k]['fillOpacity'] = ($tmp1['value']/100);
+			} 
 			$map['elements'][$k]['radius'] = deserialize($v['radius']);
 			$map['elements'][$k]['bounds'] = deserialize($v['bounds']);
 			$tmp1 = explode(',',$map['elements'][$k]['bounds'][0]);
