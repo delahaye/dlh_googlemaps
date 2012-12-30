@@ -36,13 +36,13 @@
  * @author     Christian de la Haye 
  * @package    Controller
  */
-class dlh_googlemaps
+class dlh_googlemaps extends Frontend
 {
 
 	/**
 	 * Render Map
 	 */
-	public static function render_dlh_googlemap($base,$map,$size,$zoom)
+	public function render_dlh_googlemap($base,$map,$size,$zoom)
 	{
 		global $objPage;
 
@@ -120,8 +120,7 @@ class dlh_googlemaps
 			$tmp1 = explode(',',$map['elements'][$k]['bounds'][0]);
 			$tmp2 = explode(',',$map['elements'][$k]['bounds'][1]);
 			$map['elements'][$k]['bounds'][2] = (trim($tmp1[0]).trim($tmp2[0]))/2 . ',' . (trim($tmp1[1]).trim($tmp2[1]))/2;
-			$map['elements'][$k]['infoWindow'] = addslashes(str_replace('
-','',nl2br($map['elements'][$k]['infoWindow'])));
+			$map['elements'][$k]['infoWindow'] = preg_replace('/[\n\r\t]+/i', '', addslashes(str_replace('','', $this->replaceInsertTags($map['elements'][$k]['infoWindow']))));
 			$map['elements'][$k]['infoWindowAnchor'] = deserialize($v['infoWindowAnchor']);
 			$map['elements'][$k]['routingAddress'] = addslashes(str_replace('
 ','',$map['elements'][$k]['routingAddress']));
