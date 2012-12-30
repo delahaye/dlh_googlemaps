@@ -172,7 +172,7 @@ class dlhListWizard extends Widget
 		// Import CSS
 		if ($this->Input->post('FORM_SUBMIT') == 'tl_list_import')
 		{
-			if (!$this->Input->post($this->Input->get('field')) || !is_array($this->Input->post($this->Input->get('field'))))
+			if (!$this->Input->post($this->Input->get('field')) || (!is_array($this->Input->post($this->Input->get('field'))) && !is_numeric($this->Input->post($this->Input->get('field')))))
 			{
 				$_SESSION['TL_ERROR'][] = $GLOBALS['TL_LANG']['ERR']['all_fields'];
 				$this->reload();
@@ -181,7 +181,17 @@ class dlhListWizard extends Widget
 			$this->import('Database');
 			$arrList = array();
 
-			foreach ($this->Input->post($this->Input->get('field')) as $strCsvFile)
+			if(is_numeric($this->Input->post($this->Input->get('field'))))
+			{
+				$objTmp = \FilesModel::findByPk($this->Input->post($this->Input->get('field')));
+				$arrCsvFiles = array($objTmp->path);
+			}
+			else
+			{
+				$arrCsvFiles = $this->Input->post($this->Input->get('field'));
+			}
+
+			foreach ($arrCsvFiles as $strCsvFile)
 			{
 				$objFile = new File($strCsvFile);
 
