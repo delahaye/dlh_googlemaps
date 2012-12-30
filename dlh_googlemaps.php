@@ -72,7 +72,8 @@ class dlh_googlemaps extends Frontend
 		$map['center'] = str_replace(' ','',$map['center']);
 
 		// generate static map
-		$map['staticMap'] = '<img src="http://maps.google.com/maps/api/staticmap?center=' . $map['center'] . '&amp;zoom=' . $map['zoom'] . '&amp;maptype=' . strtolower($map['mapTypeId']) . '&amp;sensor=' . $map['sensor'] . '&amp;language=' . $map['language'] . '&amp;size=';
+		$this->import('Environment');
+		$map['staticMap'] = '<img src="http'.($this->Environment->ssl ? 's' : '').'://maps.google.com/maps/api/staticmap?center=' . $map['center'] . '&amp;zoom=' . $map['zoom'] . '&amp;maptype=' . strtolower($map['mapTypeId']) . '&amp;sensor=' . $map['sensor'] . '&amp;language=' . $map['language'] . '&amp;size=';
 		if($map['mapSize'][2] == 'px') {
 			$map['staticMap'] .= $map['mapSize'][0].'x'.$map['mapSize'][1];
 		} else {
