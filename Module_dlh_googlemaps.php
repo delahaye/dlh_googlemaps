@@ -86,7 +86,8 @@ class Module_dlh_googlemaps extends Module
 		$map['sensor'] = $map['sensor'] ? 'true' : 'false';
 		$map['language'] = $GLOBALS['TL_LANGUAGE'];
 
-		$this->Template->map = dlh_googlemaps::render_dlh_googlemap($this->Environment->base,$map,$this->dlh_googlemap_size,$this->dlh_googlemap_zoom);
+		$this->import('dlh_googlemaps');
+		$this->Template->map = $this->dlh_googlemaps->render_dlh_googlemap($this->Environment->base,$map,$this->dlh_googlemap_size,$this->dlh_googlemap_zoom);
 		$this->Template->labels = $GLOBALS['TL_LANG']['dlh_googlemaps']['labels'];
 
 		$GLOBALS['TL_JAVASCRIPT'][] = 'http://maps.google.com/maps/api/js?language='.$map['language'].'&amp;sensor='.$map['sensor'];

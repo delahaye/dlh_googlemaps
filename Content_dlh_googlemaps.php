@@ -95,7 +95,8 @@ class Content_dlh_googlemaps extends Module
 			$GLOBALS['TL_JAVASCRIPT'][] = 'http://maps.google.com/maps/api/js?language='.$map['language'].'&amp;sensor='.$map['sensor'];
 		}
 
-		$this->Template->map = dlh_googlemaps::render_dlh_googlemap($this->Environment->base,$map,$this->dlh_googlemap_size,$this->dlh_googlemap_zoom);
+		$this->import('dlh_googlemaps');
+		$this->Template->map = $this->dlh_googlemaps->render_dlh_googlemap($this->Environment->base,$map,$this->dlh_googlemap_size,$this->dlh_googlemap_zoom);
 		$this->Template->labels = $GLOBALS['TL_LANG']['dlh_googlemaps']['labels'];
 	}
 }
