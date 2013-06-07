@@ -87,6 +87,9 @@ CREATE TABLE `tl_dlh_googlemaps_elements` (
   `target` char(1) NOT NULL default '',
   `linkTitle` varchar(255) NOT NULL default '',
   `parameter` text NULL,
+  `kmlSource` varchar(255) NOT NULL default 'local',
+  `kmlLocal` varchar(255) NOT NULL default '',
+  `kmlExternal` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `pid` (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

@@ -10,20 +10,20 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
  * @copyright  Christian de la Haye 2010
- * @author     Christian de la Haye 
- * @package    dlh_googlemaps 
+ * @author     Christian de la Haye
+ * @package    dlh_googlemaps
  * @license    LGPL
  * @filesource
  */
@@ -66,6 +66,10 @@ $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['zIndex']				= array('z-Index'
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['parameter']			= array('Additional parameters', 'Here you can enter additional parameters for the map elements.');
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['import']				= array('Import','Import a set of coordinates.');
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['importfile']			= array('Source file','Select the csv file to import.');
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlSource']			= array('Source of KML document','Choose the source location of KML document.');
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlSourceOptions']	= array('local'=>'Local','external'=>'External');
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlLocal']			= array('Select KML document', 'Please select the KML document to be displayed.');
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlExternal']		= array('URL of KML document', 'Please enter the URL of the KML document to be displayed.');
 
 
 /**
@@ -102,5 +106,6 @@ $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references']['LINK']				= 'Di
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references']['INFO']				= 'Open Infowindow';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references']['SIMPLE']			= 'Google default marker';
 $GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references']['ICON']				= 'Individual icon';
+$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references']['KML']				= 'KML document';
 
 ?>

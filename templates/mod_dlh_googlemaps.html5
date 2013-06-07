@@ -88,7 +88,7 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
 					, new google.maps.Point(<?php echo $element['iconAnchor'][0].','.$element['iconAnchor'][1]; ?>)
 					, new google.maps.Size(<?php echo $element['shadowSize'][0].','.$element['shadowSize'][1]; ?>)
 					)
-				<?php endif; ?> 
+				<?php endif; ?>
 			<?php endif; ?>
 			<?php if($element['markerAction'] == 'LINK' && $element['linkTitle']) : ?>
 				, title:"<?php echo $element['linkTitle']; ?>"
@@ -352,6 +352,16 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
 		<?php endif; ?>
 		<?php endif; ?>
 		<?php break;
+
+	case 'KML' : ?>
+		var gmap<?php echo $element['id']; ?>_kml = (function(map, kml) {
+			kml = new google.maps.KmlLayer();
+			kml.setUrl(<?php echo json_encode($element['kml']); ?>);
+			kml.setMap(map);
+			return kml;
+		})(gmap<?php echo $this->map['id']; ?>);
+		<?php break;
+
 	endswitch; endforeach; ?>
 
 	if(window.gmap<?php echo $this->map['id']; ?>_dynmap){
