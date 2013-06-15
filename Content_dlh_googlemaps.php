@@ -90,7 +90,7 @@ class Content_dlh_googlemaps extends Module
 			if($this->dlh_googlemap_url)
 			{
 				global $objPage;
-				$this->Template->link = '<a href="'.$this->dlh_googlemap_url.'"'.($this->rel ? ' ($objPage->outputFormat == 'html5' ? ' data-lightbox="' : ' rel="').$this->rel.'"' : '') .' title="'.addslashes($this->linkTitle).'"'.($this->target ? ' onclick="window.open(this.href); return false;"' : '') .'>';
+				$this->Template->link = '<a href="'.$this->dlh_googlemap_url.'"'.($this->rel ? ($objPage->outputFormat == 'html5' ? ' data-lightbox="' : ' rel="').$this->rel.'"' : '') .' title="'.addslashes($this->linkTitle).'"'.($this->target ? ' onclick="window.open(this.href); return false;"' : '') .'>';
 			}
 		} else {
 			$GLOBALS['TL_JAVASCRIPT'][] = 'http'.($this->Environment->ssl ? 's' : '').'://maps.google.com/maps/api/js?language='.$map['language'].'&amp;sensor='.$map['sensor'];
