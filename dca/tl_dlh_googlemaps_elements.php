@@ -10,20 +10,20 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 3 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
  * @copyright  Christian de la Haye 2010
- * @author     Christian de la Haye 
- * @package    dlh_googlemaps 
+ * @author     Christian de la Haye
+ * @package    dlh_googlemaps
  * @license    LGPL
  * @filesource
  */
@@ -50,7 +50,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 		'onload_callback'             => array
 		(
 			array('tl_dlh_googlemaps_elements', 'updatePalette')
-		) 
+		)
 	),
 
 	// List
@@ -120,7 +120,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('type','markerType','markerAction','hasShadow','useRouting'),
+		'__selector__'                => array('type','markerType','markerAction','hasShadow','useRouting','kmlSource'),
 		'default'                     => '{title_legend},title,type,published',
 
 		'MARKER'                      => '{title_legend},title,type,published;{element_legend},singleCoords,markerShowTitle,markerType,markerAction;{parameter_legend:hide},zIndex,parameter',
@@ -149,15 +149,18 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 
 		'CIRCLE'                      => '{title_legend},title,type,published;{element_legend},singleCoords,radius,strokeColor,strokeOpacity,strokeWeight,fillColor,fillOpacity,markerAction;{parameter_legend:hide},zIndex,parameter',
 		'CIRCLEINFO'                  => '{title_legend},title,type,published;{element_legend},singleCoords,radius,strokeColor,strokeOpacity,strokeWeight,fillColor,fillOpacity,markerAction,infoWindowAnchor,popupInfoWindow,infoWindow;{parameter_legend:hide},zIndex,parameter',
-		'CIRCLELINK'                  => '{title_legend},title,type,published;{element_legend},singleCoords,radius,strokeColor,strokeOpacity,strokeWeight,fillColor,fillOpacity,markerAction,url,target,linkTitle;{parameter_legend:hide},zIndex,parameter'
+		'CIRCLELINK'                  => '{title_legend},title,type,published;{element_legend},singleCoords,radius,strokeColor,strokeOpacity,strokeWeight,fillColor,fillOpacity,markerAction,url,target,linkTitle;{parameter_legend:hide},zIndex,parameter',
 
+		'KML'                         => '{title_legend},title,type,published;{element_legend},kmlSource',
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
 		'hasShadow'          => 'shadowSRC,shadowSize',
-		'useRouting'         => 'routingAddress'
+		'useRouting'         => 'routingAddress',
+		'kmlSource_local'    => 'kmlLocal',
+		'kmlSource_external' => 'kmlExternal',
 	),
 
 	// Fields
@@ -177,7 +180,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
 			'inputType'               => 'select',
-			'options'                 => array('MARKER','INFOWINDOW','POLYLINE','POLYGON','GROUND_OVERLAY','RECTANGLE','CIRCLE'),
+			'options'                 => array('MARKER','INFOWINDOW','POLYLINE','POLYGON','GROUND_OVERLAY','RECTANGLE','CIRCLE','KML'),
 			'default'                 => 'MARKER',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['references'],
 			'eval'                    => array('mandatory'=>true, 'submitOnChange'=>true, 'tl_class'=>'w50')
@@ -461,7 +464,32 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 			'label'                   => &$GLOBALS['TL_LANG']['MSC']['sorting'],
 			'sorting'                 => true,
 			'flag'                    => 2,
-		)
+		),
+		'kmlSource' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlSource'],
+			'exclude'                 => true,
+			'default'                 => 'local',
+			'inputType'               => 'select',
+			'options'                 => array('local', 'external'),
+			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlSourceOptions'],
+			'eval'                    => array('mandatory' => true, 'submitOnChange' => true, 'tl_class' => 'clr'),
+		),
+		'kmlLocal' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlLocal'],
+			'exclude'                 => true,
+			'inputType'               => 'fileTree',
+			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>'kml', 'tl_class'=>'clr', 'mandatory'=>true)
+		),
+		'kmlExternal' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['kmlExternal'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'tl_class'=>'clr long', 'mandatory'=>true),
+		),
 	)
 );
 
@@ -471,7 +499,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
  *
  * Provide miscellaneous methods that are used by the data configuration array.
  * @copyright  Christian de la Haye 2010
- * @author     Christian de la Haye 
+ * @author     Christian de la Haye
  * @package    Controller
  */
 class tl_dlh_googlemaps_elements extends Backend
@@ -498,7 +526,7 @@ class tl_dlh_googlemaps_elements extends Backend
 	public function setWizLabel($value, $dc)
 	{
 		$GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements']['fields']['multiCoords']['label'][0] .= '<a href="'.$this->Environment->request.'&amp;field=multiCoords&amp;key=list" title="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][1].'" onclick="Backend.getScrollOffset();"><img src="system/themes/default/images/tablewizard.gif" width="16" height="14" alt="'.$GLOBALS['TL_LANG']['MSC']['lw_import'][0].'" style="vertical-align:text-bottom;"></a>';
-		
+
 		return $value;
 	}
 
@@ -557,7 +585,7 @@ class tl_dlh_googlemaps_elements extends Backend
 		if (!$row['published'])
 		{
 			$icon = 'invisible.gif';
-		}		
+		}
 
 		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ';
 	}
@@ -578,7 +606,7 @@ class tl_dlh_googlemaps_elements extends Backend
 		}
 
 		$this->createInitialVersion('tl_dlh_googlemaps_elements', $intId);
-	
+
 		// Trigger the save_callback
 		if (is_array($GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements']['fields']['published']['save_callback']))
 		{
