@@ -1,0 +1,36 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/default.php" source-language="en">
+    <body>
+      <trans-unit id="MOD.dlh_googlemaps.0">
+        <source>Google Maps</source>
+      </trans-unit>
+      <trans-unit id="MOD.dlh_googlemaps.1">
+        <source>Here you can administrate your Google Maps.</source>
+      </trans-unit>
+      <trans-unit id="CTE.dlh_googlemaps.0">
+        <source>Google Map</source>
+      </trans-unit>
+      <trans-unit id="CTE.dlh_googlemaps.1">
+        <source>Integrate a Google Map.</source>
+      </trans-unit>
+      <trans-unit id="FMD.dlh_googlemaps.0">
+        <source>Google Map</source>
+      </trans-unit>
+      <trans-unit id="FMD.dlh_googlemaps.1">
+        <source>Integrate a Google Map.</source>
+      </trans-unit>
+      <trans-unit id="dlh_googlemaps.labels.noscript">
+        <source>Google Map</source>
+      </trans-unit>
+      <trans-unit id="dlh_googlemaps.labels.routingLink">
+        <source>Routing</source>
+      </trans-unit>
+      <trans-unit id="dlh_googlemaps.labels.routingLabel">
+        <source>? from your Address:</source>
+      </trans-unit>
+      <trans-unit id="dlh_googlemaps.labels.routingSubmit">
+        <source>ok</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

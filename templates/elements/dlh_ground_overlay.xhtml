@@ -1,0 +1,29 @@
+<?php if ($this->element['bounds'][0] && $this->element['bounds'][1] && $this->element['overlaySRC']) : ?>
+    var gmap<?php echo $this->element['id']; ?>_overlay = new google.maps.GroundOverlay(
+    "<?php echo $this->element['overlaySRC']; ?>"
+    , new google.maps.LatLngBounds(
+    new google.maps.LatLng(<?php echo $this->element['bounds'][0]; ?>),
+    new google.maps.LatLng(<?php echo $this->element['bounds'][1]; ?>)
+    )
+    <?php if ($this->element['parameter']) : ?>
+        , <?php echo $this->element['parameter']; ?>
+    <?php endif; ?>
+    );
+    gmap<?php echo $this->element['id']; ?>_overlay.setMap(gmap<?php echo $this->map; ?>);
+    <?php if($this->element['markerAction'] == 'INFO') : ?>
+        var gmap<?php echo $this->element['id']; ?>_infowindow = new google.maps.InfoWindow({
+        position: new google.maps.LatLng(<?php echo $this->element['bounds'][2]; ?>),
+        <?php if ($this->element['infoWindowAnchor'][0] && $this->element['infoWindowAnchor'][1]) : ?>
+            pixelOffset: new google.maps.Size(<?php echo $this->element['infoWindowAnchor'][0].','.$this->element['infoWindowAnchor'][1]; ?>),
+        <?php endif; ?>
+        content: '<div<?php echo $this->element['infoWindowSize']; ?>><?php echo $this->element['infoWindow']; ?></div>'
+        });
+        google.maps.event.addListener(gmap<?php echo $this->element['id']; ?>_overlay, 'click', function(event) {
+        gmap<?php echo $this->element['id']; ?>_infowindow.setPosition(event.latLng);
+        gmap<?php echo $this->element['id']; ?>_infowindow.open(gmap<?php echo $this->map; ?>);
+        });
+        <?php if($this->element['popupInfoWindow']) : ?>
+            gmap<?php echo $this->element['id']; ?>_infowindow.open(gmap<?php echo $this->map; ?>);
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

@@ -1,0 +1,10 @@
+<?php if ($this->element['url']) : ?>
+    var gmap<?php echo $this->element['id']; ?>_kml = new google.maps.KmlLayer({
+    url: '<?php echo $this->element['kmlUrl']; ?>'
+    , clickable: <?php echo $this->element['kmlClickable'] ? 'true':'false'; ?>
+    , preserveViewport: <?php echo $this->element['kmlPreserveViewport'] ? 'true':'false'; ?>
+    , screenOverlays: <?php echo $this->element['kmlScreenOverlays'] ? 'true':'false'; ?>
+    , suppressInfoWindows: <?php echo $this->element['kmlSuppressInfowindows'] ? 'true':'false'; ?>
+    });
+    gmap<?php echo $this->element['id']; ?>_kml.setMap(gmap<?php echo $this->map; ?>);
+<?php endif; ?>

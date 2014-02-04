@@ -1,0 +1,69 @@
+<?php if ($this->element['singleCoords'] && $this->element['markerType']) : ?>
+    var gmap<?php echo $this->element['id']; ?>_marker = new google.maps.Marker({
+    position: new google.maps.LatLng(<?php echo $this->element['singleCoords']; ?>)
+    , map: gmap<?php echo $this->map; ?>
+    <?php if($this->element['markerType']=='ICON') : ?>
+        <?php if($this->element['iconSRC'] && $this->element['iconSize'][0] && $this->element['iconSize'][1]) : ?>
+            , icon: new google.maps.MarkerImage(
+            '<?php echo $this->element['iconSRC']; ?>'
+            , new google.maps.Size(<?php echo $this->element['iconSize'][0].','.$this->element['iconSize'][1]; ?>)
+            , new google.maps.Point(0,0)
+            , new google.maps.Point(<?php echo $this->element['iconAnchor'][0].','.$this->element['iconAnchor'][1]; ?>)
+            , new google.maps.Size(<?php echo $this->element['iconSize'][0].','.$this->element['iconSize'][1]; ?>)
+            )
+        <?php endif; ?>
+        <?php if($this->element['shadowSRC'] && $this->element['shadowSize'][0] && $this->element['shadowSize'][1]) : ?>
+            , shadow: new google.maps.MarkerImage(
+            '<?php echo $this->element['shadowSRC']; ?>'
+            , new google.maps.Size(<?php echo $this->element['shadowSize'][0].','.$this->element['shadowSize'][1]; ?>)
+            , new google.maps.Point(0,0)
+            , new google.maps.Point(<?php echo $this->element['iconAnchor'][0].','.$this->element['iconAnchor'][1]; ?>)
+            , new google.maps.Size(<?php echo $this->element['shadowSize'][0].','.$this->element['shadowSize'][1]; ?>)
+            )
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if($this->element['markerAction'] == 'LINK' && $this->element['linkTitle']) : ?>
+        , title:"<?php echo $this->element['linkTitle']; ?>"
+    <?php elseif ($this->element['markerShowTitle']) : ?>
+        , title:"<?php echo $this->element['title']; ?>"
+    <?php endif; ?>
+    <?php if ($this->element['zIndex']) : ?>
+        , zIndex: <?php echo $this->element['zIndex']; ?>
+    <?php endif; ?>
+    <?php if ($this->element['parameter']) : ?>
+        , <?php echo $this->element['parameter']; ?>
+    <?php endif; ?>
+    });
+    <?php if($this->element['markerAction'] == 'INFO') : ?>
+        <?php if($this->element['useRouting']) {
+            $routingPoint = ($this->element['routingAddress'] ? $this->element['routingAddress'] : $this->element['singleCoords']);
+            $routingLink = '<div class="routinglink">' . str_replace('?','<a href="http://maps.google.com/maps?saddr=&daddr=' . urlencode($routingPoint) . '&ie=UTF8&hl=' . $this->map['language'] . '" onclick="window.open(this.href); return false;">' . $this->labels['routingLink'] . '</a>', $this->labels['routingLabel']) . '<br /><form action="http://maps.google.com/maps" method="get" target="_new"><input type="hidden" name="daddr" value="' . $routingPoint . '" /><input type="hidden" name="ie" value="UTF8" /><input type="hidden" name="hl" value="' . $this->map['language'] . '" /><input type="text" class="text" name="saddr" /><input type="submit" class="submit" value="' . $this->labels['routingSubmit'] . '" /></form></div>';
+        } else {
+            $routingLink = '';
+        } ?>
+        var gmap<?php echo $this->element['id']; ?>_infowindow = new google.maps.InfoWindow({
+        position: new google.maps.LatLng(<?php echo $this->element['singleCoords']; ?>),
+        <?php if ($this->element['infoWindowAnchor'][0] && $this->element['infoWindowAnchor'][1]) : ?>
+            pixelOffset: new google.maps.Size(<?php echo $this->element['infoWindowAnchor'][0].','.$this->element['infoWindowAnchor'][1]; ?>),
+        <?php endif; ?>
+        content: '<div<?php echo $this->element['infoWindowSize']; ?>><?php echo $this->element['infoWindow'].$routingLink; ?></div>'
+        });
+        google.maps.event.addListener(gmap<?php echo $this->element['id']; ?>_marker, 'click', function() {
+        gmap<?php echo $this->element['id']; ?>_infowindow.open(gmap<?php echo $this->map; ?>);
+        });
+        <?php if($this->element['popupInfoWindow']) : ?>
+            gmap<?php echo $this->element['id']; ?>_infowindow.open(gmap<?php echo $this->map; ?>);
+        <?php endif; ?>
+    <?php elseif($this->element['markerAction'] == 'LINK') : ?>
+        google.maps.event.addListener(gmap<?php echo $this->element['id']; ?>_marker, 'click', function() {
+        <?php if($this->element['target']) : ?>
+            window.open('<?php echo $this->element['url']; ?>','_blank','resizable=yes,scrollbars=yes,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes');
+        <?php else :?>
+            window.location.href='<?php echo $this->element['url']; ?>';
+        <?php endif; ?>
+        });
+    <?php endif; ?>
+    <?php if ($this->element['parameter']) : ?>
+        <?php echo $this->element['parameter']; ?>
+    <?php endif; ?>
+<?php endif; ?>

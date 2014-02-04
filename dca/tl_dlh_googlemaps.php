@@ -1,31 +1,15 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * dlh_googlemaps
+ * Extension for Contao Open Source CMS (contao.org)
  *
- * Formerly known as TYPOlight Open Source CMS.
+ * Copyright (c) 2014 de la Haye
  *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Christian de la Haye 2010
- * @author     Christian de la Haye 
- * @package    dlh_googlemaps 
- * @license    LGPL
- * @filesource
+ * @package dlh_googlemaps
+ * @author  Christian de la Haye
+ * @link    http://delahaye.de
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
 
@@ -41,7 +25,18 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 		'dataContainer'               => 'Table',
 		'ctable'                      => array('tl_dlh_googlemaps_elements'),
 		'switchToEdit'                => true,
-		'enableVersioning'            => true
+		'enableVersioning'            => true,
+        'onload_callback' => array
+        (
+            array('tl_dlh_googlemaps', 'checkPermission')
+        ),
+		'sql' => array
+		(
+			'keys' => array
+			(
+				'id' => 'primary'
+			)
+		)
 	),
 
 	// List
@@ -98,7 +93,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 				'label'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
-				'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
+				'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
 			),
 			'show' => array
 			(
@@ -112,28 +107,41 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('useMapTypeControl', 'useNavigationControl', 'useScaleControl'),
-		'default'                     => '{title_legend},title,geocoderAddress,geocoderCountry,center,mapSize,zoom;{maptype_legend:hide},mapTypeId,mapTypesAvailable,streetViewControl,disableDoubleClickZoom,draggable,scrollwheel,staticMapNoscript,sensor;{maptypecontrols_legend:hide},useMapTypeControl;{navigationcontrol_legend:hide},useNavigationControl;{scalecontrol_legend:hide},useScaleControl;{parameter_legend:hide},parameter'
+		'__selector__'                => array('useMapTypeControl', 'useZoomControl', 'usePanControl', 'useRotateControl', 'useScaleControl', 'useStreetViewControl','useOverviewMapControl'),
+		'default'                     => '{title_legend},title,geocoderAddress,geocoderCountry,center,mapSize,zoom;{maptype_legend:hide},mapTypeId,mapTypesAvailable,disableDoubleClickZoom,draggable,scrollwheel,staticMapNoscript,sensor;{maptypecontrols_legend:hide},useMapTypeControl;{zoomcontrol_legend:hide},useZoomControl;{rotatecontrol_legend:hide},useRotateControl;{pancontrol_legend:hide},usePanControl;{scalecontrol_legend:hide},useScaleControl;{streetviewcontrol_legend:hide},useStreetViewControl;{overviewmapcontrol_legend:hide},useOverviewMapControl;{parameter_legend:hide},parameter,moreParameter'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
 		'useMapTypeControl'          => 'mapTypeControlStyle,mapTypeControlPos',
-		'useNavigationControl'        => 'navigationControlStyle,navigationControlPos',
-		'useScaleControl'             => 'scaleControlPos'
+		'useZoomControl'             => 'zoomControlStyle,zoomControlPos',
+        'useRotateControl'           => 'rotateControlStyle,rotateControlPos',
+        'usePanControl'              => 'panControlStyle,panControlPos',
+		'useScaleControl'            => 'scaleControlPos',
+        'useStreetViewControl'       => 'streetViewControlPos',
+		'useOverviewMapControl'      => 'overviewMapControlOpened'
 	),
 
 	// Fields
 	'fields' => array
 	(
+		'id' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+		),
+		'tstamp' => array
+		(
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+		),
 		'title' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
+			'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
+			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'center' => array
 		(
@@ -142,6 +150,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>64),
+			'sql'                     => "varchar(64) NOT NULL default ''",
 			'save_callback' => array
 			(
 				array('tl_dlh_googlemaps', 'generateCoords')
@@ -153,7 +162,8 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'long clr')
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
 		'geocoderCountry' => array
 		(
@@ -163,26 +173,27 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'sorting'                 => true,
 			'inputType'               => 'select',
 			'options'                 => $this->getCountries(),
-			'eval'                    => array('includeBlankOption'=>true)
+			'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(2) NOT NULL default 'de'"
 		),
 		'mapSize' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['mapSize'],
 			'exclude'                 => true,
 			'inputType'               => 'imageSize',
-			'options'                 => array('px', 'pcnt', 'em', 'pt', 'pc', 'in', 'cm', 'mm'),
-			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('mandatory'=>true, 'rgxp'=>'digit')
+			'options'                 => array('px', '%', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
+			'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'helpwizard'=>false, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(128) NOT NULL default 'px'"
 		),
 		'zoom' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['zoom'],
 			'exclude'                 => true,
-			'filter'                  => true,
 			'inputType'               => 'select',
 			'options'                 => array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'),
 			'default'                 => '10',
-			'eval'                    => array('mandatory'=>true)
+			'eval'                    => array('mandatory'=>true),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),
 		'mapTypeId' => array
 		(
@@ -193,7 +204,8 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'options'                 => array('HYBRID','ROADMAP','SATELLITE','TERRAIN'),
 			'default'                 => 'ROADMAP',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('mandatory'=>true)
+			'eval'                    => array('mandatory'=>true),
+			'sql'                     => "varchar(16) NOT NULL default 'ROADMAP'"
 		),
 		'mapTypesAvailable' => array
 		(
@@ -203,7 +215,8 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'options'                 => array('HYBRID','ROADMAP','SATELLITE','TERRAIN'),
 			'default'                 => serialize(array('HYBRID','ROADMAP','SATELLITE','TERRAIN')),
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('mandatory'=>true, 'multiple'=>true)
+			'eval'                    => array('mandatory'=>true, 'multiple'=>true),
+			'sql'                     => "varchar(255) NOT NULL default '".serialize(array('HYBRID','ROADMAP','SATELLITE','TERRAIN'))."'"
 		),
 		'staticMapNoscript' => array
 		(
@@ -211,7 +224,9 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'exclude'                 => true,
 			'default'                 => false,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+            'default'                 => '1',
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'sensor' => array
 		(
@@ -220,14 +235,17 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'filter'                  => true,
 			'default'                 => false,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "char(1) NOT NULL default ''"
 		),
 		'useMapTypeControl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useMapTypeControls'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true)
+            'default'                 => '1',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'mapTypeControlStyle' => array
 		(
@@ -237,99 +255,193 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'options'                 => array('DEFAULT','DROPDOWN_MENU','HORIZONTAL_BAR'),
 			'default'                 => 'DEFAULT',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('mandatory'=>true)
+			'eval'                    => array('mandatory'=>true),
+			'sql'                     => "varchar(16) NOT NULL default 'DEFAULT'"
 		),
 		'mapTypeControlPos' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['mapTypeControlPos'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
 			'exclude'                 => true,
 			'inputType'               => 'radioTable',
 			'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
 			'default'                 => 'TOP_RIGHT',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position')
+			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+			'sql'                     => "varchar(16) NOT NULL default 'TOP_RIGHT'"
 		),
-		'useNavigationControl' => array
+		'useZoomControl' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useNavigationControl'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useZoomControl'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true)
+            'default'                 => '1',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
-		'navigationControlStyle' => array
+		'zoomControlStyle' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['navigationControl'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['zoomControlStyle'],
 			'exclude'                 => true,
 			'inputType'               => 'select',
 			'options'                 => array('ANDROID','DEFAULT','SMALL','ZOOM_PAN'),
 			'default'                 => 'DEFAULT',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('mandatory'=>true)
+			'eval'                    => array('mandatory'=>true),
+			'sql'                     => "varchar(16) NOT NULL default 'DEFAULT'"
 		),
-		'navigationControlPos' => array
+		'zoomControlPos' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['navigationControlPos'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
 			'exclude'                 => true,
 			'inputType'               => 'radioTable',
 			'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
 			'default'                 => 'TOP_LEFT',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position')
+			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+			'sql'                     => "varchar(16) NOT NULL default 'TOP_LEFT'"
 		),
-		'streetViewControl' => array
+        'useRotateControl' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useRotateControl'],
+            'exclude'                 => true,
+            'inputType'               => 'checkbox',
+            'default'                 => '1',
+            'eval'                    => array('submitOnChange'=>true),
+            'sql'                     => "char(1) NOT NULL default '1'"
+        ),
+        'rotateControlPos' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
+            'exclude'                 => true,
+            'inputType'               => 'radioTable',
+            'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
+            'default'                 => 'TOP_LEFT',
+            'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
+            'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+            'sql'                     => "varchar(16) NOT NULL default 'TOP_LEFT'"
+        ),
+        'usePanControl' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['usePanControl'],
+            'exclude'                 => true,
+            'inputType'               => 'checkbox',
+            'default'                 => '1',
+            'eval'                    => array('submitOnChange'=>true),
+            'sql'                     => "char(1) NOT NULL default '1'"
+        ),
+        'panControlPos' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
+            'exclude'                 => true,
+            'inputType'               => 'radioTable',
+            'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
+            'default'                 => 'TOP_LEFT',
+            'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
+            'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+            'sql'                     => "varchar(16) NOT NULL default 'TOP_LEFT'"
+        ),
+		'useStreetViewControl' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['streetViewControl'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useStreetViewControl'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+            'default'                 => '1',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
+        'streetViewControlPos' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
+            'exclude'                 => true,
+            'inputType'               => 'radioTable',
+            'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
+            'default'                 => 'TOP_LEFT',
+            'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
+            'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+            'sql'                     => "varchar(16) NOT NULL default 'TOP_LEFT'"
+        ),
+        'useOverviewMapControl' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useOverviewMapControl'],
+            'exclude'                 => true,
+            'inputType'               => 'checkbox',
+            'default'                 => '1',
+            'eval'                    => array('submitOnChange'=>true),
+            'sql'                     => "char(1) NOT NULL default '1'"
+        ),
+        'overviewMapControlOpened' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['overviewMapControlOpened'],
+            'exclude'                 => true,
+            'inputType'               => 'checkbox',
+            'eval'                    => array('tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default '1'"
+        ),
 		'disableDoubleClickZoom' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['disableDoubleClickZoom'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+            'default'                 => '1',
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'scrollwheel' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['scrollwheel'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+            'default'                 => '1',
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'draggable' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['draggable'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50')
+            'default'                 => '1',
+			'eval'                    => array('tl_class'=>'w50'),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'useScaleControl' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useScaleControl'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true)
+            'default'                 => '1',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default '1'"
 		),
 		'scaleControlPos' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['scaleControlPos'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['controlPos'],
 			'exclude'                 => true,
 			'inputType'               => 'radioTable',
 			'options'                 => array('TOP_LEFT','TOP_CENTER','TOP_RIGHT','LEFT_TOP','C1','RIGHT_TOP','LEFT_CENTER','C2','RIGHT_CENTER','LEFT_BOTTOM','C3','RIGHT_BOTTOM','BOTTOM_LEFT','BOTTOM_CENTER','BOTTOM_RIGHT'),
 			'default'                 => 'BOTTOM_LEFT',
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
-			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position')
+			'eval'                    => array('cols'=>3,'tl_class'=>'dlh_googlemaps_position'),
+			'sql'                     => "varchar(16) NOT NULL default 'BOTTOM_LEFT'"
 		),
 		'parameter' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['parameter'],
 			'exclude'                 => true,
-			'search'                  => true,
 			'inputType'               => 'textarea',
-			'eval'                    => array('allowHtml'=>true, 'class'=>'monospace', 'helpwizard'=>true),
-			'explanation'             => 'insertTags'
-		)
+			'eval'                    => array('preserveTags'=>true, 'decodeEntities'=>true, 'class'=>'monospace', 'rte'=>'ace', 'helpwizard'=>true),
+			'explanation'             => 'insertTags',
+			'sql'                     => "text NULL"
+		),
+        'moreParameter' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['moreParameter'],
+            'exclude'                 => true,
+            'inputType'               => 'textarea',
+            'eval'                    => array('preserveTags'=>true, 'decodeEntities'=>true, 'class'=>'monospace', 'rte'=>'ace', 'helpwizard'=>true),
+            'explanation'             => 'insertTags',
+            'sql'                     => "text NULL"
+        )
 	)
 );
 
@@ -338,11 +450,11 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
  * Class tl_dlh_googlemaps
  *
  * Provide miscellaneous methods that are used by the data configuration array.
- * @copyright  Christian de la Haye 2010
- * @author     Christian de la Haye 
- * @package    Controller
+ * @copyright  2014 de la Haye
+ * @author     Christian de la Haye <http://delahaye.de>
+ * @package    dlh_googlemaps
  */
-class tl_dlh_googlemaps extends Backend
+class tl_dlh_googlemaps extends \Backend
 {
 
 	/**
@@ -354,7 +466,133 @@ class tl_dlh_googlemaps extends Backend
 		$this->import('BackendUser', 'User');
 	}
 
-	/**
+
+    /**
+     * Check permissions to edit table tl_googlemaps
+     */
+    public function checkPermission()
+    {
+        if ($this->User->isAdmin)
+        {
+            return;
+        }
+
+        // Set root IDs
+        if (!is_array($this->User->dlh_googlemapss) || empty($this->User->dlh_googlemapss))
+        {
+            $root = array(0);
+        }
+        else
+        {
+            $root = $this->User->dlh_googlemapss;
+        }
+
+        $GLOBALS['TL_DCA']['tl_dlh_googlemaps']['list']['sorting']['root'] = $root;
+
+        // Check permissions to add Maps
+        if (!$this->User->hasAccess('create', 'dlh_googlemapsp'))
+        {
+            $GLOBALS['TL_DCA']['tl_dlh_googlemaps']['config']['closed'] = true;
+        }
+
+        // Check current action
+        switch (Input::get('act'))
+        {
+            case 'create':
+            case 'select':
+                // Allow
+                break;
+
+            case 'edit':
+                // Dynamically add the record to the user profile
+                if (!in_array(Input::get('id'), $root))
+                {
+                    $arrNew = $this->Session->get('new_records');
+
+                    if (is_array($arrNew['tl_dlh_googlemaps']) && in_array(Input::get('id'), $arrNew['tl_dlh_googlemaps']))
+                    {
+                        // Add permissions on user level
+                        if ($this->User->inherit == 'custom' || !$this->User->groups[0])
+                        {
+                            $objUser = $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user WHERE id=?")
+                                ->limit(1)
+                                ->execute($this->User->id);
+
+                            $arrDlh_googlemapsp = deserialize($objUser->dlh_googlemapsp);
+
+                            if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                            {
+                                $arrDlh_googlemapss = deserialize($objUser->dlh_googlemapss);
+                                $arrDlh_googlemapss[] = Input::get('id');
+
+                                $this->Database->prepare("UPDATE tl_user SET dlh_googlemapss=? WHERE id=?")
+                                    ->execute(serialize($arrDlh_googlemapss), $this->User->id);
+                            }
+                        }
+
+                        // Add permissions on group level
+                        elseif ($this->User->groups[0] > 0)
+                        {
+                            $objGroup = $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user_group WHERE id=?")
+                                ->limit(1)
+                                ->execute($this->User->groups[0]);
+
+                            $arrDlh_googlemapsp = deserialize($objGroup->dlh_googlemapsp);
+
+                            if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                            {
+                                $arrDlh_googlemapss = deserialize($objGroup->dlh_googlemapss);
+                                $arrDlh_googlemapss[] = Input::get('id');
+
+                                $this->Database->prepare("UPDATE tl_user_group SET dlh_googlemapss=? WHERE id=?")
+                                    ->execute(serialize($arrDlh_googlemapss), $this->User->groups[0]);
+                            }
+                        }
+
+                        // Add new element to the user object
+                        $root[] = Input::get('id');
+                        $this->User->dlh_googlemapss = $root;
+                    }
+                }
+            // No break;
+
+            case 'copy':
+            case 'delete':
+            case 'show':
+                if (!in_array(Input::get('id'), $root) || (Input::get('act') == 'delete' && !$this->User->hasAccess('delete', 'dlh_googlemapsp')))
+                {
+                    $this->log('Not enough permissions to '.Input::get('act').' Map ID "'.Input::get('id').'"', __METHOD__, TL_ERROR);
+                    $this->redirect('contao/main.php?act=error');
+                }
+                break;
+
+            case 'editAll':
+            case 'deleteAll':
+            case 'overrideAll':
+                $session = $this->Session->getData();
+                if (Input::get('act') == 'deleteAll' && !$this->User->hasAccess('delete', 'dlh_googlemapsp'))
+                {
+                    $session['CURRENT']['IDS'] = array();
+                }
+                else
+                {
+                    $session['CURRENT']['IDS'] = array_intersect($session['CURRENT']['IDS'], $root);
+                }
+                $this->Session->setData($session);
+                break;
+
+            default:
+                if (strlen(Input::get('act')))
+                {
+                    $this->log('Not enough permissions to '.Input::get('act').' Maps', __METHOD__, TL_ERROR);
+                    $this->redirect('contao/main.php?act=error');
+                }
+                break;
+        }
+    }
+
+
+    /**
 	 * Return the edit header button
 	 * @param array
 	 * @param string
@@ -366,105 +604,20 @@ class tl_dlh_googlemaps extends Backend
 	 */
 	public function editHeader($row, $href, $label, $title, $icon, $attributes)
 	{
-		return ($this->User->isAdmin || count(preg_grep('/^tl_dlh_googlemaps::/', $this->User->alexf)) > 0) ? '<a href="'.$this->addToUrl($href.'&amp;id='.$row['id']).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ' : '';
+		return ($this->User->isAdmin || count(preg_grep('/^tl_dlh_googlemaps::/', $this->User->alexf)) > 0) ? '<a href="'.$this->addToUrl($href.'&amp;id='.$row['id']).'" title="'.specialchars($title).'"'.$attributes.'>'.Image::getHtml($icon, $label).'</a> ' : Image::getHtml(preg_replace('/\.gif$/i', '_.gif', $icon)).' ';
 	}
+
 
 	/**
 	 * Get geo coodinates drom address
-	 * @param string
-	 * @return string
-	 */
-	function generateCoords($varValue, DataContainer $dc) 
-	{
-		if (!$varValue)
-		{
-			$objGeo = $this->Database->prepare("SELECT geocoderAddress,geocoderCountry FROM tl_dlh_googlemaps WHERE id=?")
-									   ->limit(1)
-									   ->execute($dc->id);
-			if ($objGeo->geocoderAddress)
-			{
-				$coords = $this->geocode($objGeo->geocoderAddress, null, $strLang = 'de', $objGeo->geocoderCountry);
-				if($coords)
-				{
-					$varValue = $coords['lat'] . ',' . $coords['lng'];
-				}
-		  		elseif(function_exists("curl_init"))
-		  		{
-					$strGeoURL = 'http://maps.google.com/maps/api/geocode/xml?address='.str_replace(' ', '+', $objGeo->geocoderAddress).'&sensor=false'.($objGeo->geocoderCountry ? '&region='.$objGeo->geocoderCountry : '');
-
-			  		$curl = curl_init();
-			  		if($curl)
-  					{
-    					if(curl_setopt($curl, CURLOPT_URL, $strGeoURL) && curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1) && curl_setopt($curl, CURLOPT_HEADER, 0))
-    					{
-	    					$curlVal = curl_exec($curl);
-    						curl_close($curl);
-							$xml = new SimpleXMLElement($curlVal);
-							if($xml)
-							{
-								$varValue = $xml->result->geometry->location->lat . ',' . $xml->result->geometry->location->lng;
-							}
-    					}
-  					} else {
-  						$varValue = $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCurl'];
-  					}
-	  			}
-			}
-			if (!$varValue)
-			{
-				$varValue = $GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references']['noCoords'];
-			}
-		}
-		return $varValue;
-	}
-
-	/**
-	 * Get geo coordinates from address, thanks to Oliver Hoff <oliver@hofff.com>
-	 * @param array
-	 * @return string
-	 */
-	private $arrGeocodeCache = array();
-	public function geocode($varAddress, $blnReturnAll = false, $strLang = 'en', $strRegion = null, array $arrBounds = null) {
-		
-		if(is_array($varAddress))
-			$varAddress = implode(' ', $varAddress);
-		
-		$varAddress = trim($varAddress);
-		
-		if(!strlen($varAddress) || !strlen($strLang))
-			return;
-		
-		if($strRegion !== null && !strlen($strRegion))
-			return;
-			
-		if($arrBounds !== null) {
-			if(!is_array($arrBounds) || !is_array($arrBounds['tl']) || !is_array($arrBounds['br'])
-			|| !is_numeric($arrBounds['tl']['lat']) || !is_numeric($arrBounds['tl']['lng'])
-			|| !is_numeric($arrBounds['br']['lat']) || !is_numeric($arrBounds['br']['lng']))
-				return;
-		}
-		
-		$strURL = sprintf(
-			'http://maps.google.com/maps/api/geocode/json?address=%s&sensor=false&language=%s&region=%s&bounds=%s',
-			urlencode($varAddress),
-			urlencode($strLang),
-			strlen($strRegion) ? urlencode($strRegion) : '',
-			$arrBounds ? implode(',', $arrBounds['tl']) . '|' . implode(',', $arrBounds['br']) : ''
-		);
-		
-		if(!isset($this->arrGeocodeCache[$strURL])) {
-			$arrGeo = json_decode(file_get_contents($strURL), true);
-			$this->arrGeocodeCache[$strURL] = $arrGeo['status'] == 'OK' ? $arrGeo['results'] : false;
-		}
-		
-		if(!$this->arrGeocodeCache[$strURL])
-			return;
-		
-		return $blnReturnAll ? $this->arrGeocodeCache[$strURL] : array(
-			'lat' => $this->arrGeocodeCache[$strURL][0]['geometry']['location']['lat'],
-			'lng' => $this->arrGeocodeCache[$strURL][0]['geometry']['location']['lng']
-		);
-	}
+     * @param string
+     * @param object
+     * @return string
+     */
+    function generateCoords($varValue, DataContainer $dc)
+    {
+        return $varValue ? $varValue : \delahaye\GeoCode::getCoordinates($dc->activeRecord->geocoderAddress, $dc->activeRecord->geocoderCountry, 'de');
+    }
 
 
 	/**

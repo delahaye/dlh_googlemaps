@@ -1,7 +1,0 @@
-=======================================================================
-GoogleMaps - Contao Modul
-Author: Christian de la Haye <service@delahaye.de>
-=======================================================================
-
-1. Download the module and copy it to the system/modules folder.
-2. Start the Contao Install tool and update the database.

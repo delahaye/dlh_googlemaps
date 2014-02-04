@@ -1,0 +1,330 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/default.php" source-language="en">
+        <body>
+        <trans-unit id="tl_dlh_googlemaps_elements.title.0">
+			<source>Title</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.title.1">
+			<source>Title of the map element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.type.0">
+			<source>Type</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.type.1">
+			<source>Type of the map element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.published.0">
+			<source>Published</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.published.1">
+			<source>The element is published.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.0">
+			<source>Geo-coordinates</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.1">
+			<source>Please enter the geo-coordinates of the element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.0">
+			<source>Address for geocoding</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.1">
+			<source>In case of the field ´geo-coordinates´ being empty, on saving the record the geo-coodinates of this address are generated automatically.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.0">
+			<source>Country</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.1">
+			<source>Specify the country in whict the address shall be found.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.0">
+			<source>Multiple Geo-coordinates</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.1">
+			<source>Please enter multiple geo-coordinates for the element. Polygones are closed automatically.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.radius.0">
+			<source>Radius in meters</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.radius.1">
+			<source>Please enter the radius of the circle in meters.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeColor.0">
+			<source>Line color</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeColor.1">
+			<source>Please enter the color used for lines.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.0">
+			<source>Line weight</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.1">
+			<source>Please enter the line weight in pixels.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeOpacity.0">
+			<source>Line opacity</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeOpacity.1">
+			<source>Please enter the opacity used for lines.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillColor.0">
+			<source>Fill color</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillColor.1">
+			<source>Please enter the color used for fillings.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillOpacity.0">
+			<source>Fill opacity</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillOpacity.1">
+			<source>Please enter the opacity used for fillings.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerAction.0">
+			<source>Action on click</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerAction.1">
+			<source>Here you decide how the element reacts on clicking.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.popupInfoWindow.0">
+			<source>Open infowindow automatically</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.popupInfoWindow.1">
+			<source>Shall the infowindow pop up automatically?</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.0">
+			<source>Infowindow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.1">
+			<source>Please enter the content for the infowindow. Insert tags are supported.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.0">
+			<source>Position of the infowindow anchor</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.1">
+			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.url.0">
+			<source>Link</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.url.1">
+			<source>Please enter a url (mit http://) or select a Contao page.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.0">
+			<source>Link title</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.1">
+			<source>This text is displayed as a tooltip by the clickable element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.target.0">
+			<source>Open in new window</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.target.1">
+			<source>Open the link in a new browser window.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.bounds.0">
+			<source>Geo-coordinates southwest/northeast</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.bounds.1">
+			<source>Please enter the coordinates of the element as 2 pairs of coordinates.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.0">
+			<source>File</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.1">
+			<source>Please choose an image file (gif, jpg or png), which overlays the map within the chosen area.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerShowTitle.0">
+			<source>Show title</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerShowTitle.1">
+			<source>Show the title of the marker as a tooltip.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerType.0">
+			<source>Type of marker</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerType.1">
+			<source>You can use standard Google markers or individual icons.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.useRouting.0">
+			<source>Use routing</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.useRouting.1">
+			<source>The Google Maps route planner can be linked from the infowindow directly by form.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.routingAddress.0">
+			<source>Address used for routing</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.routingAddress.1">
+			<source>Please enter the target address for routing. By an empty field the geo-coordinates are used as the routing target.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.0">
+			<source>File for the icon</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.1">
+			<source>Please choose an image file (gif, jpg oder png) for use as an icon.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSize.0">
+			<source>Dimensions width x height</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSize.1">
+			<source>Dimensions of the icon.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.0">
+			<source>Position of the icon anchor</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.1">
+			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.0">
+			<source>Use shadow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.1">
+			<source>The icon has a shadow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSRC.0">
+			<source>File for the shadow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSRC.1">
+			<source>Please choose an image file (png is best) that shall be used as a shadow.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.0">
+			<source>Dimensions width x height</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.1">
+			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.zIndex.0">
+			<source>z-Index</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.zIndex.1">
+			<source>Horizontal position of the element relative to the map.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter.0">
+			<source>Additional parameters</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter.1">
+			<source>Here you can enter additional parameters for the map element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.new.0">
+			<source>New element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.new.1">
+			<source>Add a new map element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.edit.0">
+			<source>Edit element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.edit.1">
+			<source>Edit element ID %s</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.copy.0">
+			<source>Copy element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.copy.1">
+			<source>Copy element ID %s</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.delete.0">
+			<source>Delete element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.delete.1">
+			<source>Delete element ID %s</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.show.0">
+			<source>Element details</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.show.1">
+			<source>Show the details of element ID %s</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.toggle.0">
+			<source>Publish Element</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.toggle.1">
+			<source>Publish Element ID %s</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.title_legend">
+			<source>Title and type</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.element_legend">
+			<source>Element configuration</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter_legend">
+			<source>Additional parameters</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.MARKER">
+			<source>Marker (w, w/o routing)</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.INFOWINDOW">
+			<source>Infowindow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.RECTANGLE">
+			<source>Rectangle</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.CIRCLE">
+			<source>Circle</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.POLYLINE">
+			<source>Line</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.POLYGON">
+			<source>Polygon</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.GROUND_OVERLAY">
+			<source>Ground-overlay</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.KML">
+			<source>KML-Layer</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.NONE">
+			<source>No action</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.LINK">
+			<source>Direct link on marker</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.INFO">
+			<source>Open Infowindow</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.SIMPLE">
+			<source>Google default marker</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.ICON">
+			<source>Individual icon</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.0">
+			<source>URL</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.1">
+			<source>Please enter a url to a .kml-file (with http://).</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.0">
+			<source>Clickable</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.1">
+			<source>If true, the layer receives mouse events.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.0">
+			<source>Preserve viewport</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.1">
+			<source>The viewport is left unchanged.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.0">
+			<source>Screen overlays</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.1">
+			<source>Render the screen overlays.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.0">
+			<source>Suppress info windows</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.1">
+			<source>Suppress the rendering of info windows when layer features are clicked.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.0">
+			<source>Size of the info window</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.1">
+			<source>If set, the size of the info window is fixed.</source>
+		</trans-unit>
+        </body>
+    </file>
+</xliff>

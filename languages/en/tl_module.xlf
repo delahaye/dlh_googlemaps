@@ -1,0 +1,54 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_module.php" source-language="en">
+        <body>
+        <trans-unit id="tl_module.dlh_googlemap.0">
+            <source>Google Map</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap.1">
+            <source>Please select a Google Map.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_zoom.0">
+            <source>Zoom-Factor</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_zoom.1">
+            <source>Here you can override the zoom factor set in the module for just this implementation.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_size.0">
+            <source>Dimensions width x height</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_size.1">
+            <source>Here you can override the map dimensions set in the module for just this implementation.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_static.0">
+            <source>Use static map</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_static.1">
+            <source>Instead of a normal Google-Map a (resticted) static map can be shown.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_url.0">
+            <source>Link address</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_url.1">
+            <source>Please enter a web address (http://...) or an insert-tag.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_template.0">
+            <source>Template</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_template.1">
+            <source>Select a front end template.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_nocss.0">
+            <source>Discard CSS</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_nocss.1">
+            <source>The extension provides some own CSS.</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_tabs.0">
+            <source>Map is shown in Tabs or Accordion</source>
+        </trans-unit>
+        <trans-unit id="tl_module.dlh_googlemap_tabs.1">
+            <source>This option refreshes the map when changing a tab or accordion. Made for the extension Tabcontrol.</source>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

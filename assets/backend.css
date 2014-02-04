@@ -1,0 +1,32 @@
+.dlh_googlemaps_position #mapTypeControlPos_1_4, 
+.dlh_googlemaps_position #mapTypeControlPos_2_7, 
+.dlh_googlemaps_position #mapTypeControlPos_3_10, 
+.dlh_googlemaps_position #zoomControlPos_1_4,
+.dlh_googlemaps_position #zoomControlPos_2_7,
+.dlh_googlemaps_position #zoomControlPos_3_10,
+.dlh_googlemaps_position #rotateControlPos_1_4,
+.dlh_googlemaps_position #rotateControlPos_2_7,
+.dlh_googlemaps_position #rotateControlPos_3_10,
+.dlh_googlemaps_position #panControlPos_1_4,
+.dlh_googlemaps_position #panControlPos_2_7,
+.dlh_googlemaps_position #panControlPos_3_10,
+.dlh_googlemaps_position #scaleControlPos_1_4,
+.dlh_googlemaps_position #scaleControlPos_2_7, 
+.dlh_googlemaps_position #scaleControlPos_3_10,
+.dlh_googlemaps_position #streetViewControlPos_1_4,
+.dlh_googlemaps_position #streetViewControlPos_2_7,
+.dlh_googlemaps_position #streetViewControlPos_3_10
+{
+	display:none;
+}
+.dlh_googlemaps_position #ctrl_mapTypeControlPos td,
+.dlh_googlemaps_position #ctrl_zoomControlPos td,
+.dlh_googlemaps_position #ctrl_panControlPos td,
+.dlh_googlemaps_position #ctrl_rotateControlPos td,
+.dlh_googlemaps_position #ctrl_scaleControlPos td,
+.dlh_googlemaps_position #ctrl_streetViewControlPos td
+{
+	border:1px solid #ffffff;
+	background-color: #99B3CC;
+	padding:5px 40px 5px 40px;
+}

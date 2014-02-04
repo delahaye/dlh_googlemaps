@@ -1,0 +1,27 @@
+{
+    "name": "delahaye/dlh_googlemaps",
+    "description":"Google maps module for Contao",
+    "keywords":["contao", "googlemaps", "geo", "map"],
+    "type": "contao-module",
+    "homepage":"https://github.com/delahaye/dlh_googlemaps",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Christian de la Haye",
+            "email":"service@delahaye.de",
+            "homepage":"http://www.delahaye.de",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/delahaye/dlh_googlemaps/issues"
+    },
+    "require": {
+        "contao/core": ">=3.2,<4",
+        "contao-community-alliance/composer-installer": "*",
+        "delahaye/dlh_geocode": ">=1.0"
+    },
+    "replace": {
+        "contao-legacy/dlh_googlemaps": "*"
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_user.php" source-language="en">
+        <body>
+        <trans-unit id="tl_user.dlh_googlemapss.0">
+            <source>Allowed maps</source>
+        </trans-unit>
+        <trans-unit id="tl_user.dlh_googlemapss.1">
+            <source>Here you can grant access to one or more maps.</source>
+        </trans-unit>
+        <trans-unit id="tl_user.dlh_googlemapsp.0">
+            <source>Map rights</source>
+        </trans-unit>
+        <trans-unit id="tl_user.dlh_googlemapsp.1">
+            <source>Here you can set map rights.</source>
+        </trans-unit>
+        <trans-unit id="tl_user.dlh_googlemaps_legend">
+            <source>Google Maps rights</source>
+        </trans-unit>
+        </body>
+  </file>
+</xliff>

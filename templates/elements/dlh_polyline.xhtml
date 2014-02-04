@@ -1,0 +1,19 @@
+<?php if ($this->element['multiCoords'][0] && $this->element['strokeColor'] && $this->element['strokeOpacity'] && $this->element['strokeWeight']['value']) : ?>
+    var gmap<?php echo $this->element['id']; ?>_path = new google.maps.Polyline({
+    path: [
+    <?php foreach($this->element['multiCoords'] as $k=>$v) : ?>
+        <?php if($k>0) echo ','; ?>new google.maps.LatLng(<?php echo $v; ?>)
+    <?php endforeach; ?>
+    ]
+    , strokeColor: "#<?php echo $this->element['strokeColor']; ?>"
+    , strokeOpacity: <?php echo $this->element['strokeOpacity']; ?>
+    , strokeWeight: <?php echo $this->element['strokeWeight']['value']; ?>
+    <?php if ($this->element['zIndex']) : ?>
+        , zIndex: <?php echo $this->element['zIndex']; ?>
+    <?php endif; ?>
+    <?php if ($this->element['parameter']) : ?>
+        , <?php echo $this->element['parameter']; ?>
+    <?php endif; ?>
+    });
+    gmap<?php echo $this->element['id']; ?>_path.setMap(gmap<?php echo $this->map; ?>);
+<?php endif; ?>
