@@ -65,6 +65,9 @@ class Googlemap extends \Frontend
         $arrMap['mapSize'] = deserialize($arrMap['mapSize']);
         $arrMap['mapTypesAvailable'] = deserialize($arrMap['mapTypesAvailable']);
         $arrMap['center'] = str_replace(' ','',$arrMap['center']);
+        $arrMap['draggable'] = $arrMap['draggable'] ? 'true' : 'false';
+        $arrMap['scrollwheel'] = $arrMap['scrollwheel'] ? 'true' : 'false';
+        $arrMap['disableDoubleClickZoom'] = $arrMap['disableDoubleClickZoom'] ? 'true' : 'false';
 
         // parameters overwritten?
         if(is_array($arrParams) && count($arrParams)>0)
