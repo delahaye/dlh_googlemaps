@@ -183,7 +183,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'inputType'               => 'imageSize',
 			'options'                 => array('px', '%', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
 			'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'helpwizard'=>false, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(128) NOT NULL default 'px'"
+			'sql'                     => "varchar(128) NOT NULL default ''"
 		),
 		'zoom' => array
 		(
