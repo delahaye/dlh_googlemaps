@@ -216,7 +216,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'default'                 => serialize(array('HYBRID','ROADMAP','SATELLITE','TERRAIN')),
 			'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
 			'eval'                    => array('mandatory'=>true, 'multiple'=>true),
-			'sql'                     => "varchar(255) NOT NULL default '".serialize(array('HYBRID','ROADMAP','SATELLITE','TERRAIN'))."'"
+			'sql'                     => "varchar(255) NOT NULL default '".addslashes(serialize(array('HYBRID','ROADMAP','SATELLITE','TERRAIN')))."'"
 		),
 		'staticMapNoscript' => array
 		(
