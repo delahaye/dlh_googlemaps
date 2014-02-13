@@ -373,8 +373,8 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['fillColor'],
 			'inputType'               => 'text',
-			'default'                 => 'ffffff',
-			'eval'                    => array('maxlength'=>6, 'isHexColor'=>true, 'colorpicker'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 wizard', 'mandatory'=>true),
+			'default'                 => '',
+			'eval'                    => array('maxlength'=>6, 'isHexColor'=>true, 'colorpicker'=>true, 'decodeEntities'=>true, 'tl_class'=>'w50 wizard'),
 			'sql'                     => "varchar(6) NOT NULL default ''",
 		),
 		'fillOpacity' => array
