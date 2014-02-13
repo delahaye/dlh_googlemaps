@@ -573,7 +573,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 			'exclude'                 => true,
 			'filter'                  => true,
             'default'                 => false,
-            'eval'                    => array('tl_class'=>'m12'),
+            'eval'                    => array('tl_class'=>'w50 m12'),
             'inputType'               => 'checkbox',
             'sql'                     => "char(1) NOT NULL default ''"
 		)

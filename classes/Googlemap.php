@@ -63,6 +63,7 @@ class Googlemap extends \Frontend
         $arrMap = $objMap->row();
         $arrMap['language'] = $GLOBALS['TL_LANGUAGE'];
         $arrMap['mapSize'] = deserialize($arrMap['mapSize']);
+        $arrMap['mapSize'][2] = ($arrMap['mapSize'][2]=='pcnt' ? '%' : $arrMap['mapSize'][2]);
         $arrMap['mapTypesAvailable'] = deserialize($arrMap['mapTypesAvailable']);
         $arrMap['center'] = str_replace(' ','',$arrMap['center']);
         $arrMap['draggable'] = $arrMap['draggable'] ? 'true' : 'false';

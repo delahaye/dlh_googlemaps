@@ -70,8 +70,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_size'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_size'],
 	'exclude'                 => true,
 	'inputType'               => 'imageSize',
-	'options'                 => array('px', '%', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
-	'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'helpwizard'=>false, 'tl_class'=>'w50'),
+	'options'                 => array('px', 'pcnt', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
+    'reference'               => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_ref'],
+	'eval'                    => array('tl_class'=>'w50'),
 	'sql'                     => "varchar(128) NOT NULL default ''"
 );
 

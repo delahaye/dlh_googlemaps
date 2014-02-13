@@ -76,9 +76,11 @@ class ModuleMap extends \Module
         // get the map data
         $arrParams = array
         (
-            'mapSize' => unserialize($this->dlh_googlemap_size),
+            'mapSize' => deserialize($this->dlh_googlemap_size),
             'zoom' => $this->dlh_googlemap_zoom
         );
+
+        $arrParams['mapSize'][2] = ($arrParams['mapSize'][2]=='pcnt' ? '%' : $arrParams['mapSize'][2]);
 
         $arrMap = \delahaye\googlemaps\Googlemap::getMapData($this->dlh_googlemap, $objPage->outputFormat, $arrParams);
 
