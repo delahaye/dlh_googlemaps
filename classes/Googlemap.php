@@ -185,9 +185,21 @@ class Googlemap extends \Frontend
         $arrElement['iconSize'] = deserialize($arrElement['iconSize']);
 
         $arrElement['iconAnchor'] = deserialize($arrElement['iconAnchor']);
-        if(!$arrElement['iconAnchor'][0] && !$arrElement['iconAnchor'][1]) {
+
+        if(!$arrElement['iconAnchor'][0] || $arrElement['iconAnchor'][0]==0) {
             $arrElement['iconAnchor'][0] = floor($arrElement['iconSize'][0]/2);
-            $arrElement['iconAnchor'][1] = '0';
+        }
+        else
+        {
+            $arrElement['iconAnchor'][0] = floor($arrElement['iconSize'][0]/2) + $arrElement['iconAnchor'][0];
+        }
+
+        if(!$arrElement['iconAnchor'][1] || $arrElement['iconAnchor'][1]==0) {
+            $arrElement['iconAnchor'][1] = floor($arrElement['iconSize'][1]/2);
+        }
+        else
+        {
+            $arrElement['iconAnchor'][1] = floor($arrElement['iconSize'][1]/2) + $arrElement['iconAnchor'][1];
         }
 
         $objFile = \FilesModel::findByPk($arrElement['overlaySRC']);
@@ -216,7 +228,10 @@ class Googlemap extends \Frontend
         $tmp2 = explode(',',$arrElement['bounds'][1]);
         $arrElement['bounds'][2] = (trim($tmp1[0]).trim($tmp2[0]))/2 . ',' . (trim($tmp1[1]).trim($tmp2[1]))/2;
         $arrElement['infoWindow'] = preg_replace('/[\n\r\t]+/i', '', str_replace('\"','"', addslashes($this->replaceInsertTags($arrElement['infoWindow']))));
+
         $arrElement['infoWindowAnchor'] = deserialize($arrElement['infoWindowAnchor']);
+        $arrElement['infoWindowAnchor'][0] = $arrElement['infoWindowAnchor'][0] ? -1 * $arrElement['infoWindowAnchor'][0] : 0;
+        $arrElement['infoWindowAnchor'][1] = $arrElement['infoWindowAnchor'][1] ? -1 * $arrElement['infoWindowAnchor'][1] : 0;
 
         $tmpSize = deserialize($arrElement['infoWindowSize']);
 

@@ -23,7 +23,7 @@
     <?php if($this->element['markerAction'] == 'INFO') : ?>
         var gmap<?php echo $this->element['id']; ?>_infowindow = new google.maps.InfoWindow({
         position: new google.maps.LatLng(<?php echo $this->element['windowPosition']; ?>),
-        <?php if ($this->element['infoWindowAnchor'][0] && $this->element['infoWindowAnchor'][1]) : ?>
+        <?php if ($this->element['infoWindowAnchor'][0]!=0 || $this->element['infoWindowAnchor'][1]!=0) : ?>
             pixelOffset: new google.maps.Size(<?php echo $this->element['infoWindowAnchor'][0].','.$this->element['infoWindowAnchor'][1]; ?>),
         <?php endif; ?>
         content: '<div<?php echo $this->element['infoWindowSize']; ?>><?php echo $this->element['infoWindow']; ?></div>'

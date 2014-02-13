@@ -118,12 +118,12 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = array
 		'MARKERSIMPLE'                => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,fillColor,markerAction;{parameter_legend:hide},zIndex,parameter',
 		'MARKERICON'                  => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,iconSRC,iconSize,iconAnchor,hasShadow,markerAction;{parameter_legend:hide},zIndex,parameter',
 
-		'MARKERSIMPLEINFO'            => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,markerAction,useRouting,infoWindowSize,infoWindowAnchor,popupInfoWindow,infoWindow;{parameter_legend:hide},zIndex,parameter',
+		'MARKERSIMPLEINFO'            => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,fillColor,markerAction,useRouting,infoWindowSize,infoWindowAnchor,popupInfoWindow,infoWindow;{parameter_legend:hide},zIndex,parameter',
 		'MARKERICONINFO'              => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,iconSRC,iconSize,iconAnchor,hasShadow,markerAction,useRouting,infoWindowSize,infoWindowAnchor,popupInfoWindow,infoWindow;{parameter_legend:hide},zIndex,parameter',
-		'MARKERSIMPLELINK'            => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,markerAction,url,target,linkTitle;{parameter_legend:hide},zIndex,parameter',
+		'MARKERSIMPLELINK'            => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,fillColor,markerAction,url,target,linkTitle;{parameter_legend:hide},zIndex,parameter',
 		'MARKERICONLINK'              => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,markerShowTitle,markerType,iconSRC,iconSize,iconAnchor,hasShadow,markerAction,url,target,linkTitle;{parameter_legend:hide},zIndex,parameter',
 
-		'INFOWINDOW'                  => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,infoWindow;{parameter_legend},zIndex,parameter',
+		'INFOWINDOW'                  => '{title_legend},title,type,published;{element_legend},geocoderAddress,geocoderCountry,singleCoords,infoWindowSize,infoWindow;{parameter_legend},zIndex,parameter',
 		'POLYLINE'                    => '{title_legend},title,type,published;{element_legend},multiCoords,strokeColor,strokeOpacity,strokeWeight;{parameter_legend:hide},zIndex,parameter',
 
 		'POLYGON'                     => '{title_legend},title,type,published;{element_legend},multiCoords,strokeColor,strokeOpacity,strokeWeight,fillColor,fillOpacity,markerAction;{parameter_legend:hide},zIndex,parameter',
