@@ -21,7 +21,20 @@
         "contao-community-alliance/composer-installer": "*",
         "delahaye/dlh_geocode": ">=1.0"
     },
+    "autoload": {
+        "classmap": [""]
+    },
     "replace": {
         "contao-legacy/dlh_googlemaps": "*"
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "": "system/modules/dlh_googlemaps"
+            },
+            "runonce": [
+                "system/modules/dlh_googlemaps/runonce/runonce.php"
+            ]
+        }
     }
 }
