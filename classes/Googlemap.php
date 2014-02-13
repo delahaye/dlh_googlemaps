@@ -308,12 +308,20 @@ class Googlemap extends \Frontend
         foreach($GLOBALS['TL_CONFIG']['dlh_googlemaps']['refresh'] as $strClass)
         {
             $strCode .= '
-                var dlh_'.$strClass.' = $$(".'.$strClass.'");
-                dlh_'.$strClass.'.each(function(dlh_'.$strClass.'_ele){
-                    dlh_'.$strClass.'_ele.addEvent("click", function(){
-                        dlh_resetMap();
+                if(window.addEvent) {
+                    var dlh_'.$strClass.' = $$(".'.$strClass.'");
+                    dlh_'.$strClass.'.each(function(dlh_'.$strClass.'_ele){
+                        dlh_'.$strClass.'_ele.addEvent("click", function(){
+                            dlh_resetMap();
+                        });
                     });
-                });
+                } else if(typeof jQuery == "function") {
+                    $(document).ready(function(){
+                        $(".'.$strClass.'").click(function() {
+                            dlh_resetMap();
+                        });
+                    });
+                }
             ';
         }
 

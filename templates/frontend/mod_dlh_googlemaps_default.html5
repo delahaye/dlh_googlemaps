@@ -126,6 +126,10 @@ if(window.addEvent) {
     window.addEvent('domready', function() {
         gmap<?php echo $this->map['id']; ?>_initialize();
     });
+} else if(typeof jQuery == "function") {
+    $(document).ready(function(){
+        gmap<?php echo $this->map['id']; ?>_initialize();
+    });
 } else {
     window.setTimeout("gmap<?php echo $this->map['id']; ?>_initialize()", 500);
 }
