@@ -60,6 +60,12 @@ class Googlemap extends \Frontend
 
         // get map data
         $objMap = \delahaye\googlemaps\MapModel::findByPk($intMap);
+
+        if(!$objMap)
+        {
+            return false;
+        }
+
         $arrMap = $objMap->row();
         $arrMap['language'] = $GLOBALS['TL_LANGUAGE'];
         $arrMap['mapSize'] = deserialize($arrMap['mapSize']);
