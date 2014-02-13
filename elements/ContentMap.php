@@ -70,9 +70,11 @@ class ContentMap extends \ContentElement
         // get the map data
         $arrParams = array
         (
-            'mapSize' => unserialize($this->dlh_googlemap_size),
+            'mapSize' => deserialize($this->dlh_googlemap_size),
             'zoom' => $this->dlh_googlemap_zoom
         );
+
+        $arrParams['mapSize'][2] = ($arrParams['mapSize'][2]=='pcnt' ? '%' : $arrParams['mapSize'][2]);
 
         $arrMap = \delahaye\googlemaps\Googlemap::getMapData($this->dlh_googlemap, $objPage->outputFormat, $arrParams);
 
@@ -89,7 +91,7 @@ class ContentMap extends \ContentElement
         // dynamic map
         else
         {
-            if($this->dlh_googlemap_template != 'ce_dlh_googlemaps_default')
+            if($this->dlh_googlemap_template && $this->dlh_googlemap_template != 'ce_dlh_googlemaps_default')
             {
                 $this->Template = new \FrontendTemplate($this->dlh_googlemap_template);
             }

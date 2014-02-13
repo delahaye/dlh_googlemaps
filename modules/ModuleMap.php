@@ -97,7 +97,7 @@ class ModuleMap extends \Module
         // dynamic map
         else
         {
-            if($this->dlh_googlemap_template != 'mod_dlh_googlemaps_default')
+            if($this->dlh_googlemap_template && $this->dlh_googlemap_template != 'mod_dlh_googlemaps_default')
             {
                 $this->Template = new \FrontendTemplate($this->dlh_googlemap_template);
             }
