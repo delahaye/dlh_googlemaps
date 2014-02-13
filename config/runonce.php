@@ -13,5 +13,7 @@
  */
 
 
-
-\delahaye\googlemaps\UpgradeHandler::run();
+if(class_exists('\\delahaye\\googlemaps\\UpgradeHandler'))
+{
+	\delahaye\googlemaps\UpgradeHandler::run();
+}
