@@ -128,7 +128,7 @@ if(window.addEvent) {
         gmap<?php echo $this->map['id']; ?>_initialize();
     });
 } else if(typeof jQuery == "function") {
-    $(document).ready(function(){
+    jQuery(document).ready(function(){
         gmap<?php echo $this->map['id']; ?>_initialize();
     });
 } else {
