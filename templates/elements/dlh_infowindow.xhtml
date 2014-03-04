@@ -1,12 +1,12 @@
 <?php if ($this->element['singleCoords'] && $this->element['infoWindow']) : ?>
     var gmap<?php echo $this->element['id']; ?>_infowindow = new google.maps.InfoWindow({
     position: new google.maps.LatLng(<?php echo $this->element['singleCoords']; ?>)
-    , content: '<?php echo $this->element['infoWindow']; ?>'
+    , content: '<div<?php echo $this->element['infoWindowSize']; ?>><?php echo $this->element['infoWindow']; ?></div>'
     <?php if ($this->element['zIndex']) : ?>
-        , zIndex: <?php echo $this->element['zIndex']; ?>
+    , zIndex: <?php echo $this->element['zIndex']; ?>
     <?php endif; ?>
     <?php if ($this->element['parameter']) : ?>
-        , <?php echo $this->element['parameter']; ?>
+    , <?php echo $this->element['parameter']; ?>
     <?php endif; ?>
     });
     gmap<?php echo $this->element['id']; ?>_infowindow.open(gmap<?php echo $this->map; ?>);
