@@ -80,7 +80,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_static'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_static'],
 	'exclude'                 => true,
-	'filter'                  => true,
 	'inputType'               => 'checkbox',
 	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
@@ -90,7 +89,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_nocss'] = array
 (
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_nocss'],
     'exclude'                 => true,
-    'filter'                  => true,
     'inputType'               => 'checkbox',
     'eval'                    => array('tl_class'=>'clr m12'),
     'sql'                     => "char(1) NOT NULL default ''"
@@ -100,7 +98,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_tabs'] = array
 (
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_tabs'],
     'exclude'                 => true,
-    'filter'                  => true,
     'inputType'               => 'checkbox',
     'eval'                    => array('tl_class'=>'clr m12'),
     'sql'                     => "char(1) NOT NULL default ''"
