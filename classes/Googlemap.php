@@ -316,8 +316,8 @@ class Googlemap extends \Frontend
                         });
                     });
                 } else if(typeof jQuery == "function") {
-                    $(document).ready(function(){
-                        $(".'.$strClass.'").click(function() {
+                    jQuery(document).ready(function(){
+                        jQuery(".'.$strClass.'").click(function() {
                             dlh_resetMap();
                         });
                     });
