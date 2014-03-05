@@ -14,6 +14,15 @@
 
 
 /**
+ * Register the namespaces
+ */
+ClassLoader::addNamespaces(array
+(
+    'delahaye\googlemaps',
+));
+
+
+/**
  * Register the classes
  */
 ClassLoader::addClasses(array
