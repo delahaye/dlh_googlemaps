@@ -34,8 +34,8 @@
         <target>Routenplanung</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.routingLabel">
-        <source>? from your Address:</source>
-        <target>? von Ihrer Adresse:</target>
+        <source>?[nbsp]from your Address:</source>
+        <target>?[nbsp]von Ihrer Adresse:</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.routingSubmit">
         <source>ok</source>

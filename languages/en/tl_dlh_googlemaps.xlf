@@ -280,9 +280,6 @@
         <trans-unit id="tl_dlh_googlemaps.references.noCoords">
 			<source>No geocoding possible.</source>
 		</trans-unit>
-        <trans-unit id="tl_dlh_googlemaps.references.pcnt">
-            <source>%</source>
-        </trans-unit>
         </body>
     </file>
 </xliff>

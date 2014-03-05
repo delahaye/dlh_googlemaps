@@ -49,9 +49,6 @@
         <trans-unit id="tl_module.dlh_googlemap_tabs.1">
             <source>This option refreshes the map when changing a tab or accordion. Made for the extension Tabcontrol.</source>
         </trans-unit>
-        <trans-unit id="tl_module.dlh_googlemap_ref.pcnt">
-            <source>%</source>
-        </trans-unit>
         </body>
     </file>
 </xliff>
