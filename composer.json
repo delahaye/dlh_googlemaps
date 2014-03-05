@@ -19,7 +19,7 @@
     "require": {
         "contao/core": ">=3.2,<4-dev",
         "contao-community-alliance/composer-installer": "*",
-        "delahaye/dlh_geocode": ">=1.0.*,<2-dev"
+        "delahaye/dlh_geocode": ">=1.0.2,<2-dev"
     },
     "autoload": {
         "classmap": [""]
