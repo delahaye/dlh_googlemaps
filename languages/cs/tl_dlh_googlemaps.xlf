@@ -1,0 +1,356 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_dlh_googlemaps.php" source-language="en">
+        <body>
+        <trans-unit id="tl_dlh_googlemaps.title.0">
+			<source>Title</source>
+			<target>Název</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.title.1">
+			<source>Title of the Google Map.</source>
+			<target>Název Google Mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.center.0">
+			<source>Geo-coordinates</source>
+			<target>Souřadnice středu mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.center.1">
+			<source>Please enter the geo-coordinates of the map center (e.g. 48.856846,2.351024). The coordinates can be generated from the address (s.b.).</source>
+			<target>Prosím, zadejte souřadnice středu mapy. (např.: 48.856846,2.351024). Souřadnice mohou být generovány z adresy (s.b.).</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderAddress.0">
+			<source>Address for geocoding</source>
+			<target>Adresa pro střed mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderAddress.1">
+			<source>In case of the field ´geo-coordinates´ being empty, on saving the record the geo-coodinates of this address are generated automatically.</source>
+			<target>Pokud pole souřadnice středu mapy je prazdné a zde uvedete adresu bude střed mapy automaticky generován z této adresy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderCountry.0">
+			<source>Country</source>
+			<target>Země</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderCountry.1">
+			<source>Specify the country in whict the address shall be found.</source>
+			<target>Upřesněte zemi, ve které se nachází hledaná adresa pro střed mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapSize.0">
+			<source>Dimensions width x height</source>
+			<target>Zadejte šířku a výšku</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapSize.1">
+			<source>Dimensions of the Google Map. This value can be overwritten later.</source>
+			<target>Prosím, zadejte šířku a výšku mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoom.0">
+			<source>Zoom-factor</source>
+			<target>Přiblížení</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoom.1">
+			<source>The map starts with this zoom factor. This value can be overwritten later.</source>
+			<target>Prosím, zadejte přiblížení mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeId.0">
+			<source>Starting type of the map</source>
+			<target>Standardní zobrazení</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeId.1">
+			<source>Specify the starting appearance of the map.</source>
+			<target>Prosím, nastavte standardní pohled na mapu.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypesAvailable.0">
+			<source>Available map types</source>
+			<target>Volitelné zobrazení</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypesAvailable.1">
+			<source>Specify the available map types.</source>
+			<target>Prosím, upřesněte volitelné zobrazení na mapě.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.draggable.0">
+			<source>Scrolling</source>
+			<target>Posouvání myší</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.draggable.1">
+			<source>The map can be moved by mouse.</source>
+			<target>Mapa může být přemístěna pomocí myši.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.staticMapNoscript.0">
+			<source>Static map as fallback</source>
+			<target>Statická mapa jako alternativní</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.staticMapNoscript.1">
+			<source>If javascript isn't enabled, a (restricted) static map shall be rendered instead.</source>
+			<target>Pokud není povolen JavaScript, bude namísto normální Google mapy, zobrazena statická mapa.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.disableDoubleClickZoom.0">
+			<source>Deactivate zoom on doubleclick</source>
+			<target>Přiblížení na dvojklik</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.disableDoubleClickZoom.1">
+			<source>On doubleclicking the map no zoom is performed.</source>
+			<target>Deaktivovat přiblížení dvojklikem na mapě.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scrollwheel.0">
+			<source>Mouse wheel zoom</source>
+			<target>Přiblížení kolečkem myši</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scrollwheel.1">
+			<source>Zoom by mouse wheel is enabled.</source>
+			<target>Povolit přiblížení kolečkem myši.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.sensor.0">
+			<source>Sensor</source>
+			<target>Senzor</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.sensor.1">
+			<source>The application uses sensors (see Googgle API)</source>
+			<target>Aplikace využívá senzory (viz Googgle API).</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.0">
+			<source>Use map type controls</source>
+			<target>Použití ovládacích prvků typu mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeControlStyle.0">
+			<source>Type of map type controls</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useNavigationControl.0">
+			<source>Use navigation controls</source>
+			<target>Použijte navigační ovládací prvky</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useNavigationControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationControlStyle.0">
+			<source>Type of navigation controls</source>
+			<target>Typ navigačních ovladacích prvků</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+			<target>Upřesněte prosím formátování prvku.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useScaleControl.0">
+			<source>Use scale control</source>
+			<target>Použijte ovládací prvky měřítka</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useScaleControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scaleControlStyle.0">
+			<source>Type of scale controls</source>
+			<target>Typy ovládacích prvků měřítka</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scaleControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+			<target>Upřesněte prosím formátování prvku.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter.0">
+			<source>Additional parameters in the option block</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter.1">
+			<source>Here you can enter additional parameters for the map, shown within the option variable code.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.moreParameter.0">
+			<source>Additional declarations</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.moreParameter.1">
+			<source>Here you can enter additional parameters for the map, shown as an own block after the option variable code.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useZoomControl.0">
+			<source>Use zoom control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useZoomControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomControlStyle.0">
+			<source>Variation of the zoom element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomControlStyle.1">
+			<source>Please specify how the element is used.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useRotateControl.0">
+			<source>Use rotate control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useRotateControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.usePanControl.0">
+			<source>Use pan control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.usePanControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useStreetViewControl.0">
+			<source>Use StreetView control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useStreetViewControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useOverviewMapControl.0">
+			<source>Use map overview control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useOverviewMapControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Uveďte, zda se prvky typu mapy mají použít.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewMapControlOpened.0">
+			<source>Map overview opened</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewMapControlOpened.1">
+			<source>Please specify if the element starts opened.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.controlPos.0">
+			<source>Position</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.controlPos.1">
+			<source>Please specify the position of the element on the map.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.new.0">
+			<source>New Google Map</source>
+			<target>Nová Google mapa</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.new.1">
+			<source>Add a new Google Map</source>
+			<target>Přidat novou Google mapu.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.edit.0">
+			<source>Edit Google Map</source>
+			<target>Upravit Google mapu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.edit.1">
+			<source>Edit the Google Map ID %s</source>
+			<target>Upravit Google mapy ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.copy.0">
+			<source>Duplicate Google Map</source>
+			<target>Kopírovat Google Mapu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.copy.1">
+			<source>Duplicate Google Map ID %s</source>
+			<target>Kopírovat Google mapy  ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.delete.0">
+			<source>Delete Google Map</source>
+			<target>Vymazat Google mapu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.delete.1">
+			<source>Delete Google Map ID %s</source>
+			<target>Vymazat Google mapy ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.show.0">
+			<source>Google Map Details</source>
+			<target>Podrobnosti Google mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.show.1">
+			<source>Show Google Map ID %s details</source>
+			<target>Zobrazit podrobnosti Google mapy ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.editheader.0">
+			<source>Edit Google Map settings</source>
+			<target>Upravit nastavení Google mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.editheader.1">
+			<source>Edit the settings of Google Map ID %s</source>
+			<target>Upravit nastavení Google mapy ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.title_legend">
+			<source>Title and bascis</source>
+			<target>Název a základní informace</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.maptype_legend">
+			<source>Map type and behaviour</source>
+			<target>Typ mapy a vlastnosti</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.maptypecontrols_legend">
+			<source>Map type controls</source>
+			<target>Typ ovládacích prvků mapy</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationcontrol_legend">
+			<source>Navigation controls</source>
+			<target>Navigační ovládací prvky</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scalecontrol_legend">
+			<source>Scale control</source>
+			<target>Ovládací prvky měřítka</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewmapcontrol_legend">
+			<source>Map overview control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.streetviewcontrol_legend">
+			<source>StreetView control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.pancontrol_legend">
+			<source>Pan control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.rotatecontrol_legend">
+			<source>Rotate control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomcontrol_legend">
+			<source>Zoom</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter_legend">
+			<source>Additional parameters</source>
+			<target>Další parametry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.DEFAULT">
+			<source>Default</source>
+			<target>Výchozí</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.HYBRID">
+			<source>Hybrid</source>
+			<target>Hybridní</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ROADMAP">
+			<source>Roadmap</source>
+			<target>Mapa</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.SATELLITE">
+			<source>Satellite</source>
+			<target>Satelitní</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.TERRAIN">
+			<source>Terrain</source>
+			<target>Terénní</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.DROPDOWN_MENU">
+			<source>Dropdown menu</source>
+			<target>Rolovací menu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.HORIZONTAL_BAR">
+			<source>Horizontal bar</source>
+			<target>Vodorovná lišta</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ANDROID">
+			<source>Android</source>
+			<target>Android</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.SMALL">
+			<source>Small version</source>
+			<target>Malá verze</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ZOOM_PAN">
+			<source>Big version</source>
+			<target>Velká verze</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.noCurl">
+			<source>No geocoding possible - CURL is missing.</source>
+			<target>Není možné geokódování - chybějící CURL.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.noCoords">
+			<source>No geocoding possible.</source>
+			<target>Není možné geokódování.</target>
+		</trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -3,43 +3,43 @@
     <body>
       <trans-unit id="MOD.dlh_googlemaps.0">
         <source>Google Maps</source>
-        <target>نقشه‌های گوگل</target>
+        <target>Google Mapa</target>
       </trans-unit>
       <trans-unit id="MOD.dlh_googlemaps.1">
         <source>Here you can administrate your Google Maps.</source>
-        <target>اینجا می‌توانید نقشه‌های گوگل خود را مدیریت نمایید.</target>
+        <target>Zde můžete spravovat své Google Mapy.</target>
       </trans-unit>
       <trans-unit id="CTE.dlh_googlemaps.0">
         <source>Google Map</source>
-        <target>نقشه گوگل</target>
+        <target>Google Mapa</target>
       </trans-unit>
       <trans-unit id="CTE.dlh_googlemaps.1">
         <source>Integrate a Google Map.</source>
-        <target>درج یک نقشه گوگل</target>
+        <target>Integrovat Google Mapu.</target>
       </trans-unit>
       <trans-unit id="FMD.dlh_googlemaps.0">
         <source>Google Map</source>
-        <target>نقشه گوگل</target>
+        <target>Google Mapa</target>
       </trans-unit>
       <trans-unit id="FMD.dlh_googlemaps.1">
         <source>Integrate a Google Map.</source>
-        <target>درج یک نقشه گوگل</target>
+        <target>Integrovat Google Mapu.</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.noscript">
         <source>Google Map</source>
-        <target>نقشه گوگل</target>
+        <target>Google Mapa</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.routingLink">
         <source>Routing</source>
-        <target>مسیریابی</target>
+        <target>Plánování</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.routingLabel">
         <source>? from your Address:</source>
-        <target>? از آدرس شما:</target>
+        <target>? z vaší adresy:</target>
       </trans-unit>
       <trans-unit id="dlh_googlemaps.labels.routingSubmit">
         <source>ok</source>
-        <target>بسیارخوب</target>
+        <target>ok</target>
       </trans-unit>
     </body>
   </file>

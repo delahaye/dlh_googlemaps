@@ -1,0 +1,423 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/default.php" source-language="en">
+        <body>
+        <trans-unit id="tl_dlh_googlemaps_elements.title.0">
+			<source>Title</source>
+			<target>Název</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.title.1">
+			<source>Title of the map element.</source>
+			<target>Název prvku mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.type.0">
+			<source>Type</source>
+			<target>Typ</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.type.1">
+			<source>Type of the map element.</source>
+			<target>Typ prvku mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.published.0">
+			<source>Published</source>
+			<target>Publikováno</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.published.1">
+			<source>The element is published.</source>
+			<target>Prvek je publikován.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.0">
+			<source>Geo-coordinates</source>
+			<target>Zeměpisné souřadnice</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.1">
+			<source>Please enter the geo-coordinates of the element.</source>
+			<target>Zadejte prosím zeměpisné souřadnice prvku.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.0">
+			<source>Address for geocoding</source>
+			<target>Adresa pro plánování</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.1">
+			<source>In case of the field ´geo-coordinates´ being empty, on saving the record the geo-coodinates of this address are generated automatically.</source>
+			<target>Zadejte prosím cíl cesty. V případě, že zůstane pole prázdné, budou použity zeměpisné souřadnice.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.0">
+			<source>Country</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.1">
+			<source>Specify the country in whict the address shall be found.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.0">
+			<source>Multiple Geo-coordinates</source>
+			<target>Vícero souřadnic</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.1">
+			<source>Please enter multiple geo-coordinates for the element. Polygones are closed automatically.</source>
+			<target>Zadejte prosím víc souřadnic pro prvek. Mnohoúhelníky se automaticky uzavřou.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.radius.0">
+			<source>Radius in meters</source>
+			<target>Rádius v metrech</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.radius.1">
+			<source>Please enter the radius of the circle in meters.</source>
+			<target>Zadejte prosím rádius v metrech.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeColor.0">
+			<source>Line color</source>
+			<target>Barva čáry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeColor.1">
+			<source>Please enter the color used for lines.</source>
+			<target>Zadejte prosím barvu čar.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.0">
+			<source>Line weight</source>
+			<target>Tloušťka čáry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.1">
+			<source>Please enter the line weight in pixels.</source>
+			<target>Zadejte prosím tloušťku čáry v pixelech.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeOpacity.0">
+			<source>Line opacity</source>
+			<target>Průhlednost čáry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.strokeOpacity.1">
+			<source>Please enter the opacity used for lines.</source>
+			<target>Zadejte prosím průhlednost čáry.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillColor.0">
+			<source>Fill color</source>
+			<target>Vybarvit</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillColor.1">
+			<source>Please enter the color used for fillings.</source>
+			<target>Zadejte prosím požadovanou barvu výplně.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillOpacity.0">
+			<source>Fill opacity</source>
+			<target>Průhlednost výplně</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.fillOpacity.1">
+			<source>Please enter the opacity used for fillings.</source>
+			<target>Zadejte prosím průhlednost výplně.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerAction.0">
+			<source>Action on click</source>
+			<target>Reakce na kliknutí</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerAction.1">
+			<source>Here you decide how the element reacts on clicking.</source>
+			<target>Zde se rozhodnete, jak budou prvky reagovat na kliknutí.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.popupInfoWindow.0">
+			<source>Open infowindow automatically</source>
+			<target>Automaticky otevřít informační okno</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.popupInfoWindow.1">
+			<source>Shall the infowindow pop up automatically?</source>
+			<target>Otvírat informační okno automaticky?</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.0">
+			<source>Infowindow</source>
+			<target>Informační okno</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.1">
+			<source>Please enter the content for the infowindow. Insert tags are supported.</source>
+			<target>Zadejte prosím obsah informačního okna. Vkladací tagy jsou podporovány.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.0">
+			<source>Position of the infowindow anchor</source>
+			<target>Pozice ukotvení informačního okna</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.1">
+			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up.</source>
+			<target>Pozice informačního okna může být změněna za pomoci šipek Doleva, nahoru. Např. Posuňte informační okno o 5 pixelů vlevo a 10 pixelů nahoru.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.url.0">
+			<source>Link</source>
+			<target>Odkaz</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.url.1">
+			<source>Please enter a url (mit http://) or select a Contao page.</source>
+			<target>Zadejte prosím url (včetně http://) nebo si vyberte stránku Contao</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.0">
+			<source>Link title</source>
+			<target>Název odkazu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.1">
+			<source>This text is displayed as a tooltip by the clickable element.</source>
+			<target>Tento text se zobrazí jako tip na klikacím prvku.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.target.0">
+			<source>Open in new window</source>
+			<target>Otevřít v novém okně.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.target.1">
+			<source>Open the link in a new browser window.</source>
+			<target>Otevřít odkaz v novém okně.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.bounds.0">
+			<source>Geo-coordinates southwest/northeast</source>
+			<target>Zeměpisné souřadnice jihozápad / severovýchod</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.bounds.1">
+			<source>Please enter the coordinates of the element as 2 pairs of coordinates.</source>
+			<target>Zadejte prosím souřadnice prvku jako 2 párové souřadnice.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.0">
+			<source>File</source>
+			<target>Soubor</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.1">
+			<source>Please choose an image file (gif, jpg or png), which overlays the map within the chosen area.</source>
+			<target>Vyberte si prosím obrázek (gif, jpg nebo png), který překryje mapu v rámci vybrané oblasti.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerShowTitle.0">
+			<source>Show title</source>
+			<target>Zobrazit název</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerShowTitle.1">
+			<source>Show the title of the marker as a tooltip.</source>
+			<target>Zobrazit název značky jako tip.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerType.0">
+			<source>Type of marker</source>
+			<target>Typ značky</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.markerType.1">
+			<source>You can use standard Google markers or individual icons.</source>
+			<target>Můžete použít standardní Google značky nebo si vytvořit vlastní.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.useRouting.0">
+			<source>Use routing</source>
+			<target>Využít plánování tras</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.useRouting.1">
+			<source>The Google Maps route planner can be linked from the infowindow directly by form.</source>
+			<target>Plánovač tras v Google mapě může být formulářem přímo propojen s informačním oknem.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.routingAddress.0">
+			<source>Address used for routing</source>
+			<target>Adresa pro plánování</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.routingAddress.1">
+			<source>Please enter the target address for routing. By an empty field the geo-coordinates are used as the routing target.</source>
+			<target>Zadejte prosím cíl cesty. V případě, že zůstane pole prázdné, budou použity zeměpisné souřadnice.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.0">
+			<source>File for the icon</source>
+			<target>Soubor pro ikonu</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.1">
+			<source>Please choose an image file (gif, jpg oder png) for use as an icon.</source>
+			<target>Vyberte si prosím obrázek (gif, jpg nebo png), který bude použit pro ikonu.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSize.0">
+			<source>Dimensions width x height</source>
+			<target>Rozměry šířka x výška</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconSize.1">
+			<source>Dimensions of the icon.</source>
+			<target>Rozměry ikony.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.0">
+			<source>Position of the icon anchor</source>
+			<target>Pozice ukotvení ikony</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.1">
+			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up.</source>
+			<target>Pozici ikony můžete změnit šipkami Nalevo, Nahoru. Např. 5, 10 přesune ikonu 5 pixelů vlevo a 10 pixelů nahoru.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.0">
+			<source>Use shadow</source>
+			<target>Stín</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.1">
+			<source>The icon has a shadow</source>
+			<target>Ikona má stín</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSRC.0">
+			<source>File for the shadow</source>
+			<target>Soubor pro stín</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSRC.1">
+			<source>Please choose an image file (png is best) that shall be used as a shadow.</source>
+			<target>Vyberte si prosím obrázek (png je nejlepší), který bude použit jako stín.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.0">
+			<source>Dimensions width x height</source>
+			<target>Rozměry šířka x výška</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.1">
+			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow.</source>
+			<target>Rozměry stínu. Zvláštní pozice použitá ikonou je využita i pro stín.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.zIndex.0">
+			<source>z-Index</source>
+			<target>z-Index</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.zIndex.1">
+			<source>Horizontal position of the element relative to the map.</source>
+			<target>Vodorovná pozice prvku k mapě.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter.0">
+			<source>Additional parameters</source>
+			<target>Další parametry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter.1">
+			<source>Here you can enter additional parameters for the map element.</source>
+			<target>Zde můžete zadat další parametry pro prvky mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.new.0">
+			<source>New element</source>
+			<target>Nový prvek</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.new.1">
+			<source>Add a new map element</source>
+			<target>Přidat nový prvek mapy.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.edit.0">
+			<source>Edit element</source>
+			<target>Upravit prvek</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.edit.1">
+			<source>Edit element ID %s</source>
+			<target>Upravit prvek ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.copy.0">
+			<source>Copy element</source>
+			<target>Kopírovat prvek</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.copy.1">
+			<source>Copy element ID %s</source>
+			<target>Kopírovat prvek ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.delete.0">
+			<source>Delete element</source>
+			<target>Vymazat prvek</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.delete.1">
+			<source>Delete element ID %s</source>
+			<target>Vymazat prvek ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.show.0">
+			<source>Element details</source>
+			<target>Podrobnosti prvku</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.show.1">
+			<source>Show the details of element ID %s</source>
+			<target>Zobrazt podrobnosti prvku ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.toggle.0">
+			<source>Publish Element</source>
+			<target>Publikovat prvek</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.toggle.1">
+			<source>Publish Element ID %s</source>
+			<target>Publikovat prvek ID %s.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.title_legend">
+			<source>Title and type</source>
+			<target>Název a typ</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.element_legend">
+			<source>Element configuration</source>
+			<target>Konfigurace prvku</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.parameter_legend">
+			<source>Additional parameters</source>
+			<target>Další parametry</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.MARKER">
+			<source>Marker (w, w/o routing)</source>
+			<target>Značka (w, w/o routing)</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.INFOWINDOW">
+			<source>Infowindow</source>
+			<target>Informační okno</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.RECTANGLE">
+			<source>Rectangle</source>
+			<target>Obdelník</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.CIRCLE">
+			<source>Circle</source>
+			<target>Kruh</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.POLYLINE">
+			<source>Line</source>
+			<target>Poly line</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.POLYGON">
+			<source>Polygon</source>
+			<target>Mnohoúhelník</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.GROUND_OVERLAY">
+			<source>Ground-overlay</source>
+			<target>Základní překrytí</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.KML">
+			<source>KML-Layer</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.NONE">
+			<source>No action</source>
+			<target>Bez reakce</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.LINK">
+			<source>Direct link on marker</source>
+			<target>Přímý odkaz na značku</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.INFO">
+			<source>Open Infowindow</source>
+			<target>Otevřít informační okno</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.SIMPLE">
+			<source>Google default marker</source>
+			<target>Výchozí Google značka</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.references.ICON">
+			<source>Individual icon</source>
+			<target>Vlastní ikona</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.0">
+			<source>URL</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.1">
+			<source>Please enter a url to a .kml-file (with http://).</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.0">
+			<source>Clickable</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.1">
+			<source>If true, the layer receives mouse events.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.0">
+			<source>Preserve viewport</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.1">
+			<source>The viewport is left unchanged.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.0">
+			<source>Screen overlays</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.1">
+			<source>Render the screen overlays.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.0">
+			<source>Suppress info windows</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.1">
+			<source>Suppress the rendering of info windows when layer features are clicked.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.0">
+			<source>Size of the info window</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.1">
+			<source>If set, the size of the info window is fixed.</source>
+		</trans-unit>
+        </body>
+    </file>
+</xliff>

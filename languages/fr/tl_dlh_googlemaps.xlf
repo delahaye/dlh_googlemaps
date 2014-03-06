@@ -1,0 +1,359 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_dlh_googlemaps.php" source-language="en">
+        <body>
+        <trans-unit id="tl_dlh_googlemaps.title.0">
+			<source>Title</source>
+			<target>Titre</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.title.1">
+			<source>Title of the Google Map.</source>
+			<target>Titre de la Google Map.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.center.0">
+			<source>Geo-coordinates</source>
+			<target>Géo-coordonnées</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.center.1">
+			<source>Please enter the geo-coordinates of the map center (e.g. 48.856846,2.351024). The coordinates can be generated from the address (s.b.).</source>
+			<target>Veuillez saisir les géo-coordonnées du centre de la carte (ex: 48.856846,2.351024). Les coordonnées peuvent être générées depuis l'adresse.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderAddress.0">
+			<source>Address for geocoding</source>
+			<target>Adresse pour la géolocalisation</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderAddress.1">
+			<source>In case of the field ´geo-coordinates´ being empty, on saving the record the geo-coodinates of this address are generated automatically.</source>
+			<target>Dans le cas où le champs ´géo-coordonnées´ est vide, cette adresse servira à générer les géo-coordonnées à l'enregistrement.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderCountry.0">
+			<source>Country</source>
+			<target>Pays</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.geocoderCountry.1">
+			<source>Specify the country in whict the address shall be found.</source>
+			<target>Indiquez le pays dans lequel l'adresse doit être trouvée.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapSize.0">
+			<source>Dimensions width x height</source>
+			<target>Dimensions largeur x hauteur</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapSize.1">
+			<source>Dimensions of the Google Map. This value can be overwritten later.</source>
+			<target>Dimensions de la Google Map. Cette valeur peut être redéfini plus tard.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoom.0">
+			<source>Zoom-factor</source>
+			<target>Niveau de zoom</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoom.1">
+			<source>The map starts with this zoom factor. This value can be overwritten later.</source>
+			<target>La carte débutera avec ce niveau de zoom. Cette valeur peut être redéfini plus tard.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeId.0">
+			<source>Starting type of the map</source>
+			<target>Type de carte initial</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeId.1">
+			<source>Specify the starting appearance of the map.</source>
+			<target>Indiquez l'apparence initiale de la carte.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypesAvailable.0">
+			<source>Available map types</source>
+			<target>Types de cartes disponibles</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypesAvailable.1">
+			<source>Specify the available map types.</source>
+			<target>Indiquez les types de cartes disponibles.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.draggable.0">
+			<source>Scrolling</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.draggable.1">
+			<source>The map can be moved by mouse.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.staticMapNoscript.0">
+			<source>Static map as fallback</source>
+			<target>Carte statique de secours</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.staticMapNoscript.1">
+			<source>If javascript isn't enabled, a (restricted) static map shall be rendered instead.</source>
+			<target>i javascript n'est pas activé, une carte statique (restreinte) doit apparaitre à la place.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.disableDoubleClickZoom.0">
+			<source>Deactivate zoom on doubleclick</source>
+			<target>Désactiver le zoom au double clic</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.disableDoubleClickZoom.1">
+			<source>On doubleclicking the map no zoom is performed.</source>
+			<target>En double cliquant la carte, aucun zoom n'est appliqué.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scrollwheel.0">
+			<source>Mouse wheel zoom</source>
+			<target>Zoom avec la molette de la souris</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scrollwheel.1">
+			<source>Zoom by mouse wheel is enabled.</source>
+			<target>Le zoom avec la molette de la souris est activé.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.sensor.0">
+			<source>Sensor</source>
+			<target>Capteur</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.sensor.1">
+			<source>The application uses sensors (see Googgle API)</source>
+			<target>L'application utilise des capteurs (voir Google API)</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.0">
+			<source>Use map type controls</source>
+			<target>Utiliser les controles de type de carte</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeControlStyle.0">
+			<source>Type of map type controls</source>
+			<target>Type des controles de type de carte</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.mapTypeControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+			<target>Veuillez indiquer le formattage de l'élément.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useNavigationControl.0">
+			<source>Use navigation controls</source>
+			<target>Utiliser les controles de navigation</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useNavigationControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationControlStyle.0">
+			<source>Type of navigation controls</source>
+			<target>Type de controles de navigation</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+			<target>Veuillez indiquer le formattage de l'élément.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useScaleControl.0">
+			<source>Use scale control</source>
+			<target>Utiliser le controle d'ajustement</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useScaleControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scaleControlStyle.0">
+			<source>Type of scale controls</source>
+			<target>Type de controles d'ajustement</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scaleControlStyle.1">
+			<source>Please specify the formatting of the element.</source>
+			<target>Veuillez indiquer le formattage de l'élément.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter.0">
+			<source>Additional parameters in the option block</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter.1">
+			<source>Here you can enter additional parameters for the map, shown within the option variable code.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.moreParameter.0">
+			<source>Additional declarations</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.moreParameter.1">
+			<source>Here you can enter additional parameters for the map, shown as an own block after the option variable code.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useZoomControl.0">
+			<source>Use zoom control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useZoomControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomControlStyle.0">
+			<source>Variation of the zoom element.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomControlStyle.1">
+			<source>Please specify how the element is used.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useRotateControl.0">
+			<source>Use rotate control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useRotateControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.usePanControl.0">
+			<source>Use pan control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.usePanControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useStreetViewControl.0">
+			<source>Use StreetView control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useStreetViewControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useOverviewMapControl.0">
+			<source>Use map overview control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useOverviewMapControl.1">
+			<source>Please specify if the element is used.</source>
+			<target>Veuillez indiquer si ces éléments doivent etre utilisés.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewMapControlOpened.0">
+			<source>Map overview opened</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewMapControlOpened.1">
+			<source>Please specify if the element starts opened.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.controlPos.0">
+			<source>Position</source>
+			<target>Position</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.controlPos.1">
+			<source>Please specify the position of the element on the map.</source>
+			<target>Veuillez indiquer la position de l'élément sur la carte.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.new.0">
+			<source>New Google Map</source>
+			<target>Nouvelle Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.new.1">
+			<source>Add a new Google Map</source>
+			<target>Ajouter une nouvelle Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.edit.0">
+			<source>Edit Google Map</source>
+			<target>Editer Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.edit.1">
+			<source>Edit the Google Map ID %s</source>
+			<target>Edit la Google Map ID %s</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.copy.0">
+			<source>Duplicate Google Map</source>
+			<target>Dupliquer Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.copy.1">
+			<source>Duplicate Google Map ID %s</source>
+			<target>Dupliquer la Google Map ID %s</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.delete.0">
+			<source>Delete Google Map</source>
+			<target>Supprimer Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.delete.1">
+			<source>Delete Google Map ID %s</source>
+			<target>Supprimer la Google Map ID %s</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.show.0">
+			<source>Google Map Details</source>
+			<target>Détails de la Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.show.1">
+			<source>Show Google Map ID %s details</source>
+			<target>Voir les détails de la Google Map ID %s</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.editheader.0">
+			<source>Edit Google Map settings</source>
+			<target>Editer les paramétres Google Map</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.editheader.1">
+			<source>Edit the settings of Google Map ID %s</source>
+			<target>Editer les paramétres de la  Google Map ID %s</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.title_legend">
+			<source>Title and bascis</source>
+			<target>Titre et bases</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.maptype_legend">
+			<source>Map type and behaviour</source>
+			<target>Type de carte et comportement</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.maptypecontrols_legend">
+			<source>Map type controls</source>
+			<target>Controles de type de carte</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.navigationcontrol_legend">
+			<source>Navigation controls</source>
+			<target>Controles de navigation</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.scalecontrol_legend">
+			<source>Scale control</source>
+			<target>Controles d'ajustement</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.overviewmapcontrol_legend">
+			<source>Map overview control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.streetviewcontrol_legend">
+			<source>StreetView control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.pancontrol_legend">
+			<source>Pan control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.rotatecontrol_legend">
+			<source>Rotate control</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.zoomcontrol_legend">
+			<source>Zoom</source>
+			<target>Zoom</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.parameter_legend">
+			<source>Additional parameters</source>
+			<target>Paramètres additionnels</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.DEFAULT">
+			<source>Default</source>
+			<target>Par défaut</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.HYBRID">
+			<source>Hybrid</source>
+			<target>Hybride</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ROADMAP">
+			<source>Roadmap</source>
+			<target>Plan</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.SATELLITE">
+			<source>Satellite</source>
+			<target>Satellite</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.TERRAIN">
+			<source>Terrain</source>
+			<target>Terrain</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.DROPDOWN_MENU">
+			<source>Dropdown menu</source>
+			<target>Menu déroulant</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.HORIZONTAL_BAR">
+			<source>Horizontal bar</source>
+			<target>Barre horizontale</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ANDROID">
+			<source>Android</source>
+			<target>Android</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.SMALL">
+			<source>Small version</source>
+			<target>Petite version</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.ZOOM_PAN">
+			<source>Big version</source>
+			<target>Grande version</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.noCurl">
+			<source>No geocoding possible - CURL is missing.</source>
+			<target>Géolocalisation impossible - il manque CURL</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.references.noCoords">
+			<source>No geocoding possible.</source>
+			<target>Géolocalisation impossible.</target>
+		</trans-unit>
+        </body>
+    </file>
+</xliff>
