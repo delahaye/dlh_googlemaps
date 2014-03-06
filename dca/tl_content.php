@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_zoom'] = array
 	'exclude'                 => true,
 	'inputType'               => 'select',
 	'options'                 => array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'),
-	'default'                 => '',
+	'default'                 => '10',
 	'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
 	'sql'                     => "int(10) unsigned NOT NULL default '0'"
 );
