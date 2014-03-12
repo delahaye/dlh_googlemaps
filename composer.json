@@ -33,7 +33,7 @@
                 "": "system/modules/dlh_googlemaps"
             },
             "runonce": [
-                "system/modules/dlh_googlemaps/runonce/runonce.php"
+                "system/modules/dlh_googlemaps/config/runonce.php"
             ]
         }
     }
