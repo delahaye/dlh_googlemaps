@@ -7,6 +7,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.title.1">
 			<source>Title of the map element.</source>
+			<target>عنوان المان نقشه.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.type.0">
 			<source>Type</source>
@@ -14,6 +15,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.type.1">
 			<source>Type of the map element.</source>
+			<target>نوع المان نقشه.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.published.0">
 			<source>Published</source>
@@ -21,6 +23,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.published.1">
 			<source>The element is published.</source>
+			<target>المان منتشر شده است.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.0">
 			<source>Geo-coordinates</source>
@@ -28,9 +31,11 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.singleCoords.1">
 			<source>Please enter the geo-coordinates of the element.</source>
+			<target>لطفا مختصات جفرافیایی المان را وارد نمایید.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.0">
 			<source>Address for geocoding</source>
+			<target>آدرس برای ژئو-کدینگ</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.geocoderAddress.1">
 			<source>In case of the field ´geo-coordinates´ being empty, on saving the record the geo-coodinates of this address are generated automatically.</source>
@@ -41,9 +46,11 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.1">
 			<source>Specify the country in whict the address shall be found.</source>
+			<target>کشوری که آدرس باید در آن یافت شود را مشخص نمایید.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.0">
 			<source>Multiple Geo-coordinates</source>
+			<target>مختصات-جغرافیایی چندگانه</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.1">
 			<source>Please enter multiple geo-coordinates for the element. Polygones are closed automatically.</source>
@@ -61,6 +68,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.strokeColor.1">
 			<source>Please enter the color used for lines.</source>
+			<target>لطفا رنگ استفاده شده برای خط‌ها را وارد نمایید.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.0">
 			<source>Line weight</source>
@@ -68,6 +76,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.strokeWeight.1">
 			<source>Please enter the line weight in pixels.</source>
+			<target>لطفا ضخامت خط را به پیکسل وارد نمایید.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.strokeOpacity.0">
 			<source>Line opacity</source>
