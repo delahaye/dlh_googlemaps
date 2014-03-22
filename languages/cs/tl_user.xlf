@@ -3,18 +3,23 @@
         <body>
         <trans-unit id="tl_user.dlh_googlemapss.0">
             <source>Allowed maps</source>
+            <target>Povolené mapy</target>
         </trans-unit>
         <trans-unit id="tl_user.dlh_googlemapss.1">
             <source>Here you can grant access to one or more maps.</source>
+            <target>Zde můžete udělit přístup k jedné nebo více map.</target>
         </trans-unit>
         <trans-unit id="tl_user.dlh_googlemapsp.0">
             <source>Map rights</source>
+            <target>Práva mapy</target>
         </trans-unit>
         <trans-unit id="tl_user.dlh_googlemapsp.1">
             <source>Here you can set map rights.</source>
+            <target>Zde můžete nastavit mapové práva.</target>
         </trans-unit>
         <trans-unit id="tl_user.dlh_googlemaps_legend">
             <source>Google Maps rights</source>
+            <target>Google Maps práva</target>
         </trans-unit>
         </body>
   </file>

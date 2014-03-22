@@ -43,9 +43,11 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.0">
 			<source>Country</source>
+			<target>Země</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.geocoderCountry.1">
 			<source>Specify the country in whict the address shall be found.</source>
+			<target>Zadejte zemi, ve které má být nalezena adresa.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.multiCoords.0">
 			<source>Multiple Geo-coordinates</source>
@@ -361,6 +363,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.references.KML">
 			<source>KML-Layer</source>
+			<target>KML Vrstva</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.references.NONE">
 			<source>No action</source>
@@ -384,39 +387,51 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.0">
 			<source>URL</source>
+			<target>URL</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlUrl.1">
 			<source>Please enter a url to a .kml-file (with http://).</source>
+			<target>Prosím, zadejte adresu URL ke .kml souboru (s http://).</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.0">
 			<source>Clickable</source>
+			<target>Klikací</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlClickable.1">
 			<source>If true, the layer receives mouse events.</source>
+			<target>Pokud je použito, vrstva přijímá události klinutím myši.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.0">
 			<source>Preserve viewport</source>
+			<target>Zachovat výřez</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlPreserveViewport.1">
 			<source>The viewport is left unchanged.</source>
+			<target>Výřez je ponechán beze změny.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.0">
 			<source>Screen overlays</source>
+			<target>Překryvy obrazovky</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlScreenOverlays.1">
 			<source>Render the screen overlays.</source>
+			<target>Vykreslení obrazovky s překryvy.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.0">
 			<source>Suppress info windows</source>
+			<target>Potlačit info okna</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.kmlSuppressInfowindows.1">
 			<source>Suppress the rendering of info windows when layer features are clicked.</source>
+			<target>Potlačit vykreslování informačních oken, při klepnutí na vlastnosti vrstvy.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.0">
 			<source>Size of the info window</source>
+			<target>Velikost v informačním okně</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.1">
 			<source>If set, the size of the info window is fixed.</source>
+			<target>Je-li nastaveno, velikost informačního okna je fixní.</target>
 		</trans-unit>
         </body>
     </file>

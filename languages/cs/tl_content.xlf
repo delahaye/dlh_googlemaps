@@ -43,21 +43,27 @@
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_template.0">
             <source>Template</source>
+            <target>Šablona</target>
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_template.1">
             <source>Select a front end template.</source>
+            <target>Vyberte frontend šablonu.</target>
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_nocss.0">
             <source>Discard CSS</source>
+            <target>Vypnout CSS</target>
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_nocss.1">
             <source>The extension provides some own CSS.</source>
+            <target>Rozšíření poskytuje některé vlastní CSS.</target>
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_tabs.0">
             <source>Map is shown in Tabs or Accordion</source>
+            <target>Mapa je zobrazena v záložkách nebo akordeonu</target>
         </trans-unit>
         <trans-unit id="tl_content.dlh_googlemap_tabs.1">
             <source>This option refreshes the map when changing a tab or accordion. Made for the extension Tabcontrol.</source>
+            <target>Tato volba aktualizuje mapy při změně záložky nebo akordeonu. Připraveno pro rozšíření TabControl.</target>
         </trans-unit>
         </body>
     </file>
