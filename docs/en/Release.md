@@ -1,3 +1,38 @@
+2014-02-04, 2.0.7 stable
+----------
+Added IT language, thanks to Paolo Brunelli. Updated CS, thanks to Tomáš Petrlík. Updated FA, thanks to Hamid Abbaszadeh. Fixes a bug with composer.
+
+
+2014-02-04, 2.0.6 stable
+----------
+Fixes some bugs, removes old files on update and comes with the languages FR, CS, and FA
+
+
+2014-02-04, 2.0.5 stable
+----------
+Was not published in the ER
+
+
+2014-02-04, 2.0.4 stable
+----------
+Fixes some bugs and enables maps in jQuery accordions
+
+
+2014-02-07, 2.0.3 stable
+----------
+Hopefully solves the problem at least. sorry.
+
+
+2014-02-07, 2.0.2 stable
+----------
+Fixes a bug which let updates fail
+
+
+2014-02-05, 2.0.1 stable
+----------
+Fixes some bugs
+
+
 2014-02-04, 2.0.0 stable
 ----------
 

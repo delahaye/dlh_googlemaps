@@ -1,3 +1,38 @@
+2014-02-04, 2.0.7 stable
+----------
+Sprache IT hinzugefügt, danke an Paolo Brunelli. CS upgedated, danke an Tomáš Petrlík. FA upgedated, danke an Hamid Abbaszadeh. Beseitigt einen Fehler mit Composer.
+
+
+2014-02-04, 2.0.6 stable
+----------
+Beseitigt einige Fehler, entfernt allte Dateien beim Update und kommt mit den Sprachen FR, CS und FA.
+
+
+2014-02-04, 2.0.5 stable
+----------
+Ist nicht im ER veröffentlicht worden.
+
+
+2014-02-04, 2.0.4 stable
+----------
+Beseitigt einige Fehler und ermöglicht Maps in jQuery Accordions.
+
+
+2014-02-07, 2.0.3 stable
+----------
+Löst das Problem hoffentlich. Sorry.
+
+
+2014-02-07, 2.0.2 stable
+----------
+Beseitigt einen Fehler, der ein Update verhinderte.
+
+
+2014-02-05, 2.0.1 stable
+----------
+Beseitigt einige Fehler.
+
+
 2014-02-04, 2.0.0 stable
 ----------
 
