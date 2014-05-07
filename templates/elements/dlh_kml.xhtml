@@ -1,4 +1,4 @@
-<?php if ($this->element['url']) : ?>
+<?php if ($this->element['kmlUrl']) : ?>
     var gmap<?php echo $this->element['id']; ?>_kml = new google.maps.KmlLayer({
     url: '<?php echo $this->element['kmlUrl']; ?>'
     , clickable: <?php echo $this->element['kmlClickable'] ? 'true':'false'; ?>
