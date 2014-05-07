@@ -123,30 +123,38 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.0">
 			<source>Infowindow</source>
+			<target>Infowindow</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindow.1">
 			<source>Please enter the content for the infowindow. Insert tags are supported.</source>
+			<target>In questo punto è possibile inserire il contenuto della infowindow. Gli insertag sono abilitati.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.0">
 			<source>Position of the infowindow anchor</source>
+			<target>Posizione dell'ancora infowindow  </target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.1">
 			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.url.0">
 			<source>Link</source>
+			<target>Link</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.url.1">
 			<source>Please enter a url (mit http://) or select a Contao page.</source>
+			<target>Inserisci un url (con http://) oppure seleziona una pagina del sito</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.0">
 			<source>Link title</source>
+			<target>Titolo link</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.linkTitle.1">
 			<source>This text is displayed as a tooltip by the clickable element.</source>
+			<target>Questo testo è mostrato come etichetta per l'elemento cliccabile</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.target.0">
 			<source>Open in new window</source>
+			<target>Apri in una nuova finestra</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.target.1">
 			<source>Open the link in a new browser window.</source>
@@ -159,6 +167,7 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.0">
 			<source>File</source>
+			<target>File</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.1">
 			<source>Please choose an image file (gif, jpg or png), which overlays the map within the chosen area.</source>
