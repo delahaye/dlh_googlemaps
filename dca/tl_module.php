@@ -178,7 +178,10 @@ class tl_module_dlh_googlemaps extends Backend
     {
         $objMaps = \delahaye\googlemaps\MapModel::findAll();
 
-        $return = array();
+        if(!$objMaps)
+        {
+            return array();
+        }
 
         while($objMaps->next())
         {
