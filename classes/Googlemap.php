@@ -246,6 +246,9 @@ class Googlemap extends \Frontend
 
         $arrElement['staticMapPart'] = '';
 
+		//supporting insertags
+		$arrElement['kmlUrl'] =  $this->replaceInsertTags($arrElement['kmlUrl'],false);
+		
         switch($arrElement['type']) {
             case 'MARKER':
                 if($arrElement['markerType'] == 'ICON') {
