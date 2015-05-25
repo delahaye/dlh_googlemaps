@@ -310,11 +310,14 @@ class Googlemap extends \Frontend
 
         foreach($GLOBALS['TL_CONFIG']['dlh_googlemaps']['refresh'] as $strClass)
         {
+            $strVar = str_replace(" ", "_", $strClass);
+            $strVar = str_replace("-", "_", $strVar);
+            
             $strCode .= '
                 if(window.addEvent) {
-                    var dlh_'.$strClass.' = $$(".'.$strClass.'");
-                    dlh_'.$strClass.'.each(function(dlh_'.$strClass.'_ele){
-                        dlh_'.$strClass.'_ele.addEvent("click", function(){
+                    var dlh_'.$strVar.' = $$(".'.$strClass.'");
+                    dlh_'.$strVar.'.each(function(dlh_'.$strVar.'_ele){
+                        dlh_'.$strVar.'_ele.addEvent("click", function(){
                             dlh_resetMap();
                         });
                     });
