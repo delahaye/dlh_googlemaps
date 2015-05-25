@@ -72,7 +72,4 @@
         <?php endif; ?>
         });
     <?php endif; ?>
-    <?php if ($this->element['parameter']) : ?>
-        <?php echo $this->element['parameter']; ?>
-    <?php endif; ?>
 <?php endif; ?>
