@@ -104,7 +104,7 @@ class Googlemap extends \Frontend
         }
 
         // generate static map begin
-        $arrMap['staticMap'] = '<img src="http'.(\Environment::get('ssl') ? 's' : '').'://maps.google.com/maps/api/staticmap?center=' . $arrMap['center'] . '&amp;zoom=' . $arrMap['zoom'] . '&amp;maptype=' . strtolower($arrMap['mapTypeId']) . '&amp;sensor=' . ($arrMap['sensor'] ? 'true':'false') . '&amp;language=' . $arrMap['language'] . '&amp;size=';
+        $arrMap['staticMap'] = '<img src="http'.(\Environment::get('ssl') ? 's' : '').'://maps.google.com/maps/api/staticmap?center=' . $arrMap['center'] . '&amp;zoom=' . $arrMap['zoom'] . '&amp;maptype=' . strtolower($arrMap['mapTypeId']) . '&amp;language=' . $arrMap['language'] . '&amp;size=';
 
         if($arrMap['mapSize'][2] == 'px') {
             $arrMap['staticMap'] .= $arrMap['mapSize'][0].'x'.$arrMap['mapSize'][1];
