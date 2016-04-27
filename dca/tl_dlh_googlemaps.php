@@ -630,7 +630,7 @@ class tl_dlh_googlemaps extends \Backend
 	{
 		$return = '<strong>'.$arrRow['title'].'</strong>';
 		if($arrRow['center'] && $arrRow['zoom'] && $arrRow['mapTypeId']) {
-			$src = 'http://maps.google.com/maps/api/staticmap?center=' . $arrRow['center'] . '&zoom=' . ($arrRow['zoom']-2) . '&maptype=' . strtolower($arrRow['mapTypeId']) . '&sensor=false&language=' . $GLOBALS['TL_LANGUAGE'] . '&size=300x150';
+			$src = 'https://maps.google.com/maps/api/staticmap?center=' . $arrRow['center'] . '&zoom=' . ($arrRow['zoom']-2) . '&maptype=' . strtolower($arrRow['mapTypeId']) . '&sensor=false&language=' . $GLOBALS['TL_LANGUAGE'] . '&size=300x150';
 			$return .= '<div style="margin-top:5px;margin-bottom:20px;"><img src="'.$src.'" alt="" /></div>';
 		}
 
