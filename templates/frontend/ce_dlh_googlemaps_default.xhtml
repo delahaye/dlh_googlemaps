@@ -118,7 +118,7 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
 		gmap<?php echo $this->map['id']; ?>_dynmap(gmap<?php echo $this->map['id']; ?>);
 	}
 
-    <?php 
+    <?php
     // tabcontrol
     echo $this->tabs ? $this->map['tabsCode'] : ''; ?>
 }
@@ -134,6 +134,10 @@ if(window.addEvent) {
 } else {
     window.setTimeout("gmap<?php echo $this->map['id']; ?>_initialize()", 500);
 }
+
+window.addEventListener('resize', function() {
+  gmap<?php echo $this->map['id']; ?>_initialize()
+});
 
 /* ]]> */
 </script>
