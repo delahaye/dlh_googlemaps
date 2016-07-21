@@ -105,6 +105,14 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
         <?php endif; ?>
 
     };
+
+    google.maps.event.addDomListener(window, 'resize', function() {
+        var center = gmap<?=$this->map['id'];?>.getCenter();
+ 
+        google.maps.event.trigger(gmap<?=$this->map['id'];?>, 'resize');
+        gmap<?=$this->map['id'];?>.setCenter(center);
+    });
+
     var gmap<?php echo $this->map['id']; ?> = new google.maps.Map(document.getElementById("dlh_googlemap_<?php echo $this->map['id']; ?>"), gmap<?php echo $this->map['id']; ?>_Options);
     var gmap<?php echo $this->map['id']; ?>_markers = [];
 
