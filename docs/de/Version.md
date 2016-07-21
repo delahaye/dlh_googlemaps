@@ -1,3 +1,30 @@
+2016-07-21, 2.2.0 stable
+----------
+Neues Feature: Resize bei Änderung, merci an marcobiedermann
+Neues Feature: Marker-Clusterer https://googlemaps.github.io/js-marker-clusterer
+API Key hinzugefügt, Sensor entfernt, Bugfixes.
+
+
+2015-05-26, 2.1.1 stable
+----------
+Sorry, das asynchrone Laden des Javascript funktionierte nicht.
+
+
+2015-05-25, 2.1.0 stable
+----------
+Änderungen an den html5-Templates, Bugfixes
+
+
+2014-06-25, 2.0.9 stable
+----------
+https-Support für Marker, KML-Urls mit Inserttags, Contao 3.3.3
+
+
+2014-05-08, 2.0.8 stable
+----------
+IT weiter ergänzt, Bugfixes.
+
+
 2014-02-04, 2.0.7 stable
 ----------
 Sprache IT hinzugefügt, danke an Paolo Brunelli. CS upgedated, danke an Tomáš Petrlík. FA upgedated, danke an Hamid Abbaszadeh. Beseitigt einen Fehler mit Composer.
