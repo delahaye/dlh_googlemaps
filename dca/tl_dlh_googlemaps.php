@@ -108,7 +108,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('useMapTypeControl', 'useZoomControl', 'usePanControl', 'useRotateControl', 'useScaleControl', 'useStreetViewControl','useOverviewMapControl'),
-		'default'                     => '{title_legend},title,geocoderAddress,geocoderCountry,center,mapSize,zoom;{maptype_legend:hide},mapTypeId,mapTypesAvailable,disableDoubleClickZoom,draggable,scrollwheel,staticMapNoscript,sensor;{maptypecontrols_legend:hide},useMapTypeControl;{zoomcontrol_legend:hide},useZoomControl;{rotatecontrol_legend:hide},useRotateControl;{pancontrol_legend:hide},usePanControl;{scalecontrol_legend:hide},useScaleControl;{streetviewcontrol_legend:hide},useStreetViewControl;{overviewmapcontrol_legend:hide},useOverviewMapControl;{parameter_legend:hide},parameter,moreParameter'
+		'default'                     => '{title_legend},title,geocoderAddress,geocoderCountry,center,mapSize,zoom;{maptype_legend:hide},mapTypeId,mapTypesAvailable,disableDoubleClickZoom,draggable,scrollwheel,staticMapNoscript;{maptypecontrols_legend:hide},useMapTypeControl;{zoomcontrol_legend:hide},useZoomControl;{rotatecontrol_legend:hide},useRotateControl;{pancontrol_legend:hide},usePanControl;{scalecontrol_legend:hide},useScaleControl;{streetviewcontrol_legend:hide},useStreetViewControl;{overviewmapcontrol_legend:hide},useOverviewMapControl;{parameter_legend:hide},parameter,moreParameter'
 	),
 
 	// Subpalettes
@@ -228,16 +228,6 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
             'default'                 => '1',
 			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "char(1) NOT NULL default '1'"
-		),
-		'sensor' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['sensor'],
-			'exclude'                 => true,
-			'filter'                  => true,
-			'default'                 => false,
-			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'w50'),
-			'sql'                     => "char(1) NOT NULL default ''"
 		),
 		'useMapTypeControl' => array
 		(
@@ -630,7 +620,7 @@ class tl_dlh_googlemaps extends \Backend
 	{
 		$return = '<strong>'.$arrRow['title'].'</strong>';
 		if($arrRow['center'] && $arrRow['zoom'] && $arrRow['mapTypeId']) {
-			$src = 'http://maps.google.com/maps/api/staticmap?center=' . $arrRow['center'] . '&zoom=' . ($arrRow['zoom']-2) . '&maptype=' . strtolower($arrRow['mapTypeId']) . '&sensor=false&language=' . $GLOBALS['TL_LANGUAGE'] . '&size=300x150';
+			$src = 'http://maps.google.com/maps/api/staticmap?center=' . $arrRow['center'] . '&zoom=' . ($arrRow['zoom']-2) . '&maptype=' . strtolower($arrRow['mapTypeId']) . '&language=' . $GLOBALS['TL_LANGUAGE'] . '&size=300x150';
 			$return .= '<div style="margin-top:5px;margin-bottom:20px;"><img src="'.$src.'" alt="" /></div>';
 		}
 

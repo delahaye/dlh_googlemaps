@@ -97,14 +97,6 @@
 			<source>Zoom by mouse wheel is enabled.</source>
 			<target>Povolit přiblížení kolečkem myši.</target>
 		</trans-unit>
-        <trans-unit id="tl_dlh_googlemaps.sensor.0">
-			<source>Sensor</source>
-			<target>Senzor</target>
-		</trans-unit>
-        <trans-unit id="tl_dlh_googlemaps.sensor.1">
-			<source>The application uses sensors (see Googgle API)</source>
-			<target>Aplikace využívá senzory (viz Googgle API).</target>
-		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.0">
 			<source>Use map type controls</source>
 			<target>Použití ovládacích prvků typu mapy</target>
