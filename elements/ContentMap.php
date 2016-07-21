@@ -61,6 +61,8 @@ class ContentMap extends \ContentElement
     {
         global $objPage;
 
+	$objRootPage = \Database::getInstance()->prepare("select dlh_googlemaps_apikey from tl_page where id=?")->limit(1)->execute($objPage->rootId);
+	
         // Contao framework sets images to max-width 100%, which collides with Google's CSS
         if(!$this->dlh_googlemap_nocss)
         {
@@ -96,7 +98,11 @@ class ContentMap extends \ContentElement
                 $this->Template = new \FrontendTemplate($this->dlh_googlemap_template);
             }
 
-            $GLOBALS['TL_JAVASCRIPT'][] = 'http'.(\Environment::get('ssl') ? 's' : '').'://maps.google.com/maps/api/js?language='.$arrMap['language'].'&amp;sensor='. ($arrMap['sensor'] ? 'true':'false');
+            $GLOBALS['TL_JAVASCRIPT'][] = 'http'.(\Environment::get('ssl') ? 's' : '').'://maps.google.com/maps/api/js?key='.$objRootPage->dlh_googlemaps_apikey.'&language='.$arrMap['language'];
+            if($arrMap['useClusterer']){
+                $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/src/markerclusterer.js';
+                $arrMap['clusterImg'] = $arrMap['clusterImg'] ? $arrMap['clusterImg'] : 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/images';
+            }
         }
 
         $this->Template->map = $arrMap;

@@ -97,13 +97,21 @@
 			<source>Zoom by mouse wheel is enabled.</source>
 			<target>Zoomen via Mausrad steht zur Verfügung.</target>
 		</trans-unit>
-        <trans-unit id="tl_dlh_googlemaps.sensor.0">
-			<source>Sensor</source>
-			<target>Sensor</target>
+        <trans-unit id="tl_dlh_googlemaps.useClusterer.0">
+			<source>Clusterer</source>
+			<target>Clusterer</target>
 		</trans-unit>
-        <trans-unit id="tl_dlh_googlemaps.sensor.1">
-			<source>The application uses sensors (see Googgle API)</source>
-			<target>Die Anwendung verwendet Sensoren (siehe Google Api Beschreibung)</target>
+        <trans-unit id="tl_dlh_googlemaps.useClusterer.1">
+			<source>Use the marker clusterer.</source>
+			<target>Nutze den Clusterer für Markierungen.</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.clustererImg.0">
+			<source>Path (optional)</source>
+			<target>Symbol-Verzeichnis (optional)</target>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.clustererImg.1">
+			<source>Path to clusterer symbols.</source>
+			<target>Ordner mit Clusterer-Symbolen.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.0">
 			<source>Use map type controls</source>

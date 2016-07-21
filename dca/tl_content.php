@@ -18,7 +18,7 @@
  */
  
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'dlh_googlemap_static';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['dlh_googlemaps'] = '{title_legend},type,headline;{map_legend},dlh_googlemap,dlh_googlemap_size,dlh_googlemap_zoom,dlh_googlemap_static,dlh_googlemap_nocss,dlh_googlemap_tabs;{template_legend:hide},dlh_googlemap_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['dlh_googlemaps'] = '{type_legend},type,headline;{map_legend},dlh_googlemap,dlh_googlemap_size,dlh_googlemap_zoom,dlh_googlemap_static,dlh_googlemap_nocss,dlh_googlemap_tabs;{template_legend:hide},dlh_googlemap_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 
 /**
@@ -60,9 +60,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_zoom'] = array
 	'exclude'                 => true,
 	'inputType'               => 'select',
 	'options'                 => array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'),
-	'default'                 => '',
+	'default'                 => '10',
 	'eval'                    => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
-	'sql'                     => "int(10) unsigned NOT NULL default '0'"
+	'sql'                     => "int(10) unsigned NOT NULL default '10'"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_size'] = array

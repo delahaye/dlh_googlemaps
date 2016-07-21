@@ -17,7 +17,7 @@
         "issues":"https://github.com/delahaye/dlh_googlemaps/issues"
     },
     "require": {
-        "contao/core": ">=3.2,<4-dev",
+        "contao/core": ">=3.2,<5",
         "contao-community-alliance/composer-installer": "*",
         "delahaye/dlh_geocode": ">=1.0.2,<2-dev"
     },

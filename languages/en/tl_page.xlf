@@ -1,0 +1,15 @@
+<?xml version="1.0" ?><xliff version="1.1">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_user.php" source-language="en">
+        <body>
+        <trans-unit id="tl_page.dlh_googlemaps_apikey.0">
+            <source>API-Key</source>
+        </trans-unit>
+        <trans-unit id="tl_page.dlh_googlemaps_apikey.1">
+            <source>Please enter your Google maps API key.</source>
+        </trans-unit>
+        <trans-unit id="tl_page.dlh_googlemaps_legend">
+            <source>Google Maps</source>
+        </trans-unit>
+        </body>
+  </file>
+</xliff>
