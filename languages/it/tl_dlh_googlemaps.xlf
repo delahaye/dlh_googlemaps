@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><xliff version="1.1">
-    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_dlh_googlemaps.php" source-language="en">
+    <file datatype="php" original="system/modules/dlh_googlemaps/languages/en/tl_dlh_googlemaps.php" source-language="en" target-language="it">
         <body>
         <trans-unit id="tl_dlh_googlemaps.title.0">
 			<source>Title</source>
@@ -72,6 +72,18 @@
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps.scrollwheel.1">
 			<source>Zoom by mouse wheel is enabled.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useClusterer.0">
+			<source>Clusterer</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.useClusterer.1">
+			<source>Use the marker clusterer.</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.clustererImg.0">
+			<source>Path (optional)</source>
+		</trans-unit>
+        <trans-unit id="tl_dlh_googlemaps.clustererImg.1">
+			<source>Path to clusterer symbols.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps.useMapTypeControls.0">
 			<source>Use map type controls</source>
