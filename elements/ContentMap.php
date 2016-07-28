@@ -73,7 +73,8 @@ class ContentMap extends \ContentElement
         $arrParams = array
         (
             'mapSize' => deserialize($this->dlh_googlemap_size),
-            'zoom' => $this->dlh_googlemap_zoom
+            'zoom' => $this->dlh_googlemap_zoom,
+            'apiKey' => $objRootPage->dlh_googlemaps_apikey
         );
 
         $arrParams['mapSize'][2] = ($arrParams['mapSize'][2]=='pcnt' ? '%' : $arrParams['mapSize'][2]);
