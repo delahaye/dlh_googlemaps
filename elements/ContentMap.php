@@ -105,6 +105,7 @@ class ContentMap extends \ContentElement
             }
         }
 
+	$this->Template->moduleSettings = $this->arrData;
         $this->Template->map = $arrMap;
         $this->Template->tabs = $this->dlh_googlemap_tabs;
 
