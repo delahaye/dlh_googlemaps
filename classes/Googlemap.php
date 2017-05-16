@@ -204,11 +204,15 @@ class Googlemap extends \Frontend
             $arrElement['iconAnchor'][1] = floor($arrElement['iconSize'][1]/2) + $arrElement['iconAnchor'][1];
         }
 
-        $objFile = \FilesModel::findByPk($arrElement['overlaySRC']);
-        $arrElement['overlaySRC'] = $objFile->path;
+        if(isset($arrElement['overlaySRC']) && !empty($arrElement['overlaySRC'])) {
+            $objFile = \FilesModel::findByPk($arrElement['overlaySRC']);
+            $arrElement['overlaySRC'] = $objFile->path;		
+        }
 
-        $objFile = \FilesModel::findByPk($arrElement['shadowSRC']);
-        $arrElement['shadowSRC'] = $objFile->path;
+        if(isset($arrElement['shadowSRC']) && !empty($arrElement['shadowSRC'])) {
+            $objFile = \FilesModel::findByPk($arrElement['shadowSRC']);
+            $arrElement['shadowSRC'] = $objFile->path;
+        }
 
         $arrElement['shadowSize'] = deserialize($arrElement['shadowSize']);
 
