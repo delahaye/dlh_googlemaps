@@ -710,7 +710,7 @@ class tl_dlh_googlemaps_elements extends Backend
                 if (is_array($callback))
                 {
                     $this->import($callback[0]);
-                    $blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
+                    $blnVisible = $this->{$callback[0]}->{$callback[1]}($blnVisible, $this);
                 }
                 elseif (is_callable($callback))
                 {
