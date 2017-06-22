@@ -228,7 +228,7 @@ class Googlemap extends \Frontend
         $arrElement['bounds'] = deserialize($arrElement['bounds']);
         $tmp1 = explode(',',$arrElement['bounds'][0]);
         $tmp2 = explode(',',$arrElement['bounds'][1]);
-        $arrElement['bounds'][2] = (trim($tmp1[0]).trim($tmp2[0]))/2 . ',' . (trim($tmp1[1]).trim($tmp2[1]))/2;
+        $arrElement['bounds'][2] = ((int)trim($tmp1[0]).((int)trim($tmp2[0])))/2 . ',' . ((int)trim($tmp1[1]).((int)trim($tmp2[1])))/2;
         $arrElement['infoWindow'] = preg_replace('/[\n\r\t]+/i', '', str_replace('\"','"', addslashes($this->replaceInsertTags($arrElement['infoWindow']))));
 
         $arrElement['infoWindowAnchor'] = deserialize($arrElement['infoWindowAnchor']);
