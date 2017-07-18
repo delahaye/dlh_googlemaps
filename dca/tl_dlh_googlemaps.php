@@ -150,7 +150,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>64),
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'clr'),
 			'sql'                     => "varchar(64) NOT NULL default ''",
 			'save_callback' => array
 			(
@@ -181,7 +181,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['mapSize'],
 			'exclude'                 => true,
-			'inputType'               => 'imageSize',
+			'inputType'               => 'mapSize',
 			'options'                 => array('px', 'pcnt', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
             'reference'               => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['references'],
 			'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'helpwizard'=>false, 'tl_class'=>'w50'),
@@ -194,7 +194,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = array
 			'inputType'               => 'select',
 			'options'                 => array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'),
 			'default'                 => '10',
-			'eval'                    => array('mandatory'=>true),
+			'eval'                    => array('mandatory'=>true, 'tl_class'=>'clr'),
 			'sql'                     => "int(10) unsigned NOT NULL default '10'"
 		),
 		'mapTypeId' => array
