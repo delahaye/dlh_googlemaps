@@ -11,6 +11,12 @@
             "email":"service@delahaye.de",
             "homepage":"http://www.delahaye.de",
             "role":"Developer"
+        },
+	{
+            "name":"Heimrich & Hannot GmbH",
+            "email":"digitales@heimrich-hannot.de",
+            "homepage":"http://heimrich-hannot.de",
+            "role":"Developer"
         }
     ],
     "support":{
