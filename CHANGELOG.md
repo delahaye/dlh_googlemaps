@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.3.1] - 2017-07-18
+
+### Fixed
+- `gmap*_markers is not defined` js error
+
 ## [2.3.0] - 2017-07-18
 
 ### Fixed

@@ -43,6 +43,9 @@
         , <?php echo $this->element['parameter']; ?>
     <?php endif; ?>
     });
+    if(typeof gmap<?php echo $this->map; ?>_markers === 'undefined'){
+        var gmap<?php echo $this->map; ?>_markers = [];
+    }
     gmap<?php echo $this->map; ?>_markers.push(gmap<?php echo $this->element['id']; ?>_marker);
     <?php if($this->element['markerAction'] == 'INFO') : ?>
         <?php if($this->element['useRouting']) {
