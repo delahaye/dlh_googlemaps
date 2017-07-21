@@ -13,8 +13,8 @@ class MapSizeWidget extends \ImageSize
      */
     protected function validator($varInput)
     {
-        $varInput[0] = parent::validator($varInput[0]);
-        $varInput[1] = parent::validator($varInput[1]);
+        $varInput[0] = $varInput[0] ? (int) $varInput[0] : '';
+        $varInput[1] = $varInput[1] ? (int) $varInput[1] : '';
 
         return $varInput;
     }
