@@ -68,7 +68,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['dlh_googlemap_size'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['dlh_googlemap_size'],
 	'exclude'                 => true,
-	'inputType'               => 'imageSize',
+	'inputType'               => 'mapSize',
 	'options'                 => array('px', 'pcnt', 'em', 'rem', 'ex', 'pt', 'pc', 'in', 'cm', 'mm'),
     'reference'               => &$GLOBALS['TL_LANG']['tl_module']['dlh_googlemap_ref'],
 	'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'helpwizard'=>false, 'tl_class'=>'w50'),
@@ -185,7 +185,7 @@ class tl_module_dlh_googlemaps extends Backend
 
         while($objMaps->next())
         {
-            $return[$objMaps->id] = sprintf('%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&popup=1&id=%s&rt=%s"><img src="system/themes/default/images/edit.gif" width="12" height="12"></a>', $objMaps->title, $objMaps->id, REQUEST_TOKEN);
+            $return[$objMaps->id] = sprintf('%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&popup=1&id=%s&rt=%s"><img src="system/themes/flexible/icons/edit.svg" width="16" height="16"></a>', $objMaps->title, $objMaps->id, REQUEST_TOKEN);
         }
 
         return $return;
