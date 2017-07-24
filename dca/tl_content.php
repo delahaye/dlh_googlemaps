@@ -155,7 +155,7 @@ class tl_content_dlh_googlemaps extends Backend
 
         while($objMaps->next())
         {
-            $return[$objMaps->id] = sprintf('%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&id=%s&rt=%s"><img src="system/themes/default/images/edit.gif" width="12" height="12"></a>', $objMaps->title, $objMaps->id, REQUEST_TOKEN);
+            $return[$objMaps->id] = sprintf('%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&id=%s&rt=%s"><img src="system/themes/flexible/icons/edit.svg" width="16" height="16"></a>', $objMaps->title, $objMaps->id, REQUEST_TOKEN);
         }
 
         return $return;
