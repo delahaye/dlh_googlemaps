@@ -7,4 +7,4 @@ Copyright (c) 2014 de la Haye
 
 ---
 
-This Version is compatible with Contao 3.2.x.
+This Version is compatible with Contao 3.x & 4.x
