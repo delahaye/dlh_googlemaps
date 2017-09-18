@@ -1,21 +1,15 @@
 {
-    "name": "heimrichhannot/dlh_googlemaps",
+    "name": "delahaye/dlh_googlemaps",
     "description":"Google maps module for Contao",
     "keywords":["contao", "googlemaps", "geo", "map"],
     "type": "contao-module",
-    "homepage":"https://github.com/heimrichhannot/dlh_googlemaps",
+    "homepage":"https://github.com/delahaye/dlh_googlemaps",
     "license":"LGPL-3.0+",
     "authors":[
         {
             "name":"Christian de la Haye",
             "email":"service@delahaye.de",
             "homepage":"http://www.delahaye.de",
-            "role":"Developer"
-        },
-	{
-            "name":"Heimrich & Hannot GmbH",
-            "email":"digitales@heimrich-hannot.de",
-            "homepage":"http://heimrich-hannot.de",
             "role":"Developer"
         }
     ],
@@ -24,9 +18,9 @@
     },
     "require": {
         "php": ">=5.6.0",
-	"contao/core-bundle": "^3.5.1 || ~4.1",
-	"contao-community-alliance/composer-plugin": "3.*",
-	"heimrichhannot/dlh_geocode": "~1.1"
+	    "contao/core-bundle": "^3.5.1 || ~4.1",
+	    "contao-community-alliance/composer-plugin": "3.*",
+	    "delahaye/dlh_geocode": "@Dev"
     },
     "autoload": {
         "classmap": [""]
