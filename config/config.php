@@ -46,6 +46,10 @@ array_insert($GLOBALS['TL_CTE']['media'], sizeof($GLOBALS['TL_CTE']['media']), a
     'dlh_googlemaps' => 'delahaye\googlemaps\ContentMap',
 ));
 
+/**
+ * Backend form fields
+ */
+$GLOBALS['BE_FFL']['mapSize'] = 'delahaye\googlemaps\MapSizeWidget';
 
 /**
  * Register models

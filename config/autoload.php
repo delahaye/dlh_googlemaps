@@ -42,6 +42,9 @@ ClassLoader::addClasses(array
     // Modules
     'delahaye\googlemaps\ModuleMap'     => 'system/modules/dlh_googlemaps/modules/ModuleMap.php',
 
+    // Widgets
+    'delahaye\googlemaps\MapSizeWidget' => 'system/modules/dlh_googlemaps/widgets/MapSizeWidget.php',
+
 ));
 
 
