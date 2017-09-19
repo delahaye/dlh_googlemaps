@@ -15,7 +15,7 @@ $arrFields = [
         'label'     => &$GLOBALS['TL_LANG']['tl_settings']['dlh_googlemaps_apikey'],
         'exclude'   => true,
         'inputType' => 'text',
-        'eval'      => ['mandatory' => false],
+        'eval'      => ['maxlength'=>64, 'rgxp'=>'alnum'],
         'sql'       => "varchar(64) NOT NULL default ''",
     ],
 ];

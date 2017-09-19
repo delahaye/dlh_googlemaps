@@ -67,9 +67,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_size'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_size'],
     'exclude'   => true,
     'inputType' => 'imageSize',
-    'options'   => ['box'],
+    'options'   => ['proportional','box'],
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval'      => ['tl_class' => 'w50'],
+    'eval'      => ['nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
+    'default'      => serialize(array(16,9,'proportional')),
     'sql'       => "varchar(128) NOT NULL default ''",
 ];
 
@@ -151,17 +152,23 @@ class tl_content_dlh_googlemaps extends Backend
 
         while ($objMaps->next())
         {
-            $return[$objMaps->id] = sprintf(
-                '%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&id=%s&popup=1&nb=1&rt=%s" title="%s" onclick="%s">%s</a>',
-                $objMaps->title,
-                $objMaps->id,
-                REQUEST_TOKEN,
-                sprintf(\StringUtil::specialchars($GLOBALS['TL_LANG']['tl_content']['editalias'][1]), $objMaps->id),
-                'Backend.openModalIframe({\'title\':\'' . \StringUtil::specialchars(
-                    str_replace("'", "\\'", sprintf($GLOBALS['TL_LANG']['tl_content']['editalias'][1], $objMaps->id))
-                ) . '\',\'url\':this.href});return false',
-                \Image::getHtml('alias.svg', $GLOBALS['TL_LANG']['tl_content']['editalias'][0])
-            );
+            if (version_compare(VERSION, '4', '>='))
+            {
+                $return[$objMaps->id] = sprintf(
+                    '%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&id=%s&popup=1&nb=1&rt=%s" title="%s" onclick="%s">%s</a>',
+                    $objMaps->title,
+                    $objMaps->id,
+                    REQUEST_TOKEN,
+                    sprintf(\StringUtil::specialchars($GLOBALS['TL_LANG']['tl_content']['editalias'][1]), $objMaps->id),
+                        'Backend.openModalIframe({\'title\':\'' . \StringUtil::specialchars(
+                        str_replace("'", "\\'", sprintf($GLOBALS['TL_LANG']['tl_content']['editalias'][1], $objMaps->id))
+                    ) . '\',\'url\':this.href});return false',
+                    \Image::getHtml('alias.svg', $GLOBALS['TL_LANG']['tl_content']['editalias'][0])
+                );
+
+            } else {
+                $return[$objMaps->id] = sprintf('%s <a href="contao/main.php?do=dlh_googlemaps&act=edit&id=%s&rt=%s"><img src="system/themes/default/images/edit.gif" width="12" height="12"></a>', $objMaps->title, $objMaps->id, REQUEST_TOKEN);
+            }
         }
 
         return $return;

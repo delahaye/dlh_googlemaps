@@ -53,6 +53,46 @@ class UpgradeHandler
             }
         }
 
+        // upgrade to responsive map sizes
+        foreach(array('tl_dlh_googlemaps','tl_content','tl_module') as $tmpTable){
+            switch($tmpTable){
+                case 'tl_dlh_googlemaps':
+                    if ($objDatabase->tableExists($tmpTable))
+                    {
+                        $objList = $objDatabase->prepare("select * from ".$tmpTable)->execute();
+                        self::upGradeMapSize($objDatabase, $objList, $tmpTable, 'mapSize');
+                    }
+                    break;
+
+                default:
+                    if ($objDatabase->fieldExists('dlh_googlemap_size',$tmpTable))
+                    {
+                        $objList = $objDatabase->prepare("select * from ".$tmpTable." where type=? and dlh_googlemap_size!=?")->execute('dlh_googlemaps','');
+                        self::upGradeMapSize($objDatabase, $objList, $tmpTable, 'dlh_googlemap_size');
+                    }
+                    break;
+            }
+        }
+
+
+        return;
+    }
+
+
+    private static function upGradeMapSize($objDatabase, $objList, $strTable, $strField){
+        while($objList->next()){
+            $tmpOld = deserialize($objList->$strField);
+            $tmpNew = array();
+            if($tmpOld[2] != 'box' && $tmpOld[2] != 'proportional'){
+                $tmpOld[2] = str_replace('pcnt','%',$tmpOld[2]);
+                $tmpNew[0] = $tmpOld[0] > 0 ? $tmpOld[0].$tmpOld[2] : '';
+                $tmpNew[1] = $tmpOld[1] > 0 ? $tmpOld[1].$tmpOld[2] : '';
+                $tmpNew[2] = 'box';
+
+                $objDatabase->prepare("update ".$strTable." set ".$strField."=? where id=?")->execute(serialize($tmpNew), $objList->id);
+            }
+        }
+
         return;
     }
 

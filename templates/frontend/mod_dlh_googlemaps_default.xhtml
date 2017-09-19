@@ -5,7 +5,7 @@
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
 
-<div class="dlh_googlemap block" id="dlh_googlemap_<?php echo $this->map['id']; ?>" style="width: <?= preg_replace('#\s+#', '', $this->map['mapSize'][0]) . (preg_match('#\d+(\s+)?(%|pcnt)#', $this->map['mapSize'][0]) == 1 ? '' : 'px'); ?>;height:<?php echo $this->map['mapSize'][1].$this->map['mapSize'][2]; ?>;"><noscript><p><?php echo ($this->map['staticMapNoscript'] ? $this->map['staticMap'] : $this->labels['noscript']); ?></p></noscript></div>
+<div class="dlh_googlemap block" id="dlh_googlemap_<?php echo $this->map['id']; ?>" style="<?= $this->map['mapSize']['position'].$this->map['mapSize']['width'].$this->map['mapSize']['height'].$this->map['mapSize']['padding']; ?>"><noscript><p><?php echo ($this->map['staticMapNoscript'] ? $this->map['staticMap'] : $this->labels['noscript']); ?></p></noscript></div>
 
 <script type="text/javascript">
 /* <![CDATA[ */

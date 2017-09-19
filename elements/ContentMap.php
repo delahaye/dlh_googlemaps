@@ -64,8 +64,18 @@ class ContentMap extends \ContentElement
     {
         global $objPage;
 
-        $objRootPage = \Database::getInstance()->prepare("select dlh_googlemaps_apikey from tl_page where id=?")->limit(1)->execute($objPage->rootId);
-
+        $key = null;
+        
+        if (($objRootPage = \PageModel::findByPk($objPage->rootId)) !== null)
+        {
+            $key = $objRootPage->dlh_googlemaps_apikey;
+        }
+        
+        if (!$key)
+        {
+            $key = \Config::get('dlh_googlemaps_apikey');
+        }
+        
         // Contao framework sets images to max-width 100%, which collides with Google's CSS
         if (!$this->dlh_googlemap_nocss)
         {
@@ -77,8 +87,6 @@ class ContentMap extends \ContentElement
             'mapSize' => deserialize($this->dlh_googlemap_size),
             'zoom'    => $this->dlh_googlemap_zoom,
         ];
-
-        $arrParams['mapSize'][2] = ($arrParams['mapSize'][2] == 'pcnt' ? '%' : $arrParams['mapSize'][2]);
 
         $arrMap = \delahaye\googlemaps\Googlemap::getMapData($this->dlh_googlemap, $objPage->outputFormat, $arrParams);
 
@@ -104,11 +112,11 @@ class ContentMap extends \ContentElement
             }
 
             $GLOBALS['TL_JAVASCRIPT'][] =
-                'http' . (\Environment::get('ssl') ? 's' : '') . '://maps.google.com/maps/api/js?key=' . $objRootPage->dlh_googlemaps_apikey . '&language=' . $arrMap['language'];
+                'https://maps.googleapis.com/maps/api/js?key=' . $key . '&language=' . $arrMap['language'];
             if ($arrMap['useClusterer'])
             {
                 $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/src/markerclusterer.js';
-                $arrMap['clusterImg']       = $arrMap['clusterImg'] ? $arrMap['clusterImg'] : 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/images';
+                $arrMap['clusterImg']       = $arrMap['clustererImg'] ? $arrMap['clustererImg'] : 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/images';
             }
         }
 

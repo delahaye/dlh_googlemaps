@@ -83,7 +83,7 @@ class Googlemap extends \Frontend
             $key = $objRootPage->dlh_googlemaps_apikey;
         }
 
-        if ($key === null)
+        if (!$key)
         {
             $key = \Config::get('dlh_googlemaps_apikey');
         }
@@ -91,7 +91,6 @@ class Googlemap extends \Frontend
         $arrMap                           = $objMap->row();
         $arrMap['language']               = $GLOBALS['TL_LANGUAGE'];
         $arrMap['mapSize']                = deserialize($arrMap['mapSize']);
-        $arrMap['mapSize'][2]             = ($arrMap['mapSize'][2] == 'pcnt' ? '%' : $arrMap['mapSize'][2]);
         $arrMap['mapTypesAvailable']      = deserialize($arrMap['mapTypesAvailable']);
         $arrMap['center']                 = str_replace(' ', '', $arrMap['center']);
         $arrMap['draggable']              = $arrMap['draggable'] ? 'true' : 'false';
@@ -106,7 +105,7 @@ class Googlemap extends \Frontend
                 switch ($k)
                 {
                     case 'mapSize':
-                        if (is_array($v) && $v[0] > 0 && $v[1] > 0)
+                        if (is_array($v) && $v[0] && $v[1])
                         {
                             $arrMap[$k] = $v;
                         }
@@ -129,16 +128,32 @@ class Googlemap extends \Frontend
 
         // generate static map begin
         $arrMap['staticMap'] =
-            '<img src="http' . (\Environment::get('ssl') ? 's' : '') . '://maps.google.com/maps/api/staticmap?center=' . $arrMap['center'] . '&amp;zoom=' . $arrMap['zoom']
+            '<img src="https://maps.googleapis.com/maps/api/staticmap?center=' . $arrMap['center'] . '&amp;zoom=' . $arrMap['zoom']
             . '&amp;maptype=' . strtolower($arrMap['mapTypeId']) . '&amp;language=' . $arrMap['language'] . '&amp;size=';
 
         if ($arrMap['mapSize'][2] == 'box')
         {
             $arrMap['staticMap'] .= intval($arrMap['mapSize'][0]) . 'x' . intval($arrMap['mapSize'][1]);
+
+            $arrMap['mapSize']['position'] = '';
+            $arrMap['mapSize']['width'] = 'width:'.(is_numeric($arrMap['mapSize'][0]) ? intval($arrMap['mapSize'][0]).'px':$arrMap['mapSize'][0]).';';
+            $arrMap['mapSize']['height'] = 'height:'.(is_numeric($arrMap['mapSize'][1]) ? intval($arrMap['mapSize'][1]).'px':$arrMap['mapSize'][1]).';';           
+            $arrMap['mapSize']['padding'] = '';
         }
         else
         {
-            $arrMap['staticMap'] .= '800x600';
+            $arrMap['mapSize'][0] = intval($arrMap['mapSize'][0]);
+            $arrMap['mapSize'][1] = intval($arrMap['mapSize'][1]);
+            
+            $staticMapWidth = 640;
+            $staticMapRel = (100/$arrMap['mapSize'][0])*$arrMap['mapSize'][1];
+
+            $arrMap['staticMap'] .= $staticMapWidth.'x' . intval($staticMapRel*$staticMapWidth/100);
+ 
+            $arrMap['mapSize']['position'] = 'position:relative;';
+            $arrMap['mapSize']['width'] = 'width:100%;';
+            $arrMap['mapSize']['height'] = '';           
+            $arrMap['mapSize']['padding'] = 'padding-bottom:'.$staticMapRel.'%;';
         }
 
         if ($key !== null)

@@ -251,7 +251,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = [
             'label'     => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps_elements']['iconSRC'],
             'exclude'   => true,
             'inputType' => 'fileTree',
-            'eval'      => ['fieldType' => 'radio', 'filesOnly' => true, 'extensions' => 'gif,jpg,jpeg,png', 'mandatory' => true, 'tl_class' => 'clr'],
+            'eval'      => ['fieldType' => 'radio', 'filesOnly' => true, 'extensions' => 'gif,jpg,jpeg,png,svg,svgz', 'mandatory' => true, 'tl_class' => 'clr'],
             'sql'       => "binary(16) NULL",
         ],
         'iconSize'               => [
@@ -279,7 +279,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps_elements'] = [
             'exclude'   => true,
             'filter'    => true,
             'inputType' => 'checkbox',
-            'eval'      => ['submitOnChange' => true, 'style' => 'margin-top: 12px;'],
+            'eval'      => ['submitOnChange' => true, 'style' => 'margin-top: 12px;', 'tl_class' => 'clr'],
             'sql'       => "char(1) NOT NULL default ''",
         ],
         'shadowSRC'              => [

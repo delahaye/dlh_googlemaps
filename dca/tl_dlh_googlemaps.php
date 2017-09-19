@@ -164,9 +164,10 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = [
             'label'     => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['mapSize'],
             'exclude'   => true,
             'inputType' => 'imageSize',
-            'options'   => ['box'],
+            'options'   => ['proportional','box'],
             'reference' => &$GLOBALS['TL_LANG']['MSC'],
-            'eval'      => ['rgxp' => 'digit', 'nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50'],
+            'eval'      => ['nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
+            'default'      => serialize(array(16,9,'proportional')),
             'sql'       => "varchar(128) NOT NULL default ''",
         ],
         'zoom'                     => [

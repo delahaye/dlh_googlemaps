@@ -28,6 +28,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['dlh_googlemaps_apikey'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['dlh_googlemaps_apikey'],
 	'exclude'                 => true,
 	'inputType'               => 'text',
-	'eval'                    => array('mandatory'=>false),
+	'eval'                    => array('maxlength'=>64, 'rgxp'=>'alnum'),
 	'sql'                     => "varchar(64) NOT NULL default ''"
 );
