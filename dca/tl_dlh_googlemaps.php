@@ -523,7 +523,7 @@ class tl_dlh_googlemaps extends \Backend
                     if (is_array($arrNew['tl_dlh_googlemaps']) && in_array(Input::get('id'), $arrNew['tl_dlh_googlemaps']))
                     {
                         // Add permissions on user level
-                        if ($this->User->inherit == 'custom' || !$this->User->groups[0])
+                        if ($this->User->inherit != 'group')
                         {
                             $objUser = $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user WHERE id=?")
                                 ->limit(1)
@@ -542,21 +542,22 @@ class tl_dlh_googlemaps extends \Backend
                         }
 
                         // Add permissions on group level
-                        elseif ($this->User->groups[0] > 0)
+                        if ($this->User->inherit != 'custom')
                         {
-                            $objGroup = $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user_group WHERE id=?")
-                                ->limit(1)
-                                ->execute($this->User->groups[0]);
+                            $objGroup = $this->Database->execute("SELECT id, dlh_googlemapss, dlh_googlemapsp FROM tl_user_group WHERE id IN(" . implode(',', array_map('intval', $this->User->groups)) . ")");
 
-                            $arrDlh_googlemapsp = deserialize($objGroup->dlh_googlemapsp);
-
-                            if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                            while ($objGroup->next())
                             {
-                                $arrDlh_googlemapss = deserialize($objGroup->dlh_googlemapss);
-                                $arrDlh_googlemapss[] = Input::get('id');
+                                $arrDlh_googlemapsp = deserialize($objGroup->dlh_googlemapsp);
 
-                                $this->Database->prepare("UPDATE tl_user_group SET dlh_googlemapss=? WHERE id=?")
-                                    ->execute(serialize($arrDlh_googlemapss), $this->User->groups[0]);
+                                if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                                {
+                                    $arrDlh_googlemapss = deserialize($objGroup->dlh_googlemapss);
+                                    $arrDlh_googlemapss[] = Input::get('id');
+
+                                    $this->Database->prepare("UPDATE tl_user_group SET dlh_googlemapss=? WHERE id=?")
+                                        ->execute(serialize($arrDlh_googlemapss), $objGroup->id);
+                                }
                             }
                         }
 
