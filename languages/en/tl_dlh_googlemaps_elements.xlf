@@ -101,7 +101,7 @@
 			<source>Position of the infowindow anchor</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.1">
-			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up.</source>
+			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up. Default 0,0.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.url.0">
 			<source>Link</source>
@@ -125,7 +125,7 @@
 			<source>Geo-coordinates southwest/northeast</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.bounds.1">
-			<source>Please enter the coordinates of the element as 2 pairs of coordinates.</source>
+			<source>Please enter the coordinates of the element as 2 pairs of coordinates separated by /.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.0">
 			<source>File</source>
@@ -161,19 +161,19 @@
 			<source>File for the icon</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.1">
-			<source>Please choose an image file (gif, jpg oder png) for use as an icon.</source>
+			<source>Please choose an image file (gif, jpg, png, svg) for use as an icon.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSize.0">
 			<source>Dimensions width x height</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSize.1">
-			<source>Dimensions of the icon.</source>
+			<source>Dimensions of the icon. Default 16,16.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.0">
 			<source>Position of the icon anchor</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.1">
-			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up.</source>
+			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up. Default 0,0.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.0">
 			<source>Use shadow</source>
@@ -191,7 +191,7 @@
 			<source>Dimensions width x height</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.1">
-			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow.</source>
+			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow. Default 0,0.</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.zIndex.0">
 			<source>z-Index</source>
@@ -323,7 +323,7 @@
 			<source>Size of the info window</source>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.1">
-			<source>If set, the size of the info window is fixed.</source>
+			<source>If set, the size of the info window is fixed. default 0,0.</source>
 		</trans-unit>
         </body>
     </file>

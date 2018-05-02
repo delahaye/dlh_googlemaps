@@ -134,8 +134,8 @@
 			<target>Positions-Versatz der Infoblase</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowAnchor.1">
-			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up.</source>
-			<target>Die Position der Infoblase kann über ein Koordinatenpaar LINKS,RAUF verändert werden. 5,10 verschiebt die Infoblase z.B. um 5 Pixel nach links und 10 Pixel nach oben.</target>
+			<source>The position of the infowindow can be modified by coordinates LEFT,UP. 5,10 e.g. moves the infowindow 5 Pixel to the left and 10 Pixel up. Default 0,0.</source>
+			<target>Die Position der Infoblase kann über ein Koordinatenpaar LINKS,RAUF verändert werden. 5,10 verschiebt die Infoblase z.B. um 5 Pixel nach links und 10 Pixel nach oben. Default: 0,0.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.url.0">
 			<source>Link</source>
@@ -166,8 +166,8 @@
 			<target>Geo-Koordinaten Südwest/Nordost</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.bounds.1">
-			<source>Please enter the coordinates of the element as 2 pairs of coordinates.</source>
-			<target>Geben Sie hier die Geo-Koordinaten des Elements als 2 Koordinatenpaare ein.</target>
+			<source>Please enter the coordinates of the element as 2 pairs of coordinates separated by /.</source>
+			<target>Geben Sie hier die Geo-Koordinaten des Elements als 2 Koordinatenpaare ein, getrennt durch /.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.overlaySRC.0">
 			<source>File</source>
@@ -214,24 +214,24 @@
 			<target>Dateiauswahl für das Icon</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSRC.1">
-			<source>Please choose an image file (gif, jpg oder png) for use as an icon.</source>
-			<target>Wählen Sie hier die Grafikdatei (gif, jpg oder png) aus, die für das Icon verwendet werden soll.</target>
+			<source>Please choose an image file (gif, jpg, png, svg) for use as an icon.</source>
+			<target>Wählen Sie hier die Grafikdatei (gif, jpg, png, svg) aus, die für das Icon verwendet werden soll.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSize.0">
 			<source>Dimensions width x height</source>
 			<target>Anzeigemaße Breite x Höhe</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconSize.1">
-			<source>Dimensions of the icon.</source>
-			<target>Anzeigemaße des Icons.</target>
+			<source>Dimensions of the icon. Default 16,16.</source>
+			<target>Anzeigemaße des Icons. Default 16,16.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.0">
 			<source>Position of the icon anchor</source>
 			<target>Positions-Versatz des Icons</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.iconAnchor.1">
-			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up.</source>
-			<target>Die Position des Icons kann über ein Koordinatenpaar LINKS,RAUF verändert werden. 5,10 verschiebt das Icon z.B. von der linken oberen Ecke des Icons um 5 Pixel nach links und 10 Pixel nach oben.</target>
+			<source>The position of the icon can be modified by coordinates LEFT,UP. 5,10 e.g. moves the icon 5 Pixel to the left and 10 Pixel up. Default 0,0.</source>
+			<target>Die Position des Icons kann über ein Koordinatenpaar LINKS,RAUF verändert werden. 5,10 verschiebt das Icon z.B. von der linken oberen Ecke des Icons um 5 Pixel nach links und 10 Pixel nach oben. Default: 0,0.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.hasShadow.0">
 			<source>Use shadow</source>
@@ -254,8 +254,8 @@
 			<target>Anzeigemaße Breite x Höhe</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.shadowSize.1">
-			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow.</source>
-			<target>Anzeigemaße des Schattens. Ein beim Icon einstellter Positions-Versatz wird übernommen.</target>
+			<source>Dimensions of the shadow. A special position used by the icon is used equally by the shadow. Default 0,0.</source>
+			<target>Anzeigemaße des Schattens. Ein beim Icon einstellter Positions-Versatz wird übernommen. Default 32,32.</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.zIndex.0">
 			<source>z-Index</source>
@@ -430,8 +430,8 @@
 			<target>Größe der Infoblase</target>
 		</trans-unit>
         <trans-unit id="tl_dlh_googlemaps_elements.infoWindowSize.1">
-			<source>If set, the size of the info window is fixed.</source>
-			<target>Wenn gesetzt, ist die Größe der Infoblase fixiert.</target>
+			<source>If set, the size of the info window is fixed. default 0,0.</source>
+			<target>Wenn gesetzt, ist die Größe der Infoblase fixiert. Default 0,0</target>
 		</trans-unit>
         </body>
     </file>

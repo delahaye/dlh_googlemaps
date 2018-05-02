@@ -41,6 +41,10 @@
         <source>ok</source>
         <target>ok</target>
       </trans-unit>
+      <trans-unit id="dlh_googlemaps.labels.privacy">
+        <source>This website uses Google Maps - click here to permanently activate it. I agree with the transfer of ma data to Google. Notice: You can withdraw your confirmation at any time for the future by deleting he cookie dlh_googlemaps. In our privacy policy You'll find further information about our way to deal with user data.</source>
+        <target>Diese Website nutzt Google Maps - klicken Sie hier, um es permanent zu aktivieren. Ich stimme zu, dass mit der Nutzung Daten an Google übertragen werden. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft widerrufen, indem Sie den Cookie dlh_googlemaps löschen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer Datenschutzerklärung.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

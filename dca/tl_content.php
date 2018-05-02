@@ -18,8 +18,9 @@
  */
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'dlh_googlemap_static';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'dlh_googlemap_protected';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['dlh_googlemaps'] =
-    '{type_legend},type,headline;{map_legend},dlh_googlemap,dlh_googlemap_size,dlh_googlemap_zoom,dlh_googlemap_static,dlh_googlemap_nocss,dlh_googlemap_tabs;{template_legend:hide},dlh_googlemap_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+    '{type_legend},type,headline;{map_legend},dlh_googlemap,dlh_googlemap_size,dlh_googlemap_zoom,dlh_googlemap_protected,dlh_googlemap_static,dlh_googlemap_nocss,dlh_googlemap_tabs;{template_legend:hide},dlh_googlemap_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 
 /**
@@ -27,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['dlh_googlemaps'] =
  */
 
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['dlh_googlemap_static'] = 'dlh_googlemap_url,target,linkTitle,rel';
-
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['dlh_googlemap_protected'] = 'dlh_googlemap_privacy';
 
 /**
  * add fields
@@ -50,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_template'] = [
     'inputType'        => 'select',
     'options_callback' => ['tl_content_dlh_googlemaps', 'getTemplates'],
     'eval'             => ['tl_class' => 'w50'],
-    'sql'              => "varchar(32) NOT NULL default ''",
+    'sql'              => "varchar(64) NOT NULL default ''",
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_zoom'] = [
@@ -69,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_size'] = [
     'inputType' => 'imageSize',
     'options'   => ['proportional','box'],
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval'      => ['nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
+    'eval'      => ['includeBlankOption' => true, 'rgxp' => 'digit', 'nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
     'default'      => serialize(array(16,9,'proportional')),
     'sql'       => "varchar(128) NOT NULL default ''",
 ];
@@ -110,6 +111,25 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_url'] = [
     'sql'       => "varchar(255) NOT NULL default ''",
 ];
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_protected'] = [
+    'label'     => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_protected'],
+    'exclude'   => true,
+    'default'   => false,
+    'inputType' => 'checkbox',
+    'default'   => '1',
+    'eval'      => ['submitOnChange' => true, 'tl_class' => 'clr m12'],
+    'sql'       => "char(1) NOT NULL default '1'",
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['dlh_googlemap_privacy'] = [
+    'label'       => &$GLOBALS['TL_LANG']['tl_content']['dlh_googlemap_privacy'],
+    'exclude'     => true,
+    'search'      => true,
+    'inputType'   => 'textarea',
+    'eval'        => ['rte' => 'tinyMCE', 'helpwizard' => true],
+    'explanation' => 'insertTags',
+    'sql'         => "text NULL",
+];
 
 /**
  * Class tl_content_dlh_googlemaps

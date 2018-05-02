@@ -74,6 +74,8 @@ class Googlemap extends \Frontend
             return false;
         }
 
+        $arrMap                           = $objMap->row();
+
         global $objPage;
 
         $key = null;
@@ -88,7 +90,7 @@ class Googlemap extends \Frontend
             $key = \Config::get('dlh_googlemaps_apikey');
         }
 
-        $arrMap                           = $objMap->row();
+        $arrMap['key']                    = $key;
         $arrMap['language']               = $GLOBALS['TL_LANGUAGE'];
         $arrMap['mapSize']                = deserialize($arrMap['mapSize']);
         $arrMap['mapTypesAvailable']      = deserialize($arrMap['mapTypesAvailable']);
@@ -282,12 +284,7 @@ class Googlemap extends \Frontend
         }
 
         $arrElement['radius'] = deserialize($arrElement['radius']);
-        $arrElement['bounds'] = trimsplit(',', $arrElement['bounds']);
-
-        if (!empty($arrElement['bounds']) && is_numeric($arrElement['bounds'][1]) && is_numeric($arrElement['bounds'][0]))
-        {
-            $arrElement['bounds'] = sprintf('%s,%s', ($arrElement['bounds'][0] . $arrElement['bounds'][0]) / 2, ($arrElement['bounds'][1] . $arrElement['bounds'][1]) / 2);
-        }
+        $arrElement['bounds'] = trimsplit('/', $arrElement['bounds']);
 
         $arrElement['infoWindow'] = preg_replace('/[\n\r\t]+/i', '', str_replace('\"', '"', addslashes($this->replaceInsertTags($arrElement['infoWindow']))));
 

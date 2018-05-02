@@ -111,7 +111,6 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = [
         'usePanControl'         => 'panControlStyle,panControlPos',
         'useScaleControl'       => 'scaleControlPos',
         'useStreetViewControl'  => 'streetViewControlPos',
-        'useOverviewMapControl' => 'overviewMapControlOpened',
         'useClusterer'          => 'clustererImg',
     ],
 
@@ -166,7 +165,7 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = [
             'inputType' => 'imageSize',
             'options'   => ['proportional','box'],
             'reference' => &$GLOBALS['TL_LANG']['MSC'],
-            'eval'      => ['nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
+            'eval'      => ['includeBlankOption' => true, 'rgxp' => 'digit', 'nospace' => true, 'helpwizard' => false, 'tl_class' => 'w50 clr'],
             'default'      => serialize(array(16,9,'proportional')),
             'sql'       => "varchar(128) NOT NULL default ''",
         ],
@@ -416,21 +415,6 @@ $GLOBALS['TL_DCA']['tl_dlh_googlemaps'] = [
             'eval'      => ['cols' => 3, 'tl_class' => 'dlh_googlemaps_position'],
             'sql'       => "varchar(16) NOT NULL default 'TOP_LEFT'",
         ],
-        'useOverviewMapControl'    => [
-            'label'     => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['useOverviewMapControl'],
-            'exclude'   => true,
-            'inputType' => 'checkbox',
-            'default'   => '1',
-            'eval'      => ['submitOnChange' => true],
-            'sql'       => "char(1) NOT NULL default '1'",
-        ],
-        'overviewMapControlOpened' => [
-            'label'     => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['overviewMapControlOpened'],
-            'exclude'   => true,
-            'inputType' => 'checkbox',
-            'eval'      => ['tl_class' => 'w50'],
-            'sql'       => "char(1) NOT NULL default '1'",
-        ],
         'disableDoubleClickZoom'   => [
             'label'     => &$GLOBALS['TL_LANG']['tl_dlh_googlemaps']['disableDoubleClickZoom'],
             'exclude'   => true,
@@ -540,7 +524,6 @@ class tl_dlh_googlemaps extends \Backend
         {
             return;
         }
-
         // Set root IDs
         if (!is_array($this->User->dlh_googlemapss) || empty($this->User->dlh_googlemapss))
         {
@@ -550,15 +533,12 @@ class tl_dlh_googlemaps extends \Backend
         {
             $root = $this->User->dlh_googlemapss;
         }
-
         $GLOBALS['TL_DCA']['tl_dlh_googlemaps']['list']['sorting']['root'] = $root;
-
         // Check permissions to add Maps
         if (!$this->User->hasAccess('create', 'dlh_googlemapsp'))
         {
             $GLOBALS['TL_DCA']['tl_dlh_googlemaps']['config']['closed'] = true;
         }
-
         // Check current action
         switch (Input::get('act'))
         {
@@ -566,55 +546,46 @@ class tl_dlh_googlemaps extends \Backend
             case 'select':
                 // Allow
                 break;
-
             case 'edit':
                 // Dynamically add the record to the user profile
                 if (!in_array(Input::get('id'), $root))
                 {
                     $arrNew = $this->Session->get('new_records');
-
                     if (is_array($arrNew['tl_dlh_googlemaps']) && in_array(Input::get('id'), $arrNew['tl_dlh_googlemaps']))
                     {
                         // Add permissions on user level
-                        if ($this->User->inherit == 'custom' || !$this->User->groups[0])
+                        if ($this->User->inherit != 'group')
                         {
                             $objUser = $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user WHERE id=?")->limit(1)->execute($this->User->id);
-
                             $arrDlh_googlemapsp = deserialize($objUser->dlh_googlemapsp);
-
                             if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
                             {
                                 $arrDlh_googlemapss   = deserialize($objUser->dlh_googlemapss);
                                 $arrDlh_googlemapss[] = Input::get('id');
-
                                 $this->Database->prepare("UPDATE tl_user SET dlh_googlemapss=? WHERE id=?")->execute(serialize($arrDlh_googlemapss), $this->User->id);
                             }
                         }
-
                         // Add permissions on group level
-                        elseif ($this->User->groups[0] > 0)
+                        if ($this->User->inherit != 'custom')
                         {
-                            $objGroup =
-                                $this->Database->prepare("SELECT dlh_googlemapss, dlh_googlemapsp FROM tl_user_group WHERE id=?")->limit(1)->execute($this->User->groups[0]);
-
-                            $arrDlh_googlemapsp = deserialize($objGroup->dlh_googlemapsp);
-
-                            if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                            $objGroup = $this->Database->execute("SELECT id, dlh_googlemapss, dlh_googlemapsp FROM tl_user_group WHERE id IN(" . implode(',', array_map('intval', $this->User->groups)) . ")");
+                            while ($objGroup->next())
                             {
-                                $arrDlh_googlemapss   = deserialize($objGroup->dlh_googlemapss);
-                                $arrDlh_googlemapss[] = Input::get('id');
-
-                                $this->Database->prepare("UPDATE tl_user_group SET dlh_googlemapss=? WHERE id=?")->execute(serialize($arrDlh_googlemapss), $this->User->groups[0]);
+                                $arrDlh_googlemapsp = deserialize($objGroup->dlh_googlemapsp);
+                                if (is_array($arrDlh_googlemapsp) && in_array('create', $arrDlh_googlemapsp))
+                                {
+                                    $arrDlh_googlemapss   = deserialize($objGroup->dlh_googlemapss);
+                                    $arrDlh_googlemapss[] = Input::get('id');
+                                    $this->Database->prepare("UPDATE tl_user_group SET dlh_googlemapss=? WHERE id=?")->execute(serialize($arrDlh_googlemapss), $objGroup->id);
+                                }
                             }
                         }
-
                         // Add new element to the user object
                         $root[]                      = Input::get('id');
                         $this->User->dlh_googlemapss = $root;
                     }
                 }
             // No break;
-
             case 'copy':
             case 'delete':
             case 'show':
@@ -624,7 +595,6 @@ class tl_dlh_googlemaps extends \Backend
                     $this->redirect('contao/main.php?act=error');
                 }
                 break;
-
             case 'editAll':
             case 'deleteAll':
             case 'overrideAll':
@@ -639,7 +609,6 @@ class tl_dlh_googlemaps extends \Backend
                 }
                 $this->Session->setData($session);
                 break;
-
             default:
                 if (strlen(Input::get('act')))
                 {
@@ -700,16 +669,7 @@ class tl_dlh_googlemaps extends \Backend
         $return = '<strong>' . $arrRow['title'] . '</strong>';
         if ($arrRow['center'] && $arrRow['zoom'] && $arrRow['mapTypeId'])
         {
-            $apikey   = '';
-            $pageList = \Database::getInstance()->prepare("select dlh_googlemaps_apikey from tl_page")->execute();
-            while ($pageList->next())
-            {
-                if ($pageList->dlh_googlemaps_apikey)
-                {
-                    $apikey = '&key=' . $pageList->dlh_googlemaps_apikey;
-                    continue;
-                }
-            }
+            $apikey = '&key=' . \Config::get('dlh_googlemaps_apikey');
 
             $src    = 'https://maps.google.com/maps/api/staticmap?center=' . $arrRow['center'] . $apikey . '&zoom=' . ($arrRow['zoom'] - 2) . '&maptype=' . strtolower(
                     $arrRow['mapTypeId']

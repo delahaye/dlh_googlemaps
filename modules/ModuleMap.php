@@ -90,7 +90,9 @@ class ModuleMap extends \Module
         $arrParams = array
         (
             'mapSize' => deserialize($this->dlh_googlemap_size),
-            'zoom' => $this->dlh_googlemap_zoom
+            'zoom' => $this->dlh_googlemap_zoom,
+            'protected' => $this->dlh_googlemap_protected,
+            'privacy' => $this->dlh_googlemap_privacy
         );
 
         $arrMap = \delahaye\googlemaps\Googlemap::getMapData($this->dlh_googlemap, $objPage->outputFormat, $arrParams);
@@ -113,7 +115,6 @@ class ModuleMap extends \Module
                 $this->Template = new \FrontendTemplate($this->dlh_googlemap_template);
             }
 
-            $GLOBALS['TL_JAVASCRIPT'][] = 'https://maps.googleapis.com/maps/api/js?key='.$key.'&language='.$arrMap['language'];
             if($arrMap['useClusterer']){
                 $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/src/markerclusterer.js';
                 $arrMap['clusterImg'] = $arrMap['clustererImg'] ? $arrMap['clustererImg'] : 'system/modules/dlh_googlemaps/assets/js-marker-clusterer-gh-pages/images';

@@ -66,6 +66,21 @@
             <target>Questa opzione aggiorna la mappa quando si cambia una scheda o si apre un elemento fisarmonica.
 Realizzato per l'estensione TabControl.</target>
         </trans-unit>
+        <trans-unit id="tl_content.dlh_googlemap_protected.0">
+            <source>Map has data protection</source>
+        </trans-unit>
+        <trans-unit id="tl_content.dlh_googlemap_protected.1">
+            <source>Prevents the data transfer to Google until confirmation.</source>
+        </trans-unit>
+        <trans-unit id="tl_content.dlh_googlemap_privacy.0">
+            <source>Data protection notice</source>
+        </trans-unit>
+        <trans-unit id="tl_content.dlh_googlemap_privacy.1">
+            <source>Overwrites the default message. Insert-Tags are supported.</source>
+        </trans-unit>
+        <trans-unit id="tl_content.map_legend">
+            <source>Map data</source>
+        </trans-unit>
         </body>
     </file>
 </xliff>

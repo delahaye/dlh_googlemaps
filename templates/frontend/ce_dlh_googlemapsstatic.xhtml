@@ -1,3 +1,16 @@
+<?php
+if(!$_COOKIE['dlh_googlemaps'] && $this->map['protected']=='1'):
+$privacy = ($this->map['protected']=='1' && $this->map['privacy']=='') ? $this->labels['privacy'] : $this->map['privacy'];
+endif;
+?>
+
+<script>
+function gmap<?= $this->map['id']; ?>_allow() {
+    document.cookie = 'dlh_googlemaps=ok; max-age=<?= $GLOBALS['TL_CONFIG']['dlh_googlemaps']['cookiedays']; ?> ; path=/';
+    document.getElementById('gmap<?= $this->map['id']; ?>').innerHTML = '<?php echo $this->map['staticMap']; ?>';
+}
+</script>
+
 <!-- indexer::stop -->
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <?php if ($this->headline): ?>
@@ -5,7 +18,8 @@
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
 
-<div class="map image_container"><?php echo $this->map['staticMap']; ?></div>
+<div class="map image_container" id="gmap<?= $this->map['id']; ?>"><?php echo (!$_COOKIE['dlh_googlemaps'] && $this->map['protected']=='1') ? '<div id="confirm-googlemaps" onClick="gmap'.$this->map['id'].'_allow()">'.$privacy.'</div>' : $this->map['staticMap']; ?></div>
+
 
 </div>
 <!-- indexer::continue -->

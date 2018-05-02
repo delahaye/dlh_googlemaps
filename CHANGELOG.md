@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 ## [2.3.2] - 2017-09-19
 
 ### Fixed
+- composer-plugin wrong versions
+- minor bugfixes, see github issues
+
+### Changed
+- added a data-protection confirmation to prevent data transfer to google w/o permission (optional)
+
+
+## [2.3.2] - 2017-09-19
+
+### Fixed
 - `contao 4.x` compatibility
 - minor fixes in pull request conflicts
 - minor dca fixes

@@ -1,3 +1,10 @@
+<?php
+if($_COOKIE['dlh_googlemaps'] || $this->map['protected']!='1'):
+$GLOBALS['TL_JAVASCRIPT'][] = 'https://maps.googleapis.com/maps/api/js?key=' . $this->map['key'] . '&language=' . $this->map['language'];
+$this->map['privacy'] == '';
+endif;
+?>
+
 <!-- indexer::stop -->
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <?php if ($this->headline): ?>
@@ -10,7 +17,22 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 
+function gmap<?= $this->map['id']; ?>_allow() {
+    document.cookie = 'dlh_googlemaps=ok; max-age=<?= $GLOBALS['TL_CONFIG']['dlh_googlemaps']['cookiedays']; ?> ; path=/';
+   
+    var mapsSrc = document.createElement('script');
+    mapsSrc.type = 'text/javascript';
+    mapsSrc.src = 'https://maps.googleapis.com/maps/api/js?key=<?= $this->map['key']; ?>&language=<?= $this->map['language']; ?>';
+    document.getElementsByTagName('head')[0].appendChild(mapsSrc);
+    window.setTimeout("gmap<?= $this->map['id']; ?>_initialize()", 500);
+}
+
 function gmap<?php echo $this->map['id']; ?>_initialize() {
+
+    if(!window.google){
+        return false; 
+    }
+
     var gmap<?php echo $this->map['id']; ?>_Options = {
 
         zoom: <?php echo $this->map['zoom']; ?>

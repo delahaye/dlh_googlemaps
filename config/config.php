@@ -70,3 +70,9 @@ $GLOBALS['TL_PERMISSIONS'][] = 'dlh_googlemapsp';
  * Refreshing
  */
 $GLOBALS['TL_CONFIG']['dlh_googlemaps']['refresh'] = array('toggler', 'tabs');
+
+
+/**
+ * cookie days
+ */
+$GLOBALS['TL_CONFIG']['dlh_googlemaps']['cookiedays'] = 365 * 86400; // days * sec/day
