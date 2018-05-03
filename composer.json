@@ -4,7 +4,7 @@
     "keywords":["contao", "googlemaps", "geo", "map"],
     "type": "contao-module",
     "homepage":"https://github.com/delahaye/dlh_googlemaps",
-    "license":"LGPL-3.0+",
+    "license":"LGPL-3.0-or-later",
     "authors":[
         {
             "name":"Christian de la Haye",
