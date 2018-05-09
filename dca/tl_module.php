@@ -142,9 +142,9 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['dlh_googlemap_protected'] = [
     'exclude'   => true,
     'default'   => false,
     'inputType' => 'checkbox',
-    'default'   => '1',
+    'default'   => '',
     'eval'      => ['submitOnChange' => true, 'tl_class' => 'clr m12'],
-    'sql'       => "char(1) NOT NULL default '1'",
+    'sql'       => "char(1) NOT NULL default ''",
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['dlh_googlemap_privacy'] = [

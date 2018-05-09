@@ -1,7 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [2.3.2] - 2017-09-19
+## [2.4.1] - 2018-05-09
+
+### Fixed
+- composer fixed license
+
+### Changed
+- set data-protection default off
+
+
+## [2.4.0] - 2018-05-02
 
 ### Fixed
 - composer-plugin wrong versions
