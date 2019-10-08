@@ -18,7 +18,7 @@ endif;
 
 function gmap<?= $this->map['id']; ?>_allow() {
     document.cookie = 'dlh_googlemaps=ok; max-age=<?= $GLOBALS['TL_CONFIG']['dlh_googlemaps']['cookiedays']; ?> ; path=/';
-   
+
     var mapsSrc = document.createElement('script');
     mapsSrc.type = 'text/javascript';
     mapsSrc.src = 'https://maps.googleapis.com/maps/api/js?key=<?= $this->map['key']; ?>&language=<?= $this->map['language']; ?>';
@@ -29,7 +29,7 @@ function gmap<?= $this->map['id']; ?>_allow() {
 function gmap<?php echo $this->map['id']; ?>_initialize() {
 
     if(!window.google){
-        return false; 
+        return false;
     }
 
     var gmap<?php echo $this->map['id']; ?>_Options = {
@@ -129,7 +129,7 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
 
     google.maps.event.addDomListener(window, 'resize', function() {
         var center = gmap<?=$this->map['id'];?>.getCenter();
- 
+
         google.maps.event.trigger(gmap<?=$this->map['id'];?>, 'resize');
         gmap<?=$this->map['id'];?>.setCenter(center);
     });
@@ -148,10 +148,10 @@ function gmap<?php echo $this->map['id']; ?>_initialize() {
     }
 
     <?php if($this->map['useClusterer']): ?>
-    var gmap<?php echo $this->map['id']; ?>_markerCluster = new MarkerClusterer(gmap<?php echo $this->map['id']; ?>, gmap<?php echo $this->map['id']; ?>_markers, {imagePath: '<?php echo $this->map[clusterImg]; ?>/m'});
+    var gmap<?php echo $this->map['id']; ?>_markerCluster = new MarkerClusterer(gmap<?php echo $this->map['id']; ?>, gmap<?php echo $this->map['id']; ?>_markers, {imagePath: '<?php echo $this->map['clusterImg']; ?>/m'});
     <?php endif; ?>
 
-    <?php 
+    <?php
     // tabcontrol
     echo $this->tabs ? $this->map['tabsCode'] : ''; ?>
 
