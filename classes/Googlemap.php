@@ -195,7 +195,7 @@ class Googlemap extends \Frontend
         {
             if ($intIcon <= 5)
             {
-                $arrMap['staticMap'] .= '&amp;' . $k . implode('|', $v);
+                $arrMap['staticMap'] .= '&amp;' . $k . implode('%7C', $v);
                 $intIcon++;
             }
         }
