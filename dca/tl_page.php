@@ -17,7 +17,10 @@
  * Extend default palette
  */
 $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace('{global_legend', '{dlh_googlemaps_legend},dlh_googlemaps_apikey,dlh_googlemaps_protected;{global_legend', $GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
-
+if (version_compare(VERSION, '4.9', '>='))
+{
+    $GLOBALS['TL_DCA']['tl_page']['palettes']['rootfallback'] = str_replace('{global_legend', '{dlh_googlemaps_legend},dlh_googlemaps_apikey,dlh_googlemaps_protected;{global_legend', $GLOBALS['TL_DCA']['tl_page']['palettes']['rootfallback']);
+}
 
 /**
  * Add fields to tl_page
