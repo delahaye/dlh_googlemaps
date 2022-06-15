@@ -19,6 +19,8 @@
  */
 namespace delahaye\googlemaps;
 
+use Contao\Database\Result;
+
 
 /**
  * Class UpgradeHandler
@@ -79,9 +81,14 @@ class UpgradeHandler
     }
 
 
+    /**
+     * @param Result $objList
+     */
     private static function upGradeMapSize($objDatabase, $objList, $strTable, $strField){
-        while($objList->next()){
-            $tmpOld = deserialize($objList->$strField);
+        $records = $objList->fetchAllAssoc();
+
+        foreach ($records as $record) {
+            $tmpOld = deserialize($record[$strField]);
             $tmpNew = array();
             if($tmpOld[2] != 'box' && $tmpOld[2] != 'proportional'){
                 $tmpOld[2] = str_replace('pcnt','%',$tmpOld[2]);
@@ -89,7 +96,7 @@ class UpgradeHandler
                 $tmpNew[1] = $tmpOld[1] > 0 ? $tmpOld[1].$tmpOld[2] : '';
                 $tmpNew[2] = 'box';
 
-                $objDatabase->prepare("update ".$strTable." set ".$strField."=? where id=?")->execute(serialize($tmpNew), $objList->id);
+                $objDatabase->prepare("update ".$strTable." set ".$strField."=? where id=?")->execute(serialize($tmpNew), $record['id']);
             }
         }
 
